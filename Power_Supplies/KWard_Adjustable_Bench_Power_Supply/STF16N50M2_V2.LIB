@@ -1,0 +1,181 @@
+*****************************************************************
+*****STMicroelectronics MOSFET, IGBT and Bipolar Library ********
+*****************************************************************
+*																*
+* Models provided by STMicroelectronics are not guaranteed to	*
+* fully represent all the specifications and operating			*
+* characteristics of the product behavior that they reproduce.	*
+* The model describes the characteristics of a typical device.	*
+* In all cases, the current product data sheet contains all		*
+* information to be used like final design guidelines and the	*
+* only actual performance specification.						*
+* Altough models can be a useful tool in evaluating device		*
+* performance, they cannot model exact device performance under	*
+* all conditions.												*
+* STMicroelectronics therefore does not assume any				*
+* responsibility arising from their use.						*
+* STMicroelectronics reserves the right to change models		*
+* without prior notice.											*
+*																*
+* Rev 3.1 - 04 NOV 2013											*
+*****************************************************************
+
+.SUBCKT STF16N50M2_V2 1 2 3
+*******************************************************************
+E1 Tj val_T VALUE={TEMP}
+R1 val_T 0 1E-03
+*****************************************************************
+Rtk Tj 0 1E10
+Rtk1 Tj 0 1E10
+*****************************************************************
+Ld 1 d1k 0.1E-09
+RLd 1 d1k 10
+Ls ss 3 0.1E-09
+RLs ss 3 10
+Lg 2 g2 0.1E-09
+RLg 2 g2 10
+Rg1 g2 g {rg}
+*****************************************************************
+.PARAM Area=1 BVDSS=1 Raval=0.754
+*****************************************************************
+.PARAM  Rg=5.2 Vth0=3.85
+.PARAM  Lambda=0.009 
+.PARAM  KpSat0=25 KpLin0=33 Drs=0.168
+.PARAM  Rd=0.209
+.PARAM  Rpa=0.115E-04
+*****************************************************************
+.PARAM  Unt=-1.8 Vthx=3.5E-03 Ksat=-1 Klin=-5
+.PARAM  A=1 B=1 Rx=2.91
+
+E_soglia soglia 0 value {vth1(V(TJ))}
+R_soglia soglia 0 1
+*****************************************************************
+.FUNC r_s(T) {((T+273)/300)**(unt)/drs}
+.FUNC vth1(x) {vth0-vthx*(x-27)}
+.FUNC kpsat(x) {kpsat0*((x+273)/300)**(ksat)}
+.FUNC kplin(x) {kplin0*((x+273)/300)**(klin)}
+.FUNC un(T) {b*((T+273)/300)**(unt)}
+*****************************************************************
+Gmos d s value {Area*(IF(V(d,s)>0,(IF(v(g,s)<vth1(V(TJ)),0,
++(IF((V(d,s)<(v(g,s)-vth1(V(TJ)))*kpsat(v(TJ))/kplin(v(TJ))),(1+LAMBDA*v(d,s))*kplin(v(TJ))/2*v(d,s)*
++(2*(v(g,s)-vth1(V(TJ)))-kplin(v(TJ))/kpsat(v(TJ))*v(d,s)),
++(1+LAMBDA*v(d,s))*kpsat(v(TJ))/2*(v(g,s)-vth1(V(TJ)))**2)))),-(IF(v(g,s)<vth1(V(TJ)),0,
++(IF((V(s,d)<(v(g,s)-vth1(V(TJ)))*kpsat(v(TJ))/kplin(v(TJ))),(1+LAMBDA*v(s,d))*kplin(v(TJ))/2*v(s,d)*
++(2*(v(g,s)-vth1(V(TJ)))-kplin(v(TJ))/kpsat(v(TJ))*v(s,d)),
++(1+LAMBDA*v(s,d))*kpsat(v(TJ))/2*(v(g,s)-vth1(V(TJ)))**2))))))} 
+
+G_RMos d1k dd VALUE={Area*((un(V(TJ))*(V(d1k,d)))/(rd+rpa*((I(V_sense)**a))**Rx))}
+G_rs s ss VALUE={(Area*(r_s(V(TJ))*v(s,ss))/drs)}
+R_Grs s ss 1E03
+R_Rmos d1k dd 1E03
+
+V_sense dd d 0
+*****************************************************************
+rdd dd 0 1E13
+rdd1 d 0 1E13
+rdd3 s 0 1E13
+R_DS d s 1E13
+*****************************************************************
+CGS g 3  {709E-12*Area}
+R_CGS g 3 500E06
+*****************************************************************
+Edev dev1 0 value {v(d,g)}
+c_dev1 dev1 dev2 1E-12
+R_dev dev2 dev3 1E-06
+V_miller dev3 0 0 
+G_miller d g  value ={1*Area*v(alfa)*i(V_miller)*1E12}
+*****************************************************************
+Rcap alfa 0 1E03
+Ecap alfa 0 TABLE ={V(d,g)}
++(0.1,674.08p) 
++(0.2,758.7p) 
++(0.5,715.59p) 
++(1,746.93p) 
++(2,654.59p) 
++(3,492.96p) 
++(5,417.74p) 
++(7,368.51p) 
++(10,103.28p) 
++(15,18.68p) 
++(20,11.42p) 
++(25,7.75p) 
++(30,5.44p) 
++(40,3.21p) 
++(50,2.12p) 
++(100,1.4p) 
++(150,1.41p) 
++(200,1.52p) 
++(250,1.93p) 
++(300,2.28p) 
++(350,2.74p) 
++(400,3.46p) 
++(450,4.05p) 
++(500,4.23p) 
+*****************************************************************
+Edevc dev1c 0 value {v(d,s)}
+c_dev1c dev1c dev2c 1E-12
+R_devc dev2c dev3c 1
+V_millerc dev3c 0 0 
+G_coss d s  value ={1*Area*v(alfa2)*i(V_millerc)*1E12}
+*****************************************************************
+Rcap2 alfa2 0 1E03
+Ecap2 alfa2 0 TABLE ={V(d,s)}
++(0.1,4901.39p) 
++(0.2,4657.95p) 
++(0.5,4078.19p) 
++(1,3489.04p) 
++(2,2833.74p) 
++(3,2444.69p) 
++(5,1994.13p) 
++(7,1720.88p) 
++(10,1264.74p) 
++(15,415.21p) 
++(20,325.6p) 
++(25,263.24p) 
++(30,213.11p) 
++(40,142.55p) 
++(50,89.95p) 
++(100,43.92p) 
++(150,40.24p) 
++(200,38.01p) 
++(250,35.09p) 
++(300,32.71p) 
++(350,31.29p) 
++(400,30.22p) 
++(450,29.66p) 
++(500,29.22p) 
+*****************************************************************
+R_bvdss	d1k d1bvdss1 {raval}
+V_bvdss	d1bvdss1 d1bvdss2 0
+G_bvd	d1bvdss2 ss VALUE={I_BVDSS(V(d1bvdss2,ss),v(Tj))}
+R_GBDSS	d1bvdss2 0 1E13
+.FUNC I_BVDSS(z,k1) {(exp(min(-175+z/(bvd(k1)),7))-1E-12)}
+*****************************************************************
+.FUNC bvd(k) {3.35*BVDSS+0.0029*k}
+*****************************************************************
+.FUNC Rdiodo(rdid) {rdid0*((rdid+273)/300)**(rdid_temp)}
+.PARAM rdid0={09/Area} rdid_temp=1.05
+
+G_R_didd d1k d1z VALUE={200*(V(d1k,d1z)/Rdiodo(V(TJ)))}
+R_G_R_didd d1k d1z {1/Area}
+
+V_diodo d1zd d1z 0
+G_diode 3 d1zd VALUE={I_diode(V(3,d1zd),v(Tj))}
+
+R_x 3 d1zd 1E13
+
+.FUNC I_diode(z3,k3) {(exp(min(-15+z3/(did(k3)),7))-10E-09)}
+.FUNC did(k4) {0.05-70E-06*k4}
+*****************************************************************
+R_R003 aa 0 500E06
+R_edep d1k d_dedep 100
+E_Eds d_dedep edep VALUE {-V(aa,0)*75E3}
+C_Cds edep ss {5E-12*Area}
+E_E001 ba 0 VALUE {-I(V_diodo)*(0.0016*v(Tj)+1)}
+G_R001 aa ba VALUE={V(aa,ba)/(700*(0.011*v(Tj)+1))}
+R_R002 aa ba 10E3
+C aa 0 15E-12
+*****************************************************************
+.ENDS STF16N50M2_V2
+ 
+* END OF MODELLING
