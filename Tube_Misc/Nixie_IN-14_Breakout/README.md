@@ -10,6 +10,8 @@ of the glass.  The R1 resistor footprint is for the required current-limiting re
 supply is already current-limited, yoiu can just place a jumper in this position.  Attach some standard
 5.04mm pitch screw terminals and some standoffs with #4 machine screws and you're all set.
 
+https://www.instagram.com/p/Bg9sY63FQ7b/
+
 ## Current-limiting Resistor Selection
 
 Nixie tubes work like a neon bulb: a threshold voltage is required to light them up (the "striking"
