@@ -402,6 +402,7 @@ tsl256x_set_gain(tsl256x_t tsl, uint8_t gain)
 		return (error);
 	
 	tsl->tsl_gain = gain;
+	tsl->tsl_auto_gain = false;
 
 	(void) tsl256x_poweroff(tsl);
 
