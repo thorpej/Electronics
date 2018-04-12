@@ -13,5 +13,5 @@ The channel's current may be sensed at the 10R 1% resistor that's in series with
 
 Board space is allocated for heat sinks, but you probably won't need any as beefy as afforded.
 In a typical application, you're dropping less than 200V across the tail, at currents less than 15mA.
-(I.e. typically less than 2 watts.)
+(I.e. typically less than 3 watts.)
 If you need any heat sink at all, those small fin-type sinks will probably suffice (that's what I use).
