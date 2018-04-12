@@ -56,7 +56,7 @@ usage(void)
 			"             2 = 402ms\n");
 	fprintf(stderr, "\n"
 			"-g 0|1|a   : Select gain\n"
-			"	      0 = 1x (default)\n"
+			"             0 = 1x (default)\n"
 			"             1 = 16x\n"
 			"             a = auto-gain algorithm\n");
 	fprintf(stderr, "\n"
