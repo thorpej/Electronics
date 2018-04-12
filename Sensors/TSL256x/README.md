@@ -15,7 +15,7 @@ Likewise, if you successfully use this with the CS package version of the chip o
 ## The API
 
 The API is pretty simple and straight-forward.
-As of now, it does not support any of the more advanced features of the chip, specificallt manual integration timing or threshold-driven interrupts; it is polled-mode only.
+As of now, it does not support any of the more advanced features of the chip, specifically manual integration timing or threshold-driven interrupts; it is polled-mode only.
 Worth noting, in order to maintain simplicity and reduce external dependencies, the driver does not perform any thread synchronization internally, so if you call this API from more than one thread in your application, you need to provide the synchronization yourself.
 
     int   tsl256x_alloc(const char *i2c, uint16_t slave_addr, bool cs_package, tsl256x_t *tsl);
