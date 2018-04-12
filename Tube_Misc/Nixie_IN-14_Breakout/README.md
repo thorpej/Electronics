@@ -29,8 +29,8 @@ the tube.
 
 Now, hook up your Nixie with this resistor in-series with the anode and connect one of the cathodes to
 ground, let the digit light up, and measure the voltage drop across the resistor.  For this example, we'll
-say that 49V is dropped across the resistor.  Ths means that 0.7mA is flowing through the tube.  Now use
-Ohm's law again to calculate a new resistor value to give you the desired current at the voltage drop
+say that 49V is dropped across the resistor.  This means that 0.7mA is flowing through the tube.  Now use
+Ohm's Law again to calculate a new resistor value to give you the desired current at the voltage drop
 that you just measured.  In this case, I want 1mA to flow through my Nixies, which would mean a 49K resistor;
 47K is the closest standard value which is what I'll use.  1/2W rating will be sufficient.  If you want
 2.5mA to flow, a 22K resistor will get you close enough; I chose 1mA because I can't tell any difference
