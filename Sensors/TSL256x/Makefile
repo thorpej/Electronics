@@ -3,7 +3,7 @@
 #	my choice.
 
 PROG=	tsltest
-SRCS=	tsltest tsl256x.c
+SRCS=	tsltest.c tsl256x.c
 NOMAN=	1
 
 .include <bsd.own.mk>
