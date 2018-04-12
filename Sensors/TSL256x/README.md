@@ -94,7 +94,7 @@ If either the broadband or IR sensor is saturated, 65536 will be returned for Lu
 Each call will wait for the configured integration time after enabling sensor power, read the sensors, calculate the Lux value, and  disable sensor power.
 Arguments:
 
-* *tsl* -- Valud sensor handle.
+* *tsl* -- Valid sensor handle.
 * *lux* -- Optional output parameter used to return the calculated Lux value.
 * *raw_broadband* -- Optional output parameter used to return the raw broadband sensor value.
 * *raw_ir* -- Optional output parameter used to return the raw IR sensor value.
