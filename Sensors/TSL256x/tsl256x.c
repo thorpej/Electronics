@@ -158,10 +158,23 @@ tsl256x_write2(tsl256x_t tsl, uint8_t reg, uint16_t val)
 static int
 tsl256x_poweron(tsl256x_t tsl)
 {
+	int error;
 
-	if (tsl->tsl_poweron++ == 0)
-		return (tsl256x_write1(tsl, TSL256x_REG_CONTROL,
-				       CONTROL_POWER_ON));
+	if (tsl->tsl_poweron++ == 0) {
+		uint8_t val;
+
+		error = tsl256x_write1(tsl, TSL256x_REG_CONTROL,
+				       CONTROL_POWER_ON);
+		if (error)
+			return (error);
+
+		error = tsllux_read1(tsl, TSL256x_REG_CONTROL, &val);
+		if (error)
+			return (error);
+
+		if (val != CONTROL_POWER_ON)
+			return (EIO);
+	}
 	return (0);
 }
 
