@@ -58,7 +58,6 @@ struct tsl256x_context {
  */
 #define	REGMASK		(COMMAND_REGMASK | COMMAND_CLEAR)
 
-#if 0	/* not used */
 static int
 tsl256x_read1(tsl256x_t tsl, uint8_t reg, uint8_t *valp)
 {
@@ -79,7 +78,6 @@ tsl256x_read1(tsl256x_t tsl, uint8_t reg, uint8_t *valp)
 	
 	return (error);
 }
-#endif
 
 static int
 tsl256x_read2(tsl256x_t tsl, uint8_t reg, uint16_t *valp)
@@ -168,7 +166,7 @@ tsl256x_poweron(tsl256x_t tsl)
 		if (error)
 			return (error);
 
-		error = tsllux_read1(tsl, TSL256x_REG_CONTROL, &val);
+		error = tsl256x_read1(tsl, TSL256x_REG_CONTROL, &val);
 		if (error)
 			return (error);
 
