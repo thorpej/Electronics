@@ -378,13 +378,13 @@ tsl256x_set_integration_time(tsl256x_t tsl, uint8_t time)
 
 	if ((error = tsl256x_write1(tsl, TSL256x_REG_TIMING,
 				    time | tsl->tsl_gain)) != 0)
-		return (error);
+		goto out;
 	
 	tsl->tsl_itime = time;
 
+ out:
 	(void) tsl256x_poweroff(tsl);
-
-	return (0);
+	return (error);
 }
 
 /*
