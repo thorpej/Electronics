@@ -391,6 +391,19 @@ tsl256x_set_integration_time(tsl256x_t tsl, uint8_t time)
  * tsl256x_set_gain --
  *	Set the sensor gain.
  */
+static int
+tsl256x_set_gain0(tsl256x_t tsl, uint8_t gain)
+{
+	int error;
+
+	if ((error = tsl256x_write1(tsl, TSL256x_REG_TIMING,
+				    tsl->tsl_itime | gain)) != 0)
+		return (error);
+
+	tsl->tsl_gain = gain;
+	return (0);
+}
+
 int
 tsl256x_set_gain(tsl256x_t tsl, uint8_t gain)
 {
@@ -407,16 +420,14 @@ tsl256x_set_gain(tsl256x_t tsl, uint8_t gain)
 
 	if ((error = tsl256x_poweron(tsl)) != 0)
 		return (error);
-	
-	if ((error = tsl256x_write1(tsl, TSL256x_REG_TIMING,
-				    tsl->tsl_itime | gain)) != 0)
-		return (error);
-	
-	tsl->tsl_gain = gain;
+
+	if ((error = tsl256x_set_gain0(tsl, gain)) != 0)
+		goto out;
+
 	tsl->tsl_auto_gain = false;
 
+ out:
 	(void) tsl256x_poweroff(tsl);
-
 	return (0);
 }
 
@@ -541,14 +552,14 @@ tsl256x_get_sensor_data(tsl256x_t tsl, uint16_t *broadband, uint16_t *ir)
 		if (did_adjust_gain == false) {
 			if (adc0 < lo && tsl->tsl_gain == TIMING_GAIN_1X) {
 				/* Increase the gain and try again. */
-				if ((error = tsl256x_set_gain(tsl,
+				if ((error = tsl256x_set_gain0(tsl,
 							TIMING_GAIN_16X)) != 0)
 				     	goto out;
 				did_adjust_gain = true;
 			} else if (adc0 > hi &&
 				   tsl->tsl_gain == TIMING_GAIN_16X) {
 				/* Decrease the gain and try again. */
-				if ((error = tsl256x_set_gain(tsl,
+				if ((error = tsl256x_set_gain0(tsl,
 							TIMING_GAIN_1X)) != 0)
 					goto out;
 				did_adjust_gain = true;
