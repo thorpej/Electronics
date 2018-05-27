@@ -12,6 +12,9 @@ The use of NetBSD-specific API is isolated to just a couple of functions and the
 If you provide me with clean and tidy patches to make it run elsewhere, I'll be happy to integrate them.
 Likewise, if you successfully use this with the CS package version of the chip or with the TSL2560 flavor, let me know so I can make a note of it here.
 
+As of May 27, 2018, there is a kernel-mode driver in NetBSD for this device, [tsllux](http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/dev/i2c/tsl256x.c), based on this code base.
+It integrates with the [envsys(4)](http://netbsd.gw.com/cgi-bin/man-cgi?envsys++NetBSD-current) kernel API, which provides a variety of options for getting the sensor data in the kernel and in user-space applications.
+
 ## The API
 
 The API is pretty simple and straight-forward.
