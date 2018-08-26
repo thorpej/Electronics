@@ -10,7 +10,7 @@ distortion.
 
 In addition to maintaining a fixed bias voltage, the regulator is referenced to the output stage's
 screen voltage (for pentode mode) or the plate voltage (for ultra-linear mode).  If the power supply
-sags for some reason, the regular compensates by reducing the bias applied to the cathodes,
+sags for some reason, the regulator compensates by reducing the bias applied to the cathodes,
 thus maintaining the optimal operating point.  This flavor of EFB is best suited for smaller power
 amplifiers, such as those based on the 6V6 or EL84/6BQ5.
 
