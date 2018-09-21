@@ -87,11 +87,11 @@ The negative voltage produced by the EFB Bias Supply is not the voltage that wil
 applied to the grids of the output tubes.  You will want some headroom to adjust up and down
 from the nominal value that's appropriate for your application.  Let's say you have an output
 stage design that calls for a -35V bias voltage; you might want to have that be the center of a
-range that can swing as much as 12.5% in either direction (from -39.4V to -30.6V).  To get that
+range that can swing as much as 15% in either direction (from -40.25V to -29.75V).  To get that
 range, you're going to be feeding the "raw bias voltage" from the bias supply though a voltage
 divider network (maybe individual bias pots for each output tube, or maybe a bias pot combined
-with a balance pot for each push-pull pair).  In any case, to provide that -35V +/- 12.5% range,
-you may need as much as -45V to -50V of "raw bias voltage".  Spend some time experimenting
+with a balance pot for each push-pull pair).  In any case, to provide that -35V +/- 15% range,
+you may need as much as -45V to -55V of "raw bias voltage".  Spend some time experimenting
 with the included LTSpice simulations of bias / balance networks to determine the appropriate
 raw bias voltage for your application.
 
