@@ -81,7 +81,7 @@ The actual **Sense_Current** that will be generated in the circuit will be shown
 
 ### Step 3
 
-Determine is your target **Raw\_Bias\_Voltage**.
+Determine your target **Raw\_Bias\_Voltage**.
 
 The negative voltage produced by the EFB Bias Supply is not the voltage that will be directly
 applied to the grids of the output tubes.  You will want some headroom to adjust up and down
