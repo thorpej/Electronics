@@ -53,6 +53,8 @@ ignores things like diode forward voltage and transistor base-emitter voltage dr
 barely any effect on the results because the voltages used with tube amplifiers are typically
 much higher in comparison; these small errors are thus lost in the noise.
 
+[Click here](https://github.com/thorpej/Electronics/blob/master/Tube_Audio/Helper_Circuits/EFB_Bias_Supply/EFB_Bias_Supply_Calculator.xlsx) to download the spreadsheet and get started!
+
 ### Step 1
 
 Determine is your **Sense_Voltage**.  This is the nominal value you will be using as your
