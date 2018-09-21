@@ -136,13 +136,13 @@ approximation.
 Enter the bias transfomer AC voltage in cell *B41*.
 
 Whether you use the estimate or measure, enter the **Raw\_Neg\_Voltage** in cell *B47*.
+Note that this voltage is also present at the **Vneg** terminal (see discussion in Step 6).
 
 ### Step 8
 
 Determine your **Qpoint\_Dropping\_Resistor** value.  This resistor will drop the **Raw\_Neg\_Voltage**
 to the quiescent **Qpoint_Voltage**, which should be roughly double the **Raw\_Bias\_Voltage**
-in order to provide even voltage swing on either side of the **Raw\_Bias\_Voltage**.  This voltage
-is also present at the **Vneg** terminal (see discussion in Step 6).
+in order to provide even voltage swing on either side of the **Raw\_Bias\_Voltage**.
 
 The target Qpoint voltage drop is calculated by the spreadsheep and reported in cell *H46*.
 A target resistor value is suggested by the spreadsheet in cell *H51*.  Select the nearest standard
