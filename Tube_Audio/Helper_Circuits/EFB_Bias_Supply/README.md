@@ -1,16 +1,20 @@
 # EFB Bias Supply
 
-This is a negative bias supply and regulator circuit for used in fixed bias output stages of a tube
-power amplifier.  It is an adaptation of the "EFB II", developed by David Gillespie and documented
-in this thread on AudioKarma: [Improving the Fisher SA-100 with EFB II](http://audiokarma.org/forums/index.php?threads/improving-the-fisher-sa-100-with-efb-ii.476431/).
-The idea behind "EFB II" is to maintain the relationship between the negative bias voltage applied
-to the tube grids and a reference voltage (the screen supply voltage in a pentode output stage;
-the plate supply voltage in an ultra-linear or triode output stage).  If the reference voltage sags
-during, for example, maximum output scenarios, the bias voltage will be reduced (made less
-negative) proportionally in order to maintain the desired operating point (avoid an over-bias
-condition).  This leads to improved performance (higher power output with less distortion) while
-also frequently leading to improved tube life (because the output stage does not need to be
-under-biased in order to achieve maximum performance under maximum power scenarios).
+## EFB - Enhanced Fixed Bias
+
+This is a negative bias supply and regulator circuit for use in push-pull Class AB1 fixed bias output
+stages of a tube power amplifier.  It is an adaptation of the "EFB II" circuit, developed by
+David Gillespie and documented in this thread on AudioKarma: [Improving the Fisher SA-100 with EFB II](http://audiokarma.org/forums/index.php?threads/improving-the-fisher-sa-100-with-efb-ii.476431/).
+The idea behind "EFB II" is to maintain the optimum relationship between the negative bias
+voltage applied to the tube grids and a reference voltage (the screen supply voltage in a pentode
+output stage; the plate supply voltage in an ultra-linear or triode output stage) at any power output
+conditions, up to the maximum power the output stage is capable of delivering.  When the
+reference voltage sags during, for example, maximum output conditions, the bias voltage will be
+reduced (made less negative) proportionally to the change in reference voltage in order to maintain
+the desired operating point (avoid an over-bias condition).  This leads to improved performance
+(higher power output with less distortion) while also frequently leading to improved tube life
+(because the output stage does not need to be under-biased in order to achieve maximum
+performance under maximum power conditions).
 
 David's circuit is very clever: a current is passed from the voltage reference through a sense
 resistor.  This current produces a voltage drop across another resistor (or resistor network).
@@ -20,10 +24,10 @@ voltage (up or down) results in a change in the sense current, resulting in a pr
 in the voltage drop across the resistor(s) that set the base bias voltage.
 
 This board is intended to more or less fully encapsulate a bias supply; it contains a half-wave
-rectifier and two filter capacitors, in addition to the "EFB II" circuitry.  To use it, all you need to do
-is determine what your "raw bias voltage" should be, plug in a few values into a handy spreadsheet
-I've provided, and then install the calculated components onto the board, and viola!  It's tailored
-for your particular application.
+rectifier and two filter capacitors, in addition to the "EFB II" circuitry.  To use it, simply determine
+what your "raw bias voltage" should be, plug in a few values into a handy spreadsheet I've
+provided, and then install the calculated components onto the board, *et viola*!  It's tailored for
+your particular application.
 
 ## Parts you'll need to build your EFB Bias Supply board
 
@@ -43,6 +47,15 @@ You will also need:
 
 ...plus a handful of resistors (see the following section about configuring the board), and optional
 screw terminal blocks (you can opt to use flying leads if you wish).
+
+Please note that the KSA1013 has a maximum Vce rating of -160V.  If your application requires
+a bias voltage in excess of -70V, the KSA1013 may not be suitable.  If you can find another
+PNP transistor with a suitable Vce rating in a TO-92 package with an ECB pin configuration, you
+should be able to substitute it.  If there's sufficient interest, I could spin another revision of the
+board that uses a different TO-92 pin configuration if a suitable high-voltage ECB transistor
+proves elusive.  I chose the KSA1013 because that's what David used originally and the price
+is right.  Note that higher-voltage transistors would also require higher-voltage electrolytic
+capacitors.
 
 ## Configuring the EFB Bias Supply board
 
