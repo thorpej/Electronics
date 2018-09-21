@@ -9,8 +9,8 @@ bias-balance circuit that I like to use:
 	      |        |              |
 	      |        |              |
 	C- ---+       RV1<---R3---RV2-+-GND
-	      |        |           ^  |
 	      |        |           ^--+
+	      |        |              |
 	      +---R2---+-----C2-)|----+
 	               |
 	               B
