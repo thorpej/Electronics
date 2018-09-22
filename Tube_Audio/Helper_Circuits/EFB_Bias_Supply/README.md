@@ -106,7 +106,10 @@ divider network (maybe individual bias pots for each output tube, or maybe a bia
 with a balance pot for each push-pull pair).  In any case, to provide that -35V +/- 15% range,
 you may need as much as -45V to -55V of "raw bias voltage".  Spend some time experimenting
 with the included LTSpice simulations of bias / balance networks to determine the appropriate
-raw bias voltage for your application.
+raw bias voltage for your application.  There are two simulations proivided:
+
+* [Individual_Bias_Network.asc](https://github.com/thorpej/Electronics/tree/master/Tube_Audio/Helper_Circuits/EFB_Bias_Supply/Individual_Bias_Network.asc): This is a network topology that provides an individual pot to fine-tune the bias voltage for each output tube.  The voltage ranges from **Raw\_Bias\_Voltage** to a floor as determined by the bottom leg of a voltage divider.
+* [Bias_Balance_Network.asc](https://github.com/thorpej/Electronics/tree/master/Tube_Audio/Helper_Circuits/EFB_Bias_Supply/Bias_Balance_Network.asc): This is a network topology that provides a DC-balance pot and a bias adjustment pot for each push-pull pair of output tubes.  It is more complex to build (but my handy [helper board](https://github.com/thorpej/Electronics/tree/master/Tube_Audio/Helper_Circuits/Bias_Balance_Helper_x2) makes it a little easier) and calculate the required resistor values, but it makes DC-balance adjustment somewhat easier because the balance pot adjusts 2 tubes at the same time.  This network requires a more-negative **Raw\_Bias\_Voltage**, as voltage at the outputs of the network is always less negative than **Raw\_Bias\_Voltage**.
 
 Enter the **Raw\_Bias\_Voltage** into cell *B16*.
 
