@@ -70,7 +70,7 @@ much higher in comparison; these small errors are thus lost in the noise.
 
 ### Step 1
 
-Determine is your **Sense_Voltage**.  This is the nominal value you will be using as your
+Determine your **Sense_Voltage**.  This is the nominal value you will be using as your
 voltage reference for the circuit.  For a pentode output stage, this is the nominal screen grid
 voltage.  For an ultra-linear or triode output stage, this is the voltage at the primary center tap
 of the output transformer.  In the example spreadsheet, we will use 475V.
