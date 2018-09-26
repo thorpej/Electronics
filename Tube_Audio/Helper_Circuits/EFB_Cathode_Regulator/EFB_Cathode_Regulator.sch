@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:EFB_Cathode_Regulator-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -201,4 +202,6 @@ Text Notes 6500 4550 0    60   ~ 0
 Pot is TE 409VA103M.
 Text Notes 5250 4550 0    60   ~ 0
 R3 is 1% tolerance, 2W
+Text Notes 5250 5000 0    60   ~ 0
+EFB(tm) and Enhanced Fixed Bias(tm) are trademarks of\nD Gillespie Designs and are used with permission.\n\nCircuit is copyright D Gillespie Designs, and is used with permission.
 $EndSCHEMATC

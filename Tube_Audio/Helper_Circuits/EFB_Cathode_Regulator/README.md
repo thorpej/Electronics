@@ -1,17 +1,18 @@
-# EFB Cathode Regulator
+# EFB(tm) Cathode Regulator
 
-This is a regulator circuit for generating a fixed cathode bias in the output stage of a tube
-power amplifier.  The circuit, called "EFB" (Enhanced Fixed Bias), was designed by David Gillespie.
-Unlike traditional cathode bias setups, which derive the bias voltage from the current flowing
-through the output stage, this cathode regulator maintains a fixed positive bias voltage on the
-output tube cathodes regardless of the current flowing through the tubes.  This prevents an
-over-bias condition when the tubes are driven to full power, increasing power output and reducing
-distortion.
+## EFB(tm) - Enhanced Fixed Bias(tm)
+
+This is a regulator circuit developed by David Gillespie for generating a fixed cathode bias in the
+output stage of a tube power amplifier.  Unlike traditional cathode bias setups, which derive the
+bias voltage from the current flowing through the output stage, this cathode regulator maintains
+a fixed positive bias voltage on the output tube cathodes regardless of the current flowing through
+the tubes.  This prevents an over-bias condition when the tubes are driven to full power, increasing
+power output and reducing distortion.
 
 In addition to maintaining a fixed bias voltage, the regulator is referenced to the output stage's
 screen voltage (for pentode mode) or the plate voltage (for ultra-linear mode).  If the power supply
 sags for some reason, the regulator compensates by reducing the bias applied to the cathodes,
-thus maintaining the optimal operating point.  This flavor of EFB is best suited for smaller power
+thus maintaining the optimal operating point.  This flavor of EFB(tm) is best suited for smaller power
 amplifiers, such as those based on the 6V6 or EL84/6BQ5.
 
 The circuit is very simple.  It is comprised of an adjustable voltage divider and an LM337 negative
@@ -38,6 +39,11 @@ be 1/2W parts.  The current sensing resistor should be a 10R 2W 1% part for accu
 here.  If you want to skip the current sensing capability, you need to install a wire jumper in lieu
 of the 10R resistor.  Any decent quality LM337 should work fine.  The TI and ST versions are great.
 I have a bag of Fairchild parts that work perfectly well.
+
+## Acknowledgements
+
+EFB(tm) and Enhanced Fixed Bias(tm) are trademarks of D Gillespie Designs, and are used with
+permission.  Circuit is copyright D Gillespie Designs, and is used with permission.
 
 Please let me know if you find this useful.  And many thanks to David Gillespie for sharing this
 circuit with the tube audio community.  Check out his work at [Tronola](http://www.tronola.com/html/dave_s_lab.html).
