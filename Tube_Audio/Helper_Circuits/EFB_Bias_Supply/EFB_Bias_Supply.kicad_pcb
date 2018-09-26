@@ -3,7 +3,7 @@
   (general
     (links 26)
     (no_connects 0)
-    (area 91.364999 69.774999 151.205001 111.835001)
+    (area 78.510001 62.07 164.06 119.540001)
     (thickness 1.6)
     (drawings 15)
     (tracks 71)
@@ -1349,7 +1349,7 @@
   (gr_text "Board (c) 2018\nJason R. Thorpe" (at 104.14 109.22) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.25)))
   )
-  (gr_text "Gillespie EFB(tm)\nBias Supply, board rev. 1" (at 148.59 91.44 90) (layer F.SilkS)
+  (gr_text "D Gillespie Designs EFB(tm)\nBias Supply, board rev. 1" (at 148.59 91.44 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.25)))
   )
   (dimension 36.83 (width 0.3) (layer F.Fab)

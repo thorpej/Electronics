@@ -318,4 +318,6 @@ Wire Wire Line
 	8250 4150 8250 4050
 Wire Wire Line
 	8250 3750 8250 3650
+Text Notes 5400 5800 0    60   ~ 0
+EFB(tm) and Enhanced Fixed Bias(tm) are trademarks of\nD Gillespie Designs and are used with permission.\n\nCircuit is copyright D Gillespie Designs, and is used with permission.
 $EndSCHEMATC

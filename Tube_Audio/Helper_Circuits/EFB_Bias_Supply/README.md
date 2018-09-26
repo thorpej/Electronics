@@ -1,6 +1,6 @@
-# EFB Bias Supply
+# EFB(tm) Bias Supply
 
-## EFB - Enhanced Fixed Bias
+## EFB(tm) - Enhanced Fixed Bias(tm)
 
 This is a negative bias supply and regulator circuit for use in push-pull Class AB1 fixed bias output
 stages of a tube power amplifier.  It is an adaptation of the "EFB II" circuit, developed by
@@ -29,9 +29,9 @@ what your "raw bias voltage" should be, plug in a few values into a handy spread
 provided, and then install the calculated components onto the board, *et viola*!  It's tailored for
 your particular application.
 
-## Parts you'll need to build your EFB Bias Supply board
+## Parts you'll need to build your EFB(tm) Bias Supply board
 
-There are a few specific components required to properly assemble your EFB Bias Supply board.
+There are a few specific components required to properly assemble your EFB(tm) Bias Supply board.
 
 * A PCB-mounted 50K linear trim pot, TE 409HA503M or equivalent.
 * A rectangular radial .22µF (220nF) 50V film capacitor, Kemet SMR5224J50J02L16.5 or equivalent.
@@ -57,10 +57,10 @@ proves elusive.  I chose the KSA1013 because that's what David used originally a
 is right.  Note that higher-voltage transistors would also require higher-voltage electrolytic
 capacitors.
 
-## Configuring the EFB Bias Supply board
+## Configuring the EFB(tm) Bias Supply board
 
 This board is meant to be flexible and configurable to make it easy to adapt to a wide variety
-of amplifiier applications.  I've provided a handy EFB Bias Supply Calculator in the form of an
+of amplifiier applications.  I've provided a handy EFB(tm) Bias Supply Calculator in the form of an
 Excel spreadsheet that makes configuring the board for your application fairly easy.  The calculator
 ignores things like diode forward voltage and transistor base-emitter voltage drop, but this has
 barely any effect on the results because the voltages used with tube amplifiers are typically
@@ -96,7 +96,7 @@ The actual **Sense_Current** that will be generated in the circuit will be shown
 
 Determine your target **Raw\_Bias\_Voltage**.
 
-The negative voltage produced by the EFB Bias Supply is not the voltage that will be directly
+The negative voltage produced by the EFB(tm) Bias Supply is not the voltage that will be directly
 applied to the grids of the output tubes.  You will want some headroom to adjust up and down
 from the nominal value that's appropriate for your application.  Let's say you have an output
 stage design that calls for a -35V bias voltage; you might want to have that be the center of a
@@ -183,6 +183,9 @@ R1, R2, R3, R4, and R5 in rows 70-74.  The spreadsheet will also provide the ini
 pot setting in row 77.
 
 ## Acknowledgements
+
+EFB(tm) and Enhanced Fixed Bias(tm) are trademarks of D Gillespie Designs, and are used with
+permission.  Circuit is copyright D Gillespie Designs, and is used with permission.
 
 Please let me know if you find this useful.  Thanks to Kevin Ward for reviewing this content and
 providing several helpful suggestions.  And many thanks to David Gillespie for sharing this circuit
