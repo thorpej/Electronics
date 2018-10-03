@@ -45,12 +45,7 @@ This is probably the simplest configuration of the board, used simply to provide
 ripple filtering using a low-value capacitor.  You only need to select an appropriate resistor for
 R1 in order to set the cut-off point of the low-pass filter.  For example, a 200K resistor would
 set the cut-off point of the low pass filter to approx. 0.8Hz, which will provide a signifant amount
-of filtering.  If the peak-to-peak ripple at Vin is already less than the MOSFET Vgs threshold
-voltage (typically 2-4V for power MOSFETs), then you are good to go.  If the ripple coming in
-is more than the MOSFET's threshold voltage, then you will need to add a lower leg to the voltage
-divider in order to provide some additional headroom for ripple rejection (at the cost of a lower
-nominal voltage output from the regulator and more heat dissipation from the MOSFET).  Install
-a wire jumper in place of R7, and the board is ready for use.
+of filtering.  Install a wire jumper in place of R7, and the board is ready for use.
 
 ### Zener-referenced Regulator
 
