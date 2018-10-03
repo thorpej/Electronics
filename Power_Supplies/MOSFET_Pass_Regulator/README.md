@@ -94,5 +94,5 @@ At the low end of the current range (2mA):
 * The MOSFET will dissipate 577 mW and drop ~288.6V.
 
 At the high end of the current range (30mA):
-* R7 will dissipate 4.23W and drop 141V.  157 (4.7W)
+* R7 will dissipate 4.23W and drop 141V.
 * The MOSFET will dissipate 4.7W and drop 157V
