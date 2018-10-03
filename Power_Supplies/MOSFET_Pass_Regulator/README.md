@@ -47,12 +47,16 @@ R1 in order to set the cut-off point of the low-pass filter.  For example, a 200
 set the cut-off point of the low pass filter to approx. 0.8Hz, which will provide a signifant amount
 of filtering.  Install a wire jumper in place of R7, and the board is ready for use.
 
+Note that if your peak-to-peak ripple voltage is greater than your MOSFET's
+Vgs threshold voltage, you will need to use a different configuration to drop
+more voltage across the MOSFET.
+
 ### Zener-referenced Regulator
 
 In this configuration, Zener diodes are used in the bottom leg of the voltage divider to set the
 output voltage of the regulator.  Use either a single Zener in the R2 position or two Zeners in
 series in the R5 and R6 positions.  The output voltage will be the summed Zener voltages minus
-the MOSFET Vgs threshold voltage.  Please a resistor in position R1 to set the current (make sure
+the MOSFET Vgs threshold voltage.  Place a resistor in position R1 to set the current (make sure
 sufficient current is avaiable for the Zeners to regulate properly, without exceeding the Zener's
 power rating).  The film capacitor will filter ripple as in the Capacitance Multiplier configuration,
 as well as shunt Zener noise.
