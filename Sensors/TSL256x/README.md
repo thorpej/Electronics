@@ -34,7 +34,7 @@ The slave address the sensor responds to is selected with the *ADDR_SEL* pin on 
 
 Returns 0 on success or an **errno** code on failure.
 
-    void  tsl256x_free(tsl256x_t *tsl);
+    void  tsl256x_free(tsl256x_t tsl);
 
 Frees a previously-allocated sensor handle.
 Arguments:
