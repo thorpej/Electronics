@@ -62,9 +62,9 @@ This call always succeeds.
 
     int  pca9685_set_freq(pca9685_t sc, unsigned int pwm_freq, int ext_freq);
 
-Sets the reference clock frequency and the PWM frequency. **NOTE: calling this function
-while a channel is active will result in undefined behavior.**  This is due to lack of
-support for the PCA9685 "restart" sequence.
+Sets the reference clock frequency and the PWM frequency.  For non-group handles, this
+must be called exactly once to initialize the clock parameters.  Calling this function
+on a group handle will result in an error.
 
 Arguments:
 
@@ -104,7 +104,9 @@ Returns 0 on success or an **errno** code on failure.
     int  pca9685_set_output_mode(pca9685_t sc, uint8_t mode2);
 
 Configures the output mode.  This function sets the MODE2 register directly.  Consult
-the datasheet for information on how to configure the output mode.
+the datasheet for information on how to configure the output mode.  For non-group handles,
+this must be called exactly once to initialize the output mode.  Calling this function
+on a group handle will result in an error.
 
 Arguments:
 
