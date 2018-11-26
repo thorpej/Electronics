@@ -379,7 +379,7 @@ pca9685_set_freq(pca9685_t sc, unsigned int pwm_freq, int ext_freq)
 	 * If we're using an external clock source, keep the
 	 * internal oscillator turned off.
 	 *
-	 * XXX The datasheet is a little ambiguoous about how this
+	 * XXX The datasheet is a little ambiguous about how this
 	 * XXX is supposed to work -- on the same page it says to
 	 * XXX perform this procedure, and also that PWM control of
 	 * XXX the channels is not possible when the oscillator is
@@ -723,6 +723,10 @@ pca9685_pulse_channel(pca9685_t sc, unsigned int channel, uint16_t delay_ticks,
 	 */
 	if (active_ticks == 0)
 		return pca9685_set_channel(sc, channel, false);
+
+	error = pca9685_start_transaction(sc);
+	if (error)
+		return error;
 	
 	on_tick = delay_ticks;
 	
