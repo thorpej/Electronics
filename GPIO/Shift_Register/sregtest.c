@@ -25,6 +25,7 @@ SOFTWARE.
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 #include "shift_register.h"
@@ -42,6 +43,12 @@ usage(void)
 	fprintf(stderr,
 	    "usage: %s [-g gpio] -c pin -d pin -l pin pin on|off\n",
 	    getprogname());
+	fprintf(stderr,
+	    "usage: %s [-g gpio] -c pin -d pin -l pin byte value\n",
+	    getprogname());
+	fprintf(stderr,
+	    "usage: %s [-g gpio] -c pin -d pin -l pin -C byte\n",
+	    getprogname());
 	fprintf(stderr, "\n"
 			"-g gpio    : GPIO instance device is connnected to\n"
 			"             (default: \"gpio0\")\n");
@@ -51,6 +58,10 @@ usage(void)
 	fprintf(stderr, "-l pin     : GPIO pin for latch signal\n");
 	fprintf(stderr, "\n"
 			"pin on|off : change shift output pin to on/off\n");
+	fprintf(stderr, "\n"
+			"byte value : set shift register byte to value\n");
+	fprintf(stderr, "\n"
+			"-C byte    : count in shift register byte\n");
 
 	exit(EXIT_FAILURE);
 }
@@ -63,13 +74,18 @@ main(int argc, char *argv[])
 	int pos = -1;
 	bool set_byte = false;
 	uint8_t val;
+	bool do_count = false;
 
 	setprogname(argv[0]);
 
-	while ((ch = getopt(argc, argv, "g:c:d:l:n:")) != -1) {
+	while ((ch = getopt(argc, argv, "g:Cc:d:l:n:")) != -1) {
 		switch (ch) {
 		case 'g':
 			gpio = optarg;
+			break;
+
+		case 'C':
+			do_count = true;
 			break;
 
 		case 'c':
@@ -99,24 +115,32 @@ main(int argc, char *argv[])
 	argc -= optind;
 	argv += optind;
 
-	if (argc != 2)
-		usage();
+	if (do_count) {
+		if (argc != 1)
+			usage();
+	} else {
+		if (argc != 2)
+			usage();
+	}
 
 	pos = atoi(argv[0]);
-	if (strcmp(argv[1], "on") == 0)
-		val = true;
-	else if (strcmp(argv[1], "off") == 0)
-		val = false;
-	else {
-		long longval;
-		char *endcp = NULL;
 
-		longval = strtol(argv[1], &endcp, 0);
-		if (endcp == NULL || *endcp != '\0' ||
-		    longval < 0 || longval > 0xff)
-			usage();
-		val = (uint8_t)longval;
-		set_byte = true;
+	if (! do_count) {
+		if (strcmp(argv[1], "on") == 0)
+			val = true;
+		else if (strcmp(argv[1], "off") == 0)
+			val = false;
+		else {
+			long longval;
+			char *endcp = NULL;
+
+			longval = strtol(argv[1], &endcp, 0);
+			if (endcp == NULL || *endcp != '\0' ||
+			    longval < 0 || longval > 0xff)
+				usage();
+			val = (uint8_t)longval;
+			set_byte = true;
+		}
 	}
 
 	printf("Opening %s, clock=%d, data=%d, latch=%d, nbits=%d\n",
@@ -131,6 +155,24 @@ main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	if (do_count) {
+		struct timespec ts = {
+			.tv_sec = 0,
+			.tv_nsec = 50000000,
+		};
+
+		for (val = 0;; val++) {
+			if ((val % 16) == 0)
+				printf("0x%02x...\n", val);
+			error = shift_register_set_byte(sreg, pos, val);
+			if (error) {
+				fprintf(stderr,
+				    "%s: error setting byte %d to 0x%02x: %s\n",
+				    getprogname(), pos, val, strerror(error));
+			}
+			nanosleep(&ts, NULL);
+		}
+	}
 	if (set_byte) {
 		error = shift_register_set_byte(sreg, pos, val);
 		if (error) {
