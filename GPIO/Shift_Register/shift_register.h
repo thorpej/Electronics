@@ -38,5 +38,6 @@ int	shift_register_transaction_begin(shift_register_t sreg);
 int	shift_register_transaction_end(shift_register_t sreg);
 
 int	shift_register_set_bit(shift_register_t sreg, int bit, bool val);
+int	shift_register_set_byte(shift_register_t sreg, int byte, uint8_t val);
 
 #endif /* shift_register_h_included */

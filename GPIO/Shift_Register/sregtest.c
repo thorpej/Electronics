@@ -60,8 +60,9 @@ main(int argc, char *argv[])
 {
 	shift_register_t sreg;
 	int ch, error;
-	int pin = -1;
-	bool val;
+	int pos = -1;
+	bool set_byte = false;
+	uint8_t val;
 
 	setprogname(argv[0]);
 
@@ -101,13 +102,22 @@ main(int argc, char *argv[])
 	if (argc != 2)
 		usage();
 
-	pin = atoi(argv[0]);
+	pos = atoi(argv[0]);
 	if (strcmp(argv[1], "on") == 0)
 		val = true;
 	else if (strcmp(argv[1], "off") == 0)
 		val = false;
-	else
-		usage();
+	else {
+		long longval;
+		char *endcp = NULL;
+
+		longval = strtol(argv[1], &endcp, 0);
+		if (endcp == NULL || *endcp != '\0' ||
+		    longval < 0 || longval > 0xff)
+			usage();
+		val = (uint8_t)longval;
+		set_byte = true;
+	}
 
 	printf("Opening %s, clock=%d, data=%d, latch=%d, nbits=%d\n",
 	       gpio, clock_pin, data_pin, latch_pin, nbits);
@@ -121,11 +131,20 @@ main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	error = shift_register_set_bit(sreg, pin, val);
-	if (error) {
-		fprintf(stderr, "%s: error setting pin %d to %s: %s\n",
-			getprogname(), pin, val ? "on" : "off",
-			strerror(error));
+	if (set_byte) {
+		error = shift_register_set_byte(sreg, pos, val);
+		if (error) {
+			fprintf(stderr,
+				"%s: error setting byte %d to 0x%x: %s\n",
+				getprogname(), pos, val, strerror(error));
+		}
+	} else {
+		error = shift_register_set_bit(sreg, pos, val);
+		if (error) {
+			fprintf(stderr, "%s: error setting pin %d to %s: %s\n",
+				getprogname(), pos, val ? "on" : "off",
+				strerror(error));
+		}
 	}
 
 	shift_register_free(sreg);

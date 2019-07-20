@@ -104,3 +104,15 @@ allocation time.
 
 Returns 0 on success or an **errno** code on failure.
  
+    int  shift_register_set_byte(shift_register_t sreg, int byte, uint8_t val);
+
+Sets the byte at the specified index to the indicated 8-it value.
+Arguments:
+
+* *sreg* -- Valid register handle.
+* *byte* -- The byte to change.  Must be in the range of 0 .. *nbits* / 8 as specified at
+allocation time.
+* *val* -- The a-bit value to assign to the specified byte.
+
+Returns 0 on success or an **errno** code on failure.
+ 

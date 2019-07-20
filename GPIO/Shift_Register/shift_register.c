@@ -323,3 +323,29 @@ shift_register_set_bit(shift_register_t sreg, int bit, bool val)
  out:
 	return (error);
  }
+
+ /*
+  * shift_register_set_byte --
+  *	Set the byte at the specified index, sending it out to the
+  *	register if it completes the transaction.
+  */
+ int
+ shift_register_set_byte(shift_register_t sreg, int byte, uint8_t val)
+ {
+ 	int error;
+
+	if (byte < 0 || (byte * 8) >= sreg->sreg_nbits) {
+		error = EINVAL;
+		goto out;
+	}
+
+	if ((error = shift_register_transaction_begin(sreg)) != 0)
+		goto out;
+
+	sreg->sreg_bytes[byte] = val;
+
+	error = shift_register_transaction_end(sreg);
+
+ out:
+	return (error);
+ }
