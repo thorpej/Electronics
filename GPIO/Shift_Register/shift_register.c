@@ -105,9 +105,9 @@ sreg_shift_out_byte(shift_register_t sreg, uint8_t byte)
 	uint8_t bit;
 
 	for (bit = 0x80; bit != 0; bit >>= 1) {
-		WRITE(PIN_CLOCK, false);
 		WRITE(PIN_DATA, (byte & bit) ? true : false);
 		WRITE(PIN_CLOCK, true);
+		WRITE(PIN_CLOCK, false);
 	}
 
  out:
@@ -124,6 +124,7 @@ sreg_send_data(shift_register_t sreg)
 		return (0);
 
 	WRITE(PIN_CLOCK, false);
+	WRITE(PIN_DATA, false);
 	WRITE(PIN_LATCH, false);
 
 	count = sreg->sreg_nbits >> 3;
@@ -135,8 +136,10 @@ sreg_send_data(shift_register_t sreg)
 			goto out;
 	}
 
+	/* Clock is off. */
+
+	WRITE(PIN_DATA, false);
 	WRITE(PIN_LATCH, true);
-	WRITE(PIN_CLOCK, false);
 	WRITE(PIN_LATCH, false);
 
  out:
