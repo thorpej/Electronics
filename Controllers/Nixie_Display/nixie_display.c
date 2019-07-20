@@ -338,12 +338,12 @@ nixie_display_set_cell_count(nixie_display_t nixie, unsigned int num_cells)
 
 	if (nixie->n_cells != NULL)
 		free(nixie->n_cells);
-	nixie->n_cells = calloc(1, sizeof(*nixie->n_cells) * num_cells);
+	nixie->n_cells = calloc(1, sizeof(struct nixie_cell) * num_cells);
 	if (nixie->n_cells == NULL)
 		return ENOMEM;
 	nixie->n_cell_count = num_cells;
 
-	for (cell_num = 0; cell_num <= num_cells; cell_num++) {
+	for (cell_num = 0; cell_num < num_cells; cell_num++) {
 		nixie_cell_t cell = nixie_display_lookup_cell(nixie, cell_num);
 		cell->c_value = NIXIE_DISPLAY_CELL_BLANK;
 	}
