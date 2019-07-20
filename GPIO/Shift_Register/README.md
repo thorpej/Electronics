@@ -112,7 +112,7 @@ Arguments:
 * *sreg* -- Valid register handle.
 * *byte* -- The byte to change.  Must be in the range of 0 .. *nbits* / 8 as specified at
 allocation time.
-* *val* -- The a-bit value to assign to the specified byte.
+* *val* -- The 8-bit value to assign to the specified byte.
 
 Returns 0 on success or an **errno** code on failure.
  
