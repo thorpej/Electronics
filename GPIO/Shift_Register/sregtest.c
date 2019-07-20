@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2018 Jason R. Thorpe
+Copyright (c) 2018, 2019 Jason R. Thorpe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
