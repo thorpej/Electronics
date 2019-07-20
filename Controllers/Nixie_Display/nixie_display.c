@@ -81,11 +81,13 @@ struct nixie_cell {
 };
 
 struct nixie_display_context {
-	const char *	n_gpio;
+	char *		n_gpio;
 	int		n_clock_pin;
 	int		n_data_pin;
 	int		n_latch_pin;
 	shift_register_t n_shift_register;
+
+	nixie_display_state_t n_state;
 
 	unsigned int	n_cell_count;
 	struct nixie_cell *n_cells;
@@ -102,7 +104,7 @@ nixie_display_lookup_cell(nixie_display_t nixie, unsigned int cell_num)
 }
 
 static int
-nixie_display_cell_init(nixie_display_t nixie, unsigned int cell_num);
+nixie_display_cell_init(nixie_display_t nixie, unsigned int cell_num)
 {
 	nixie_cell_t cell = nixie_display_lookup_cell(nixie, cell_num);
 
@@ -112,7 +114,7 @@ nixie_display_cell_init(nixie_display_t nixie, unsigned int cell_num);
 	cell->c_value = NIXIE_DISPLAY_CELL_BLANK;
 	cell->c_cell_num = cell_num;
 
-	iof (cell->c_funcs == NULL)
+	if (cell->c_funcs == NULL)
 		return EPIPE;
 
 	if (nixie->n_shift_register == NULL)
@@ -203,7 +205,7 @@ int
 nixie_display_alloc(nixie_display_t *nixiep)
 {
 	nixie_display_t nixie = NULL;
-	error = 0;
+	int error = 0;
 
 	if ((nixie = calloc(1, sizeof(*nixie))) == NULL) {
 		error = ENOMEM;
@@ -212,7 +214,7 @@ nixie_display_alloc(nixie_display_t *nixiep)
 
 	nixie->n_clock_pin = -1;
 	nixie->n_data_pin = -1;
-	nixie->n_latch_pin = -1
+	nixie->n_latch_pin = -1;
 
  out:
 	if (error == 0)
@@ -228,7 +230,7 @@ nixie_display_alloc(nixie_display_t *nixiep)
  *	Frees driver context and any resources associated with it.
  */
 void
-nixie_display_free(nixie_display_t nixie);
+nixie_display_free(nixie_display_t nixie)
 {
 	unsigned int cell_num;
 
@@ -362,7 +364,7 @@ nixie_display_set_cell_type(nixie_display_t nixie, unsigned int cell_num,
 
 	switch (cell_type) {
 	case NIXIE_CELL_TYPE_NUMERIC:
-		cell_funcs = nixie_cell_funcs_numeric;
+		cell_funcs = &nixie_cell_funcs_numeric;
 		break;
 	
 	default:
@@ -371,7 +373,7 @@ nixie_display_set_cell_type(nixie_display_t nixie, unsigned int cell_num,
 
 	if (cell_num == NIXIE_DISPLAY_ALL_CELLS) {
 		first_cell = 0;
-		num_cells = nixie->n_cells;
+		num_cells = nixie->n_cell_count;
 	} else {
 		first_cell = cell_num;
 		num_cells = 1;
@@ -399,11 +401,11 @@ nixie_display_start(nixie_display_t nixie)
 		break;
 	
 	case NIXIE_DISPLAY_STATE_RUNNING:
-		return;
+		return 0;
 
 	case NIXIE_DISPLAY_STATE_STOPPED:
 		nixie->n_state = NIXIE_DISPLAY_STATE_RUNNING;
-		return;
+		return 0;
 	
 	default:
 		return EPIPE;
