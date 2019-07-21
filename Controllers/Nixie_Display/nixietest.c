@@ -63,7 +63,7 @@ short_delay(void)
 {
 	struct timespec ts = {
 		.tv_sec = 0,
-		.tv_nsec = 500000000,
+		.tv_nsec = 100000000,
 	};
 
 	(void) nanosleep(&ts, NULL);
