@@ -1,9 +1,9 @@
 # SN74141 BCD decoder / Nixie driver
 
 This is a driver for the SN74141 BCD decoder / Nixie driver, that also works with
-the Russian and other Soviet-era Eastern European equivalents.  This implementation
-is intended for use with a shifter register (such as the SN74595) to drive the SN74141
-inputs.
+the Russian and other Soviet-era Eastern European equivalents (TESLA MH74141, K155ID1,
+etc.).  This implementation is intended for use with a shifter register (such as the
+SN74595) to drive the SN74141 inputs.
 
 The SN74141 is a TTL BCD decoder combined with a set of 10 open-collector outputs
 suitable for directly driving Nixie display tubes.  The anode of the Nixie is connected to
@@ -11,6 +11,10 @@ an appropriate high-voltage supply, and each cathode (one for each digit) is con
 the corresponding SN74141 output; upon decoding, the base of the selected internal output
 transistor is driven, thus completing the selected cathode circuit and illuminating the
 digit by the ionization of the gas mixture in the tube and the resulting glow-discharge.
+
+This library can also be used with other BCD-to-decimal decoder ICs that fully decode
+the inputs (such as the CD4028B, SN74145, or SN7442A).  When using these types, external
+driving circuitry is required.
 
 ## The API
 

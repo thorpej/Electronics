@@ -21,8 +21,20 @@ SOFTWARE.
 */
 
 /*
- * Driver for the SN74141 (and the Russian equivalent) using a shift
- * register to drive the inputs.
+ * Driver for the Texas Instruments SN74141 BCD-to-Decimal decoder/driver
+ * IC.  This package uses a shift register to drive the inputs.  The SN74141
+ * contains the high-voltage driver transistors within the package to
+ * directly drive the cathodes of Nixie display tubes.
+ *
+ * This works with essentially any BCD-to-Decimal decoder IC:
+ *
+ * ==> TESLA MH74141 (Soviet-era Czech-made SN74141 clone)
+ * ==> K155ID1 (Soviet SN74141 clone)
+ *
+ * And with external circuitry to drive the Nixie cathodes:
+ * ==> CD4028B
+ * ==> SN74145
+ * ==> SN7442A
  */
 
 #include <sys/types.h>
