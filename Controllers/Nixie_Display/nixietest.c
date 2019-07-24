@@ -20,11 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 #include "nixie_display.h"
@@ -56,6 +58,17 @@ usage(void)
 	exit(EXIT_FAILURE);
 }
 
+static void
+short_delay(void)
+{
+	struct timespec ts = {
+		.tv_sec = 0,
+		.tv_nsec = 100000000,
+	};
+
+	(void) nanosleep(&ts, NULL);
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -71,7 +84,7 @@ main(int argc, char *argv[])
 			break;
 
 		case 'n':
-			num_cells = atoi(argv[optind]);
+			num_cells = atoi(optarg);
 			break;
 
 		default:
@@ -179,6 +192,7 @@ main(int argc, char *argv[])
 	}
 
 	for (;;) {
+		printf("string = '%s'\n", string);
 		error = nixie_display_set_string(nixie, string);
 		if (error) {
 			fprintf(stderr,
@@ -186,6 +200,7 @@ main(int argc, char *argv[])
 				getprogname(), strerror(error));
 			exit(EXIT_FAILURE);
 		}
+		short_delay();
 		for (unsigned int i = 0; i < num_cells; i++) {
 			switch (string[i]) {
 			case '9':

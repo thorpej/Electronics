@@ -4,6 +4,7 @@
 
 PROG=	nixietest
 SRCS=	nixietest.c nixie_display.c sn74141.c shift_register.c
+NOMAN=	1
 
 .include <bsd.own.mk>
 

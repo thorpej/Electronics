@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2018 Jason R. Thorpe
+Copyright (c) 2018, 2019 Jason R. Thorpe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -105,9 +105,9 @@ sreg_shift_out_byte(shift_register_t sreg, uint8_t byte)
 	uint8_t bit;
 
 	for (bit = 0x80; bit != 0; bit >>= 1) {
-		WRITE(PIN_CLOCK, false);
 		WRITE(PIN_DATA, (byte & bit) ? true : false);
 		WRITE(PIN_CLOCK, true);
+		WRITE(PIN_CLOCK, false);
 	}
 
  out:
@@ -124,6 +124,7 @@ sreg_send_data(shift_register_t sreg)
 		return (0);
 
 	WRITE(PIN_CLOCK, false);
+	WRITE(PIN_DATA, false);
 	WRITE(PIN_LATCH, false);
 
 	count = sreg->sreg_nbits >> 3;
@@ -135,8 +136,10 @@ sreg_send_data(shift_register_t sreg)
 			goto out;
 	}
 
+	/* Clock is off. */
+
+	WRITE(PIN_DATA, false);
 	WRITE(PIN_LATCH, true);
-	WRITE(PIN_CLOCK, false);
 	WRITE(PIN_LATCH, false);
 
  out:
@@ -317,6 +320,32 @@ shift_register_set_bit(shift_register_t sreg, int bit, bool val)
 		sreg->sreg_bytes[bytepos] |= 1U << bitpos;
 	else
 		sreg->sreg_bytes[bytepos] &= ~(1U << bitpos);
+
+	error = shift_register_transaction_end(sreg);
+
+ out:
+	return (error);
+ }
+
+ /*
+  * shift_register_set_byte --
+  *	Set the byte at the specified index, sending it out to the
+  *	register if it completes the transaction.
+  */
+ int
+ shift_register_set_byte(shift_register_t sreg, int byte, uint8_t val)
+ {
+ 	int error;
+
+	if (byte < 0 || (byte * 8) >= sreg->sreg_nbits) {
+		error = EINVAL;
+		goto out;
+	}
+
+	if ((error = shift_register_transaction_begin(sreg)) != 0)
+		goto out;
+
+	sreg->sreg_bytes[byte] = val;
 
 	error = shift_register_transaction_end(sreg);
 
