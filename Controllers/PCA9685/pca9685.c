@@ -677,11 +677,11 @@ pca9685_set_channel(pca9685_t sc, unsigned int channel, bool on)
 		return error;
 
 	if (on) {
-		on_tick = 0;
-		off_tick = PCA9685_PWM_TICKS;	/* magic */
-	} else {
 		on_tick = PCA9685_PWM_TICKS;	/* magic */
 		off_tick = 0;
+	} else {
+		on_tick = 0;
+		off_tick = PCA9685_PWM_TICKS;	/* magic */
 	}
 
 	error = pca9685_update_channel(sc, channel, on_tick, off_tick);
