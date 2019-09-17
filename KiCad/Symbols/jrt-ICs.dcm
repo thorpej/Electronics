@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SN74141
+D BCD-to-decimal decoder / Nixie driver
+$ENDCMP
+#
+#End Doc Library
