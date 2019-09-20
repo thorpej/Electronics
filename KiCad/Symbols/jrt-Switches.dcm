@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SW_Rotary2x4_CandK_A20403RNZQ
+D C&K 2-pole 4-position 30deg rotary switch
+F https://www.mouser.com/datasheet/2/60/arotary-1369275.pdf
+$ENDCMP
+#
+#End Doc Library
