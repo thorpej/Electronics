@@ -1,0 +1,562 @@
+EESchema Schematic File Version 4
+LIBS:STPre6080-cache
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 4 4
+Title "6AS7 Pre-amp Mk 1 power supply"
+Date "2019-09-20"
+Rev "1.0"
+Comp "San Francisco Electronworks"
+Comment1 "For hobbyist use only."
+Comment2 "Copyright 2019 Jason R. Thorpe.   All rights reserved."
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Diode:1N4007 D301
+U 1 1 5D8A12A9
+P 3600 3000
+F 0 "D301" V 3554 3079 50  0000 L CNN
+F 1 "1N4007" V 3645 3079 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3600 2825 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3600 3000 50  0001 C CNN
+	1    3600 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4007 D302
+U 1 1 5D8A1F4A
+P 3600 3550
+F 0 "D302" V 3554 3629 50  0000 L CNN
+F 1 "1N4007" V 3645 3629 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3600 3375 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 3600 3550 50  0001 C CNN
+	1    3600 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP1 C301
+U 1 1 5D8A3A58
+P 4100 3000
+F 0 "C301" H 4215 3046 50  0000 L CNN
+F 1 "270uF" H 4215 2955 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm" H 4100 3000 50  0001 C CNN
+F 3 "~" H 4100 3000 50  0001 C CNN
+F 4 "Nichicon UCY2E271MHD" H 4100 3000 50  0001 C CNN "Part"
+F 5 "250V" H 4300 2850 50  0000 C CNN "Vrating"
+	1    4100 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C302
+U 1 1 5D8A4E48
+P 4100 3550
+F 0 "C302" H 4215 3596 50  0000 L CNN
+F 1 "270uF" H 4215 3505 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm" H 4100 3550 50  0001 C CNN
+F 3 "~" H 4100 3550 50  0001 C CNN
+F 4 "Nichicon UCY2E271MHD" H 4100 3550 50  0001 C CNN "Part"
+F 5 "250V" H 4300 3400 50  0000 C CNN "Vrating"
+	1    4100 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3150 3600 3400
+Wire Wire Line
+	4100 3150 4100 3350
+Text GLabel 2750 3150 0    50   Input ~ 0
+HV_120Vac_X
+Text GLabel 2750 3350 0    50   Input ~ 0
+HV_120Vac_Y
+Wire Wire Line
+	2750 3150 3600 3150
+Connection ~ 3600 3150
+Wire Wire Line
+	2750 3350 4100 3350
+Connection ~ 4100 3350
+Wire Wire Line
+	4100 3350 4100 3400
+$Comp
+L power:GND #PWR0101
+U 1 1 5D8A5C04
+P 3600 3700
+F 0 "#PWR0101" H 3600 3450 50  0001 C CNN
+F 1 "GND" H 3605 3527 50  0000 C CNN
+F 2 "" H 3600 3700 50  0001 C CNN
+F 3 "" H 3600 3700 50  0001 C CNN
+	1    3600 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5D8A5D0E
+P 4100 3700
+F 0 "#PWR0102" H 4100 3450 50  0001 C CNN
+F 1 "GND" H 4105 3527 50  0000 C CNN
+F 2 "" H 4100 3700 50  0001 C CNN
+F 3 "" H 4100 3700 50  0001 C CNN
+	1    4100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Iron L301
+U 1 1 5D8AB213
+P 5600 3350
+F 0 "L301" V 5419 3350 50  0000 C CNN
+F 1 "1.5H" V 5510 3350 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 5600 3350 50  0001 C CNN
+F 3 "~" H 5600 3350 50  0001 C CNN
+F 4 "Triode C354" V 5600 3350 50  0001 C CNN "Part"
+F 5 "55R" V 5750 3350 50  0000 C CNN "Rser"
+	1    5600 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 2450 4100 2450
+Wire Wire Line
+	3600 2450 3600 2850
+Wire Wire Line
+	4100 2450 4100 2850
+$Comp
+L Device:CP1 C305
+U 1 1 5D8AE2DF
+P 6100 3550
+F 0 "C305" H 6215 3596 50  0000 L CNN
+F 1 "820uF" H 6215 3505 50  0000 L CNN
+F 2 "jrt-Capacitors:CP_Radial_D25.0mm_P12.50mm" H 6100 3550 50  0001 C CNN
+F 3 "~" H 6100 3550 50  0001 C CNN
+F 4 "Nichicon UPT2D821MRD" H 6100 3550 50  0001 C CNN "Part"
+F 5 "200V" H 6300 3400 50  0000 C CNN "Vrating"
+	1    6100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Iron L302
+U 1 1 5D8AF5A0
+P 6600 3350
+F 0 "L302" V 6419 3350 50  0000 C CNN
+F 1 "1.5H" V 6510 3350 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 6600 3350 50  0001 C CNN
+F 3 "~" H 6600 3350 50  0001 C CNN
+F 4 "Triode C354" V 6600 3350 50  0001 C CNN "Part"
+F 5 "55R" V 6750 3350 50  0000 C CNN "Rser"
+	1    6600 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP1 C306
+U 1 1 5D8AFD9B
+P 7100 3550
+F 0 "C306" H 7215 3596 50  0000 L CNN
+F 1 "820uF" H 7215 3505 50  0000 L CNN
+F 2 "jrt-Capacitors:CP_Radial_D25.0mm_P12.50mm" H 7100 3550 50  0001 C CNN
+F 3 "~" H 7100 3550 50  0001 C CNN
+F 4 "Nichicon UPT2D821MRD" H 7100 3550 50  0001 C CNN "Part"
+F 5 "200V" H 7300 3400 50  0000 C CNN "Vrating"
+	1    7100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5D8B0005
+P 6100 3700
+F 0 "#PWR0103" H 6100 3450 50  0001 C CNN
+F 1 "GND" H 6105 3527 50  0000 C CNN
+F 2 "" H 6100 3700 50  0001 C CNN
+F 3 "" H 6100 3700 50  0001 C CNN
+	1    6100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5D8B044B
+P 7100 3700
+F 0 "#PWR0104" H 7100 3450 50  0001 C CNN
+F 1 "GND" H 7105 3527 50  0000 C CNN
+F 2 "" H 7100 3700 50  0001 C CNN
+F 3 "" H 7100 3700 50  0001 C CNN
+	1    7100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L jrt-Power:+250V #PWR0105
+U 1 1 5D8B1910
+P 7400 2450
+F 0 "#PWR0105" H 7400 2300 50  0001 C CNN
+F 1 "+250V" V 7415 2578 50  0000 L CNN
+F 2 "" H 7400 2450 50  0001 C CNN
+F 3 "" H 7400 2450 50  0001 C CNN
+	1    7400 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L jrt-Power:+160V #PWR0106
+U 1 1 5D8B2FAB
+P 7400 3350
+F 0 "#PWR0106" H 7400 3200 50  0001 C CNN
+F 1 "+160V" V 7415 3478 50  0000 L CNN
+F 2 "" H 7400 3350 50  0001 C CNN
+F 3 "" H 7400 3350 50  0001 C CNN
+	1    7400 3350
+	0    1    1    0   
+$EndComp
+Text Notes 7550 2600 0    50   Italic 10
+12mA
+Text Notes 7550 3500 0    50   Italic 10
+80mA
+Wire Wire Line
+	4100 2450 4450 2450
+Connection ~ 4100 2450
+Text GLabel 2750 4250 0    50   Input ~ 0
+Fil_6.3_X
+Text GLabel 2750 4950 0    50   Input ~ 0
+Fil_6.3_Y
+$Comp
+L Device:R_POT_TRIM RV301
+U 1 1 5D8BF084
+P 3600 4600
+F 0 "RV301" H 3531 4691 50  0000 R CNN
+F 1 "500R" H 3531 4600 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical_HandSoldering" H 3600 4600 50  0001 C CNN
+F 3 "~" H 3600 4600 50  0001 C CNN
+F 4 "Bourns 3339P-1-501LF" H 3531 4509 50  0000 R CNN "Part"
+	1    3600 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 4250 3600 4250
+Wire Wire Line
+	3600 4250 3600 4450
+Wire Wire Line
+	2750 4950 3600 4950
+Wire Wire Line
+	3600 4950 3600 4750
+$Comp
+L Device:R R301
+U 1 1 5D8C1706
+P 4100 4400
+F 0 "R301" H 4170 4446 50  0000 L CNN
+F 1 "22K" H 4170 4355 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4030 4400 50  0001 C CNN
+F 3 "~" H 4100 4400 50  0001 C CNN
+F 4 "Vishay / BC PR01000102202JR500" H 4100 4400 50  0001 C CNN "Part"
+	1    4100 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R302
+U 1 1 5D8C29E3
+P 4100 4800
+F 0 "R302" H 4170 4846 50  0000 L CNN
+F 1 "12K" H 4170 4755 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4030 4800 50  0001 C CNN
+F 3 "~" H 4100 4800 50  0001 C CNN
+F 4 "Vishay / BC SFR16S0001202JA500" H 4100 4800 50  0001 C CNN "Part"
+	1    4100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5D8C31BE
+P 4100 4950
+F 0 "#PWR0107" H 4100 4700 50  0001 C CNN
+F 1 "GND" H 4105 4777 50  0000 C CNN
+F 2 "" H 4100 4950 50  0001 C CNN
+F 3 "" H 4100 4950 50  0001 C CNN
+	1    4100 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 4550 4100 4600
+Wire Wire Line
+	3750 4600 3850 4600
+Connection ~ 4100 4600
+Wire Wire Line
+	4100 4600 4100 4650
+Text Notes 4350 4500 0    50   Italic 10
+1W
+Text Notes 4150 4650 0    50   Italic 10
++55V
+Text Notes 2200 5350 0    50   Italic 10
+Set 4-turn trim-pot to 250-250 nominal\nand adjust for minimum ripple at test point\nrelative to ground.
+$Comp
+L Connector:TestPoint #TP301
+U 1 1 5D8C5727
+P 3850 4600
+F 0 "#TP301" H 4000 4850 50  0000 R CNN
+F 1 "TestPoint" H 4050 4900 50  0001 R CNN
+F 2 "" H 4050 4600 50  0001 C CNN
+F 3 "~" H 4050 4600 50  0001 C CNN
+	1    3850 4600
+	-1   0    0    1   
+$EndComp
+Connection ~ 3850 4600
+Wire Wire Line
+	3850 4600 4100 4600
+$Comp
+L Device:R R303
+U 1 1 5D8A720A
+P 4600 2450
+F 0 "R303" V 4393 2450 50  0000 C CNN
+F 1 "2.2K" V 4484 2450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4530 2450 50  0001 C CNN
+F 3 "~" H 4600 2450 50  0001 C CNN
+F 4 "Vishay / BC PR01000102201JA100" V 4600 2450 50  0001 C CNN "Part"
+	1    4600 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5D8A9B46
+P 5100 2750
+F 0 "#PWR0108" H 5100 2500 50  0001 C CNN
+F 1 "GND" H 5105 2577 50  0000 C CNN
+F 2 "" H 5100 2750 50  0001 C CNN
+F 3 "" H 5100 2750 50  0001 C CNN
+	1    5100 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C307
+U 1 1 5D8A8334
+P 5100 2600
+F 0 "C307" H 5215 2646 50  0000 L CNN
+F 1 "47uF" H 5215 2555 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 5100 2600 50  0001 C CNN
+F 3 "~" H 5100 2600 50  0001 C CNN
+F 4 "United Chemi-Con EGXF351ELL470MK30S" H 5100 2600 50  0001 C CNN "Part"
+F 5 "350V" H 5300 2450 50  0000 C CNN "Vrating"
+	1    5100 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 2450 5100 2450
+Connection ~ 5100 2450
+Wire Wire Line
+	5100 2450 5450 2450
+$Comp
+L Device:R R304
+U 1 1 5D8A8CFE
+P 5600 2450
+F 0 "R304" V 5393 2450 50  0000 C CNN
+F 1 "3.9K" V 5484 2450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5530 2450 50  0001 C CNN
+F 3 "~" H 5600 2450 50  0001 C CNN
+F 4 "Vishay / BC PR01000103901JR500" V 5600 2450 50  0001 C CNN "Part"
+	1    5600 2450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 2450 6100 2450
+Connection ~ 6100 2450
+$Comp
+L power:GND #PWR0109
+U 1 1 5D8A97CC
+P 6100 2750
+F 0 "#PWR0109" H 6100 2500 50  0001 C CNN
+F 1 "GND" H 6105 2577 50  0000 C CNN
+F 2 "" H 6100 2750 50  0001 C CNN
+F 3 "" H 6100 2750 50  0001 C CNN
+	1    6100 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C308
+U 1 1 5D8A601C
+P 6100 2600
+F 0 "C308" H 6215 2646 50  0000 L CNN
+F 1 "100uF" H 6215 2555 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm" H 6100 2600 50  0001 C CNN
+F 3 "~" H 6100 2600 50  0001 C CNN
+F 4 "Panasonic EEU-EB2V101" H 6100 2600 50  0001 C CNN "Part"
+F 5 "350V" H 6300 2450 50  0000 C CNN "Vrating"
+	1    6100 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C303
+U 1 1 5D8D376D
+P 4600 3550
+F 0 "C303" H 4715 3596 50  0000 L CNN
+F 1 "270uF" H 4715 3505 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm" H 4600 3550 50  0001 C CNN
+F 3 "~" H 4600 3550 50  0001 C CNN
+F 4 "Nichicon UCY2E271MHD" H 4600 3550 50  0001 C CNN "Part"
+F 5 "250V" H 4800 3400 50  0000 C CNN "Vrating"
+	1    4600 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5D8D3773
+P 4600 3700
+F 0 "#PWR0110" H 4600 3450 50  0001 C CNN
+F 1 "GND" H 4605 3527 50  0000 C CNN
+F 2 "" H 4600 3700 50  0001 C CNN
+F 3 "" H 4600 3700 50  0001 C CNN
+	1    4600 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C304
+U 1 1 5D8D3C19
+P 5100 3550
+F 0 "C304" H 5215 3596 50  0000 L CNN
+F 1 "270uF" H 5215 3505 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm" H 5100 3550 50  0001 C CNN
+F 3 "~" H 5100 3550 50  0001 C CNN
+F 4 "Nichicon UCY2E271MHD" H 5100 3550 50  0001 C CNN "Part"
+F 5 "250V" H 5300 3400 50  0000 C CNN "Vrating"
+	1    5100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5D8D3C1F
+P 5100 3700
+F 0 "#PWR0111" H 5100 3450 50  0001 C CNN
+F 1 "GND" H 5105 3527 50  0000 C CNN
+F 2 "" H 5100 3700 50  0001 C CNN
+F 3 "" H 5100 3700 50  0001 C CNN
+	1    5100 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 2450 7400 2450
+Wire Wire Line
+	4100 3350 4600 3350
+Wire Wire Line
+	5750 3350 6100 3350
+Wire Wire Line
+	6750 3350 6900 3350
+Wire Wire Line
+	4600 3400 4600 3350
+Connection ~ 4600 3350
+Wire Wire Line
+	4600 3350 5100 3350
+Wire Wire Line
+	5100 3400 5100 3350
+Connection ~ 5100 3350
+Wire Wire Line
+	5100 3350 5450 3350
+Wire Wire Line
+	6100 3400 6100 3350
+Connection ~ 6100 3350
+Wire Wire Line
+	6100 3350 6450 3350
+Wire Wire Line
+	7100 3400 7100 3350
+Connection ~ 7100 3350
+Wire Wire Line
+	7100 3350 7400 3350
+Wire Wire Line
+	6900 4250 6900 3350
+Wire Wire Line
+	4100 4250 6900 4250
+Connection ~ 6900 3350
+Wire Wire Line
+	6900 3350 7100 3350
+$Comp
+L Connector:Screw_Terminal_01x02 J301
+U 1 1 5D8587DB
+P 2750 5700
+F 0 "J301" H 2830 5692 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 2830 5601 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 2750 5700 50  0001 C CNN
+F 3 "~" H 2750 5700 50  0001 C CNN
+	1    2750 5700
+	1    0    0    -1  
+$EndComp
+Text GLabel 2550 5700 0    50   Output ~ 0
+HV_120Vac_X
+Text GLabel 2550 5800 0    50   Output ~ 0
+HV_120Vac_Y
+$Comp
+L Connector:Screw_Terminal_01x02 J302
+U 1 1 5D85A468
+P 2750 6000
+F 0 "J302" H 2830 5992 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 2830 5901 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 2750 6000 50  0001 C CNN
+F 3 "~" H 2750 6000 50  0001 C CNN
+	1    2750 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5D85BDCF
+P 2550 6600
+F 0 "#PWR0112" H 2550 6350 50  0001 C CNN
+F 1 "GND" V 2555 6472 50  0000 R CNN
+F 2 "" H 2550 6600 50  0001 C CNN
+F 3 "" H 2550 6600 50  0001 C CNN
+	1    2550 6600
+	0    1    1    0   
+$EndComp
+Text GLabel 2550 6000 0    50   Output ~ 0
+Fil_6.3_X
+Text GLabel 2550 6100 0    50   Output ~ 0
+Fil_6.3_Y
+$Comp
+L Connector:Screw_Terminal_01x02 J303
+U 1 1 5D85E741
+P 2750 6300
+F 0 "J303" H 2830 6292 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 2830 6201 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 2750 6300 50  0001 C CNN
+F 3 "~" H 2750 6300 50  0001 C CNN
+	1    2750 6300
+	1    0    0    -1  
+$EndComp
+Text GLabel 2550 6300 0    50   Input ~ 0
+Fil_6.3_X
+Text GLabel 2550 6400 0    50   Input ~ 0
+Fil_6.3_Y
+Text Notes 1300 6100 0    50   ~ 0
+From transformer
+Text Notes 1350 6400 0    50   ~ 0
+To tube sockets
+$Comp
+L Connector:Screw_Terminal_01x03 J304
+U 1 1 5D860CA3
+P 2750 6700
+F 0 "J304" H 2830 6742 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 2830 6651 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-3_P5.08mm" H 2750 6700 50  0001 C CNN
+F 3 "~" H 2750 6700 50  0001 C CNN
+	1    2750 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L jrt-Power:+250V #PWR0113
+U 1 1 5D8628B3
+P 2550 6800
+F 0 "#PWR0113" H 2550 6650 50  0001 C CNN
+F 1 "+250V" V 2565 6928 50  0000 L CNN
+F 2 "" H 2550 6800 50  0001 C CNN
+F 3 "" H 2550 6800 50  0001 C CNN
+	1    2550 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L jrt-Power:+160V #PWR0114
+U 1 1 5D863367
+P 2550 6700
+F 0 "#PWR0114" H 2550 6550 50  0001 C CNN
+F 1 "+160V" V 2565 6828 50  0000 L CNN
+F 2 "" H 2550 6700 50  0001 C CNN
+F 3 "" H 2550 6700 50  0001 C CNN
+	1    2550 6700
+	0    -1   -1   0   
+$EndComp
+Text Notes 4550 2600 0    50   Italic 10
+1W
+Text Notes 5550 2600 0    50   Italic 10
+1W
+Text GLabel 3850 4400 1    50   UnSpc ~ 0
+Fil_TP
+Wire Wire Line
+	3850 4600 3850 4400
+$EndSCHEMATC

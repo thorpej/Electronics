@@ -1,0 +1,1089 @@
+EESchema Schematic File Version 4
+LIBS:STPre6080-cache
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 2 4
+Title "6AS7 Pre-amp Mk I PCB"
+Date "2019-09-19"
+Rev "1.0"
+Comp "San Francisco Electronworks"
+Comment1 "For hobbyist use only."
+Comment2 "Copyright 2019 Jason R. Thorpe.  All rights reserved."
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 1100 1900 0    50   Input ~ 0
+L_buffer_input
+Text Notes 2150 750  0    50   ~ 0
+Input buffer
+$Comp
+L Device:C_Small C102
+U 1 1 5D73D862
+P 2800 2100
+F 0 "C102" V 2900 2100 50  0000 C CNN
+F 1 ".47uF" V 3000 2100 50  0000 C CNN
+F 2 "" H 2800 2100 50  0001 C CNN
+F 3 "~" H 2800 2100 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J474JC" V 2800 2100 50  0001 C CNN "Part"
+	1    2800 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1100 1900 1250 1900
+Text Notes 4200 3550 0    50   ~ 0
+Baxandall network resistors are 0.1% 1/4W film resistors.\nAll other resistors are 1% 1/2W film resistors unless otherwise\nindicated.\n\nTone control potentiometers are linear taper and panel mounted, not\nmounted on-board.
+$Comp
+L Device:C_Small C101
+U 1 1 5D7338B6
+P 1450 1900
+F 0 "C101" V 1221 1900 50  0000 C CNN
+F 1 ".047uF" V 1312 1900 50  0000 C CNN
+F 2 "" H 1450 1900 50  0001 C CNN
+F 3 "~" H 1450 1900 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J473J4" V 1450 1900 50  0001 C CNN "Part"
+	1    1450 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R101
+U 1 1 5D8C2555
+P 1250 2100
+F 0 "R101" H 1309 2146 50  0000 L CNN
+F 1 "470K" H 1309 2055 50  0000 L CNN
+F 2 "" H 1250 2100 50  0001 C CNN
+F 3 "~" H 1250 2100 50  0001 C CNN
+	1    1250 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8C3F9F
+P 1250 2300
+F 0 "#PWR?" H 1250 2050 50  0001 C CNN
+F 1 "GND" H 1255 2127 50  0000 C CNN
+F 2 "" H 1250 2300 50  0001 C CNN
+F 3 "" H 1250 2300 50  0001 C CNN
+	1    1250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 1900 1250 2000
+Connection ~ 1250 1900
+Wire Wire Line
+	1250 1900 1350 1900
+Wire Wire Line
+	1250 2200 1250 2300
+$Comp
+L Device:R_Small R103
+U 1 1 5D8CBA4E
+P 1750 2100
+F 0 "R103" H 1809 2146 50  0000 L CNN
+F 1 "10M" H 1809 2055 50  0000 L CNN
+F 2 "" H 1750 2100 50  0001 C CNN
+F 3 "~" H 1750 2100 50  0001 C CNN
+	1    1750 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R102
+U 1 1 5D8CC065
+P 1750 1700
+F 0 "R102" H 1809 1746 50  0000 L CNN
+F 1 "10M" H 1809 1655 50  0000 L CNN
+F 2 "" H 1750 1700 50  0001 C CNN
+F 3 "~" H 1750 1700 50  0001 C CNN
+	1    1750 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 1900 1750 2000
+$Comp
+L power:GND #PWR?
+U 1 1 5D8DAFE3
+P 1750 2300
+F 0 "#PWR?" H 1750 2050 50  0001 C CNN
+F 1 "GND" H 1755 2127 50  0000 C CNN
+F 2 "" H 1750 2300 50  0001 C CNN
+F 3 "" H 1750 2300 50  0001 C CNN
+	1    1750 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2200 1750 2300
+$Comp
+L Device:R_Small R104
+U 1 1 5D8DE0A6
+P 2050 1900
+F 0 "R104" V 1850 2000 50  0000 C CNN
+F 1 "220R" V 1950 1950 50  0000 C CNN
+F 2 "" H 2050 1900 50  0001 C CNN
+F 3 "~" H 2050 1900 50  0001 C CNN
+	1    2050 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_SGD Q101
+U 1 1 5D8E20F8
+P 2350 1900
+F 0 "Q101" H 2556 1946 50  0000 L CNN
+F 1 "ZVN0545A" H 2556 1855 50  0000 L CNN
+F 2 "" H 2550 2000 50  0001 C CNN
+F 3 "~" H 2350 1900 50  0001 C CNN
+	1    2350 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 1800 1750 1900
+Connection ~ 1750 1900
+Wire Wire Line
+	1750 1900 1950 1900
+$Comp
+L jrt-Power:+300V #PWR?
+U 1 1 5D8FC989
+P 2450 1150
+F 0 "#PWR?" H 2450 1000 50  0001 C CNN
+F 1 "+300V" H 2465 1323 50  0000 C CNN
+F 2 "" H 2450 1150 50  0001 C CNN
+F 3 "" H 2450 1150 50  0001 C CNN
+	1    2450 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R105
+U 1 1 5D8FD19B
+P 2450 2200
+F 0 "R105" H 2509 2246 50  0000 L CNN
+F 1 "56K" H 2509 2155 50  0000 L CNN
+F 2 "" H 2450 2200 50  0001 C CNN
+F 3 "~" H 2450 2200 50  0001 C CNN
+	1    2450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8FDF07
+P 2450 2300
+F 0 "#PWR?" H 2450 2050 50  0001 C CNN
+F 1 "GND" H 2455 2127 50  0000 C CNN
+F 2 "" H 2450 2300 50  0001 C CNN
+F 3 "" H 2450 2300 50  0001 C CNN
+	1    2450 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 2100 2700 2100
+Connection ~ 2450 2100
+Wire Notes Line
+	1650 800  3000 800 
+Wire Wire Line
+	1550 1900 1750 1900
+Wire Wire Line
+	2450 1150 2450 1450
+Wire Wire Line
+	1750 1600 1750 1450
+Wire Wire Line
+	1750 1450 2450 1450
+Connection ~ 2450 1450
+Wire Wire Line
+	2450 1450 2450 1700
+Wire Wire Line
+	3900 1850 3900 2100
+Wire Notes Line
+	3650 800  3650 3050
+Wire Notes Line
+	4950 800  4950 3050
+Wire Notes Line
+	3650 3050 4950 3050
+Wire Notes Line
+	5100 800  5100 3050
+Wire Notes Line
+	6350 800  6350 3050
+Wire Notes Line
+	5100 3050 6350 3050
+Text Notes 5450 600  0    50   ~ 0
+Tone controls
+Wire Wire Line
+	4300 2050 4300 2100
+Connection ~ 4300 2050
+Wire Wire Line
+	4700 1900 4700 2250
+Connection ~ 4700 1900
+Wire Wire Line
+	5150 1900 4700 1900
+Wire Notes Line
+	5100 800  6350 800 
+Wire Wire Line
+	4700 1850 4700 1900
+Wire Wire Line
+	4300 2000 4300 2050
+Text Notes 5350 750  0    50   ~ 0
+Inverting amplifier
+Connection ~ 4700 1600
+Wire Wire Line
+	4700 1650 4700 1600
+Connection ~ 3900 1600
+Wire Wire Line
+	3900 1650 3900 1600
+Wire Wire Line
+	4700 1100 4700 1600
+Wire Wire Line
+	4400 1100 4700 1100
+Wire Wire Line
+	3900 1100 3900 1600
+Wire Wire Line
+	4200 1100 3900 1100
+Text Notes 3950 750  0    50   ~ 0
+Baxandall network
+Wire Notes Line
+	3650 800  4950 800 
+Wire Wire Line
+	4700 2550 4700 2450
+Wire Wire Line
+	4450 2550 4500 2550
+Wire Wire Line
+	4100 2550 4150 2550
+Wire Wire Line
+	3900 2550 3900 2450
+Wire Wire Line
+	4300 2300 4300 2400
+Wire Wire Line
+	4300 1750 4300 1800
+Wire Wire Line
+	4150 1600 3900 1600
+Wire Wire Line
+	4450 1600 4700 1600
+$Comp
+L Device:R_Small R107
+U 1 1 5D72EB48
+P 4700 1750
+F 0 "R107" H 4759 1796 50  0000 L CNN
+F 1 "56K" H 4759 1705 50  0000 L CNN
+F 2 "" H 4700 1750 50  0001 C CNN
+F 3 "~" H 4700 1750 50  0001 C CNN
+	1    4700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R106
+U 1 1 5D72E6E5
+P 3900 1750
+F 0 "R106" H 3959 1796 50  0000 L CNN
+F 1 "56K" H 3959 1705 50  0000 L CNN
+F 2 "" H 3900 1750 50  0001 C CNN
+F 3 "~" H 3900 1750 50  0001 C CNN
+	1    3900 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R109
+U 1 1 5D72E4ED
+P 4700 2350
+F 0 "R109" H 4759 2396 50  0000 L CNN
+F 1 "56K" H 4759 2305 50  0000 L CNN
+F 2 "" H 4700 2350 50  0001 C CNN
+F 3 "~" H 4700 2350 50  0001 C CNN
+	1    4700 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R108
+U 1 1 5D72E0A3
+P 3900 2350
+F 0 "R108" H 3959 2396 50  0000 L CNN
+F 1 "56K" H 3959 2305 50  0000 L CNN
+F 2 "" H 3900 2350 50  0001 C CNN
+F 3 "~" H 3900 2350 50  0001 C CNN
+	1    3900 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C105
+U 1 1 5D72D9DA
+P 4600 2550
+F 0 "C105" V 4750 2550 50  0000 C CNN
+F 1 "270pF" V 4850 2550 50  0000 C CNN
+F 2 "" H 4600 2550 50  0001 C CNN
+F 3 "~" H 4600 2550 50  0001 C CNN
+F 4 "CDE CD15FD271FO3F" V 4600 2550 50  0001 C CNN "Part"
+	1    4600 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C104
+U 1 1 5D72CCE6
+P 4000 2550
+F 0 "C104" V 4150 2550 50  0000 C CNN
+F 1 "270pF" V 4250 2550 50  0000 C CNN
+F 2 "" H 4000 2550 50  0001 C CNN
+F 3 "~" H 4000 2550 50  0001 C CNN
+F 4 "CDE CD15FD271FO3F" V 4000 2550 50  0001 C CNN "Part"
+	1    4000 2550
+	0    1    1    0   
+$EndComp
+Text Notes 4200 2950 0    50   ~ 0
+Treble\n<- CW
+$Comp
+L Device:R_POT RV102
+U 1 1 5D72C3B8
+P 4300 2550
+F 0 "RV102" V 4185 2550 50  0000 C CNN
+F 1 "250K" V 4094 2550 50  0000 C CNN
+F 2 "" H 4300 2550 50  0001 C CNN
+F 3 "~" H 4300 2550 50  0001 C CNN
+	1    4300 2550
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R_Small R111
+U 1 1 5D72BE5B
+P 4300 2200
+F 0 "R111" H 4359 2246 50  0000 L CNN
+F 1 "220K" H 4359 2155 50  0000 L CNN
+F 2 "" H 4300 2200 50  0001 C CNN
+F 3 "~" H 4300 2200 50  0001 C CNN
+	1    4300 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R110
+U 1 1 5D72A920
+P 4300 1900
+F 0 "R110" H 4359 1946 50  0000 L CNN
+F 1 "470K" H 4359 1855 50  0000 L CNN
+F 2 "" H 4300 1900 50  0001 C CNN
+F 3 "~" H 4300 1900 50  0001 C CNN
+	1    4300 1900
+	1    0    0    -1  
+$EndComp
+Text Notes 4200 1350 0    50   ~ 0
+Bass\n<- CW
+$Comp
+L Device:R_POT RV101
+U 1 1 5D7284F3
+P 4300 1600
+F 0 "RV101" V 4093 1600 50  0000 C CNN
+F 1 "250K" V 4184 1600 50  0000 C CNN
+F 2 "" H 4300 1600 50  0001 C CNN
+F 3 "~" H 4300 1600 50  0001 C CNN
+	1    4300 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C103
+U 1 1 5D727690
+P 4300 1100
+F 0 "C103" V 4071 1100 50  0000 C CNN
+F 1 ".0047uF" V 4162 1100 50  0000 C CNN
+F 2 "" H 4300 1100 50  0001 C CNN
+F 3 "~" H 4300 1100 50  0001 C CNN
+F 4 "CDE CD19FD472FO3F" V 4300 1100 50  0001 C CNN "Part"
+	1    4300 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_SGD Q102
+U 1 1 5D951A9A
+P 6850 1550
+F 0 "Q102" H 7056 1596 50  0000 L CNN
+F 1 "ZVN0545A" H 7056 1505 50  0000 L CNN
+F 2 "" H 7050 1650 50  0001 C CNN
+F 3 "~" H 6850 1550 50  0001 C CNN
+	1    6850 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R113
+U 1 1 5D956CD9
+P 6950 1850
+F 0 "R113" H 7009 1896 50  0000 L CNN
+F 1 "56K" H 7009 1805 50  0000 L CNN
+F 2 "" H 6950 1850 50  0001 C CNN
+F 3 "~" H 6950 1850 50  0001 C CNN
+	1    6950 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R112
+U 1 1 5D959C85
+P 6550 1550
+F 0 "R112" V 6354 1550 50  0000 C CNN
+F 1 "220R" V 6445 1550 50  0000 C CNN
+F 2 "" H 6550 1550 50  0001 C CNN
+F 3 "~" H 6550 1550 50  0001 C CNN
+	1    6550 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D95D739
+P 6950 1950
+F 0 "#PWR?" H 6950 1700 50  0001 C CNN
+F 1 "GND" H 6955 1777 50  0000 C CNN
+F 2 "" H 6950 1950 50  0001 C CNN
+F 3 "" H 6950 1950 50  0001 C CNN
+	1    6950 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L jrt-Power:+300V #PWR?
+U 1 1 5D95DDEF
+P 6950 1100
+F 0 "#PWR?" H 6950 950 50  0001 C CNN
+F 1 "+300V" H 6965 1273 50  0000 C CNN
+F 2 "" H 6950 1100 50  0001 C CNN
+F 3 "" H 6950 1100 50  0001 C CNN
+	1    6950 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 1100 6950 1350
+$Comp
+L Device:C_Small C106
+U 1 1 5D961BBC
+P 7300 1750
+F 0 "C106" V 7200 1750 50  0000 C CNN
+F 1 ".47uF" V 7100 1750 50  0000 C CNN
+F 2 "" H 7300 1750 50  0001 C CNN
+F 3 "~" H 7300 1750 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J474JC" V 7300 1750 50  0001 C CNN "Part"
+	1    7300 1750
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	7200 1750 6950 1750
+Connection ~ 6950 1750
+Wire Notes Line
+	6400 800  6400 3050
+Wire Notes Line
+	6400 3050 7500 3050
+Wire Notes Line
+	7500 3050 7500 800 
+Wire Notes Line
+	7500 800  6400 800 
+Text Notes 6700 750  0    50   ~ 0
+Output buffer
+Wire Notes Line
+	3600 650  7550 650 
+Wire Wire Line
+	7400 1750 7450 1750
+Wire Wire Line
+	7450 1750 7450 850 
+Wire Wire Line
+	5150 850  7450 850 
+Connection ~ 3900 2100
+Wire Wire Line
+	3900 2100 3900 2250
+Text GLabel 1100 4700 0    50   Input ~ 0
+R_buffer_input
+$Comp
+L Device:C_Small C202
+U 1 1 5D871BBF
+P 2800 4900
+F 0 "C202" V 2900 4900 50  0000 C CNN
+F 1 ".47uF" V 3000 4900 50  0000 C CNN
+F 2 "" H 2800 4900 50  0001 C CNN
+F 3 "~" H 2800 4900 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J474JC" V 2800 4900 50  0001 C CNN "Part"
+	1    2800 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1100 4700 1250 4700
+$Comp
+L Device:C_Small C201
+U 1 1 5D871BC8
+P 1450 4700
+F 0 "C201" V 1221 4700 50  0000 C CNN
+F 1 ".047uF" V 1312 4700 50  0000 C CNN
+F 2 "" H 1450 4700 50  0001 C CNN
+F 3 "~" H 1450 4700 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J473J4" V 1450 4700 50  0001 C CNN "Part"
+	1    1450 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R201
+U 1 1 5D871BCE
+P 1250 4900
+F 0 "R201" H 1309 4946 50  0000 L CNN
+F 1 "470K" H 1309 4855 50  0000 L CNN
+F 2 "" H 1250 4900 50  0001 C CNN
+F 3 "~" H 1250 4900 50  0001 C CNN
+	1    1250 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D871BD4
+P 1250 5100
+F 0 "#PWR?" H 1250 4850 50  0001 C CNN
+F 1 "GND" H 1255 4927 50  0000 C CNN
+F 2 "" H 1250 5100 50  0001 C CNN
+F 3 "" H 1250 5100 50  0001 C CNN
+	1    1250 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 4700 1250 4800
+Connection ~ 1250 4700
+Wire Wire Line
+	1250 4700 1350 4700
+Wire Wire Line
+	1250 5000 1250 5100
+$Comp
+L Device:R_Small R203
+U 1 1 5D871BDE
+P 1750 4900
+F 0 "R203" H 1809 4946 50  0000 L CNN
+F 1 "10M" H 1809 4855 50  0000 L CNN
+F 2 "" H 1750 4900 50  0001 C CNN
+F 3 "~" H 1750 4900 50  0001 C CNN
+	1    1750 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R202
+U 1 1 5D871BE4
+P 1750 4500
+F 0 "R202" H 1809 4546 50  0000 L CNN
+F 1 "10M" H 1809 4455 50  0000 L CNN
+F 2 "" H 1750 4500 50  0001 C CNN
+F 3 "~" H 1750 4500 50  0001 C CNN
+	1    1750 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 4700 1750 4800
+$Comp
+L power:GND #PWR?
+U 1 1 5D871BEB
+P 1750 5100
+F 0 "#PWR?" H 1750 4850 50  0001 C CNN
+F 1 "GND" H 1755 4927 50  0000 C CNN
+F 2 "" H 1750 5100 50  0001 C CNN
+F 3 "" H 1750 5100 50  0001 C CNN
+	1    1750 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 5000 1750 5100
+$Comp
+L Device:R_Small R204
+U 1 1 5D871BF2
+P 2050 4700
+F 0 "R204" V 1850 4800 50  0000 C CNN
+F 1 "220R" V 1950 4750 50  0000 C CNN
+F 2 "" H 2050 4700 50  0001 C CNN
+F 3 "~" H 2050 4700 50  0001 C CNN
+	1    2050 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_SGD Q201
+U 1 1 5D871BF8
+P 2350 4700
+F 0 "Q201" H 2556 4746 50  0000 L CNN
+F 1 "ZVN0545A" H 2556 4655 50  0000 L CNN
+F 2 "" H 2550 4800 50  0001 C CNN
+F 3 "~" H 2350 4700 50  0001 C CNN
+	1    2350 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 4600 1750 4700
+Connection ~ 1750 4700
+Wire Wire Line
+	1750 4700 1950 4700
+$Comp
+L jrt-Power:+300V #PWR?
+U 1 1 5D871C01
+P 2450 3950
+F 0 "#PWR?" H 2450 3800 50  0001 C CNN
+F 1 "+300V" H 2465 4123 50  0000 C CNN
+F 2 "" H 2450 3950 50  0001 C CNN
+F 3 "" H 2450 3950 50  0001 C CNN
+	1    2450 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R205
+U 1 1 5D871C07
+P 2450 5000
+F 0 "R205" H 2509 5046 50  0000 L CNN
+F 1 "56K" H 2509 4955 50  0000 L CNN
+F 2 "" H 2450 5000 50  0001 C CNN
+F 3 "~" H 2450 5000 50  0001 C CNN
+	1    2450 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D871C0D
+P 2450 5100
+F 0 "#PWR?" H 2450 4850 50  0001 C CNN
+F 1 "GND" H 2455 4927 50  0000 C CNN
+F 2 "" H 2450 5100 50  0001 C CNN
+F 3 "" H 2450 5100 50  0001 C CNN
+	1    2450 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 4900 2700 4900
+Connection ~ 2450 4900
+Wire Notes Line
+	1650 5800 3000 5800
+Wire Wire Line
+	1550 4700 1750 4700
+Wire Wire Line
+	2450 3950 2450 4250
+Wire Wire Line
+	1750 4400 1750 4250
+Wire Wire Line
+	1750 4250 2450 4250
+Connection ~ 2450 4250
+Wire Wire Line
+	2450 4250 2450 4500
+Wire Notes Line
+	1650 800  1650 5800
+Wire Notes Line
+	3000 800  3000 5800
+Text GLabel 3300 2300 3    50   Output ~ 0
+L_buffer_output
+Text GLabel 3300 5100 3    50   Output ~ 0
+R_buffer_output
+Wire Wire Line
+	2900 2100 3300 2100
+Wire Wire Line
+	3300 2100 3300 2300
+Wire Wire Line
+	2900 4900 3300 4900
+Wire Wire Line
+	3300 4900 3300 5100
+Wire Wire Line
+	5150 850  5150 1900
+Wire Wire Line
+	3300 2100 3900 2100
+Connection ~ 3300 2100
+Text Notes 5550 1400 0    50   Italic 10
+Off-board
+Text GLabel 5400 2250 3    50   Output ~ 0
+L_tone_amp_input
+Text GLabel 6050 2250 3    50   Input ~ 0
+L_tone_amp_output
+Wire Wire Line
+	5400 2050 5400 2250
+Wire Wire Line
+	4300 2050 5400 2050
+Wire Wire Line
+	6050 2250 6050 1550
+Wire Wire Line
+	6050 1550 6450 1550
+Wire Wire Line
+	3900 4650 3900 4900
+Wire Notes Line
+	3650 3600 3650 5850
+Wire Notes Line
+	4950 3600 4950 5850
+Wire Notes Line
+	3650 5850 4950 5850
+Wire Notes Line
+	5100 3600 5100 5850
+Wire Notes Line
+	6350 3600 6350 5850
+Wire Notes Line
+	5100 5850 6350 5850
+Wire Wire Line
+	4300 4850 4300 4900
+Connection ~ 4300 4850
+Wire Wire Line
+	4700 4700 4700 5050
+Connection ~ 4700 4700
+Wire Wire Line
+	5150 4700 4700 4700
+Wire Notes Line
+	5100 3600 6350 3600
+Wire Wire Line
+	4700 4650 4700 4700
+Wire Wire Line
+	4300 4800 4300 4850
+Connection ~ 4700 4400
+Wire Wire Line
+	4700 4450 4700 4400
+Connection ~ 3900 4400
+Wire Wire Line
+	3900 4450 3900 4400
+Wire Wire Line
+	4700 3900 4700 4400
+Wire Wire Line
+	4400 3900 4700 3900
+Wire Wire Line
+	3900 3900 3900 4400
+Wire Wire Line
+	4200 3900 3900 3900
+Wire Notes Line
+	3650 3600 4950 3600
+Wire Wire Line
+	4700 5350 4700 5250
+Wire Wire Line
+	4450 5350 4500 5350
+Wire Wire Line
+	4100 5350 4150 5350
+Wire Wire Line
+	3900 5350 3900 5250
+Wire Wire Line
+	4300 5100 4300 5200
+Wire Wire Line
+	4300 4550 4300 4600
+Wire Wire Line
+	4150 4400 3900 4400
+Wire Wire Line
+	4450 4400 4700 4400
+$Comp
+L Device:R_Small R207
+U 1 1 5D8BB9BE
+P 4700 4550
+F 0 "R207" H 4759 4596 50  0000 L CNN
+F 1 "56K" H 4759 4505 50  0000 L CNN
+F 2 "" H 4700 4550 50  0001 C CNN
+F 3 "~" H 4700 4550 50  0001 C CNN
+	1    4700 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R206
+U 1 1 5D8BB9C4
+P 3900 4550
+F 0 "R206" H 3959 4596 50  0000 L CNN
+F 1 "56K" H 3959 4505 50  0000 L CNN
+F 2 "" H 3900 4550 50  0001 C CNN
+F 3 "~" H 3900 4550 50  0001 C CNN
+	1    3900 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R208
+U 1 1 5D8BB9D0
+P 3900 5150
+F 0 "R208" H 3959 5196 50  0000 L CNN
+F 1 "56K" H 3959 5105 50  0000 L CNN
+F 2 "" H 3900 5150 50  0001 C CNN
+F 3 "~" H 3900 5150 50  0001 C CNN
+	1    3900 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C205
+U 1 1 5D8BB9D7
+P 4600 5350
+F 0 "C205" V 4750 5350 50  0000 C CNN
+F 1 "270pF" V 4850 5350 50  0000 C CNN
+F 2 "" H 4600 5350 50  0001 C CNN
+F 3 "~" H 4600 5350 50  0001 C CNN
+F 4 "CDE CD15FD271FO3F" V 4600 5350 50  0001 C CNN "Part"
+	1    4600 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C204
+U 1 1 5D8BB9DE
+P 4000 5350
+F 0 "C204" V 4150 5350 50  0000 C CNN
+F 1 "270pF" V 4250 5350 50  0000 C CNN
+F 2 "" H 4000 5350 50  0001 C CNN
+F 3 "~" H 4000 5350 50  0001 C CNN
+F 4 "CDE CD15FD271FO3F" V 4000 5350 50  0001 C CNN "Part"
+	1    4000 5350
+	0    1    1    0   
+$EndComp
+Text Notes 4200 5750 0    50   ~ 0
+Treble\n<- CW
+$Comp
+L Device:R_POT RV202
+U 1 1 5D8BB9E5
+P 4300 5350
+F 0 "RV202" V 4185 5350 50  0000 C CNN
+F 1 "250K" V 4094 5350 50  0000 C CNN
+F 2 "" H 4300 5350 50  0001 C CNN
+F 3 "~" H 4300 5350 50  0001 C CNN
+	1    4300 5350
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R_Small R211
+U 1 1 5D8BB9EB
+P 4300 5000
+F 0 "R211" H 4359 5046 50  0000 L CNN
+F 1 "220K" H 4359 4955 50  0000 L CNN
+F 2 "" H 4300 5000 50  0001 C CNN
+F 3 "~" H 4300 5000 50  0001 C CNN
+	1    4300 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R210
+U 1 1 5D8BB9F1
+P 4300 4700
+F 0 "R210" H 4359 4746 50  0000 L CNN
+F 1 "470K" H 4359 4655 50  0000 L CNN
+F 2 "" H 4300 4700 50  0001 C CNN
+F 3 "~" H 4300 4700 50  0001 C CNN
+	1    4300 4700
+	1    0    0    -1  
+$EndComp
+Text Notes 4200 4150 0    50   ~ 0
+Bass\n<- CW
+$Comp
+L Device:R_POT RV201
+U 1 1 5D8BB9F8
+P 4300 4400
+F 0 "RV201" V 4093 4400 50  0000 C CNN
+F 1 "250K" V 4184 4400 50  0000 C CNN
+F 2 "" H 4300 4400 50  0001 C CNN
+F 3 "~" H 4300 4400 50  0001 C CNN
+	1    4300 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C203
+U 1 1 5D8BB9FF
+P 4300 3900
+F 0 "C203" V 4071 3900 50  0000 C CNN
+F 1 ".0047uF" V 4162 3900 50  0000 C CNN
+F 2 "" H 4300 3900 50  0001 C CNN
+F 3 "~" H 4300 3900 50  0001 C CNN
+F 4 "CDE CD19FD472FO3F" V 4300 3900 50  0001 C CNN "Part"
+	1    4300 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_SGD Q202
+U 1 1 5D8BBA05
+P 6850 4350
+F 0 "Q202" H 7056 4396 50  0000 L CNN
+F 1 "ZVN0545A" H 7056 4305 50  0000 L CNN
+F 2 "" H 7050 4450 50  0001 C CNN
+F 3 "~" H 6850 4350 50  0001 C CNN
+	1    6850 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R213
+U 1 1 5D8BBA0B
+P 6950 4650
+F 0 "R213" H 7009 4696 50  0000 L CNN
+F 1 "56K" H 7009 4605 50  0000 L CNN
+F 2 "" H 6950 4650 50  0001 C CNN
+F 3 "~" H 6950 4650 50  0001 C CNN
+	1    6950 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D8BBA17
+P 6950 4750
+F 0 "#PWR?" H 6950 4500 50  0001 C CNN
+F 1 "GND" H 6955 4577 50  0000 C CNN
+F 2 "" H 6950 4750 50  0001 C CNN
+F 3 "" H 6950 4750 50  0001 C CNN
+	1    6950 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L jrt-Power:+300V #PWR?
+U 1 1 5D8BBA1D
+P 6950 3900
+F 0 "#PWR?" H 6950 3750 50  0001 C CNN
+F 1 "+300V" H 6965 4073 50  0000 C CNN
+F 2 "" H 6950 3900 50  0001 C CNN
+F 3 "" H 6950 3900 50  0001 C CNN
+	1    6950 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3900 6950 4150
+$Comp
+L Device:C_Small C206
+U 1 1 5D8BBA25
+P 7300 4550
+F 0 "C206" V 7200 4550 50  0000 C CNN
+F 1 ".47uF" V 7100 4550 50  0000 C CNN
+F 2 "" H 7300 4550 50  0001 C CNN
+F 3 "~" H 7300 4550 50  0001 C CNN
+F 4 "Panasonic ECW-FD2J474JC" V 7300 4550 50  0001 C CNN "Part"
+	1    7300 4550
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	7200 4550 6950 4550
+Connection ~ 6950 4550
+Wire Notes Line
+	6400 3600 6400 5850
+Wire Notes Line
+	6400 5850 7500 5850
+Wire Notes Line
+	7500 5850 7500 3600
+Wire Notes Line
+	7500 3600 6400 3600
+Wire Notes Line
+	7550 5900 3600 5900
+Wire Wire Line
+	7400 4550 7450 4550
+Wire Wire Line
+	7450 4550 7450 3650
+Wire Wire Line
+	5150 3650 7450 3650
+Connection ~ 3900 4900
+Wire Wire Line
+	3900 4900 3900 5050
+Wire Wire Line
+	5150 3650 5150 4700
+Wire Wire Line
+	3300 4900 3900 4900
+Text Notes 5550 4200 0    50   Italic 10
+Off-board
+Text GLabel 5400 5050 3    50   Output ~ 0
+R_tone_amp_input
+Text GLabel 6050 5050 3    50   Input ~ 0
+R_tone_amp_output
+Wire Wire Line
+	5400 4850 5400 5050
+Wire Wire Line
+	4300 4850 5400 4850
+Wire Wire Line
+	6050 5050 6050 4350
+Wire Wire Line
+	6050 4350 6450 4350
+Connection ~ 3300 4900
+Wire Notes Line
+	7550 650  7550 5900
+Wire Notes Line
+	3600 650  3600 5900
+Text GLabel 7850 1750 2    50   Output ~ 0
+L_tone_output
+Text GLabel 7850 4550 2    50   Output ~ 0
+R_tone_output
+Wire Wire Line
+	7450 1750 7850 1750
+Connection ~ 7450 1750
+Wire Wire Line
+	7450 4550 7850 4550
+Connection ~ 7450 4550
+$Comp
+L Connector:Screw_Terminal_01x02 J101
+U 1 1 5D921CC8
+P 2200 6000
+F 0 "J101" H 2280 5992 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 2280 5901 50  0000 L CNN
+F 2 "" H 2200 6000 50  0001 C CNN
+F 3 "~" H 2200 6000 50  0001 C CNN
+	1    2200 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L jrt-Power:+250V #PWR?
+U 1 1 5D924499
+P 2000 6000
+F 0 "#PWR?" H 2000 5850 50  0001 C CNN
+F 1 "+250V" V 2015 6128 50  0000 L CNN
+F 2 "" H 2000 6000 50  0001 C CNN
+F 3 "" H 2000 6000 50  0001 C CNN
+	1    2000 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D924F80
+P 2000 6100
+F 0 "#PWR?" H 2000 5850 50  0001 C CNN
+F 1 "GND" V 2005 5972 50  0000 R CNN
+F 2 "" H 2000 6100 50  0001 C CNN
+F 3 "" H 2000 6100 50  0001 C CNN
+	1    2000 6100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x04 J102
+U 1 1 5D92C37C
+P 2200 6450
+F 0 "J102" H 2280 6442 50  0000 L CNN
+F 1 "Screw_Terminal_01x04" H 2280 6351 50  0000 L CNN
+F 2 "" H 2200 6450 50  0001 C CNN
+F 3 "~" H 2200 6450 50  0001 C CNN
+	1    2200 6450
+	1    0    0    -1  
+$EndComp
+Text GLabel 2000 6550 0    50   Output ~ 0
+R_buffer_input
+Text GLabel 2000 6650 0    50   Input ~ 0
+R_buffer_output
+Text GLabel 2000 6350 0    50   Output ~ 0
+L_buffer_input
+Text GLabel 2000 6450 0    50   Input ~ 0
+L_buffer_output
+$Comp
+L Connector:Screw_Terminal_01x03 J103
+U 1 1 5D9382FE
+P 9500 2100
+F 0 "J103" H 9580 2142 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 9580 2051 50  0000 L CNN
+F 2 "" H 9500 2100 50  0001 C CNN
+F 3 "~" H 9500 2100 50  0001 C CNN
+	1    9500 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J203
+U 1 1 5D93A941
+P 9500 4900
+F 0 "J203" H 9580 4942 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 9580 4851 50  0000 L CNN
+F 2 "" H 9500 4900 50  0001 C CNN
+F 3 "~" H 9500 4900 50  0001 C CNN
+	1    9500 4900
+	1    0    0    -1  
+$EndComp
+Text GLabel 9300 2000 0    50   Input ~ 0
+L_tone_amp_input
+Text GLabel 9300 2100 0    50   Output ~ 0
+L_tone_amp_output
+Text GLabel 8700 2200 2    50   Output ~ 0
+L_tone_output
+Text GLabel 9300 4800 0    50   Input ~ 0
+R_tone_amp_input
+Text GLabel 9300 4900 0    50   Output ~ 0
+R_tone_amp_output
+Text GLabel 8700 5000 2    50   Output ~ 0
+R_tone_output
+$Comp
+L Device:R_Small R209
+U 1 1 5D8BB9CA
+P 4700 5150
+F 0 "R209" H 4759 5196 50  0000 L CNN
+F 1 "56K" H 4759 5105 50  0000 L CNN
+F 2 "" H 4700 5150 50  0001 C CNN
+F 3 "~" H 4700 5150 50  0001 C CNN
+	1    4700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R212
+U 1 1 5D8BBA11
+P 6550 4350
+F 0 "R212" V 6354 4350 50  0000 C CNN
+F 1 "220R" V 6445 4350 50  0000 C CNN
+F 2 "" H 6550 4350 50  0001 C CNN
+F 3 "~" H 6550 4350 50  0001 C CNN
+	1    6550 4350
+	0    1    1    0   
+$EndComp
+Text Notes 2150 5050 0    50   Italic 10
+1W 1%
+Text Notes 6650 4700 0    50   Italic 10
+1W 1%
+Text Notes 6650 1900 0    50   Italic 10
+1W 1%
+Text Notes 2150 2250 0    50   Italic 10
+1W 1%
+$EndSCHEMATC
