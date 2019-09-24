@@ -9,7 +9,16 @@
     (nets 39)
   )
 
-  (page A4)
+  (page USLetter)
+  (title_block
+    (title "6AS7 Pre-amp Mk I PCB")
+    (date 2019-09-23)
+    (rev 1.0)
+    (company "San Francisco Electronworks")
+    (comment 1 "For hobbyist use only.")
+    (comment 2 "Copyright 2019 Jason R. Thorpe.  All rights reserved.")
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
