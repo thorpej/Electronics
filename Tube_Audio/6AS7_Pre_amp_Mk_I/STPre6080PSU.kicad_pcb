@@ -2,10 +2,10 @@
 
   (general
     (thickness 1.6)
-    (drawings 22)
+    (drawings 23)
     (tracks 82)
     (zones 0)
-    (modules 26)
+    (modules 27)
     (nets 12)
   )
 
@@ -159,6 +159,30 @@
     (add_net "Net-(C307-Pad1)")
   )
 
+  (module jrt-Graphics:Symbol_HighVoltage_Type2_FSilk_VerySmall (layer F.Cu) (tedit 0) (tstamp 5D8AC827)
+    (at 167.64 106.68)
+    (descr "Symbol, High Voltage, Type 2, FSilk, Very Small,")
+    (tags "Symbol, High Voltage, Type 2, FSilk, Very Small,")
+    (attr virtual)
+    (fp_text reference REF** (at -0.127 -5.715) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Symbol_HighVoltage_Type2_FSilk_VerySmall (at -0.381 4.572) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_line (start -4.699 2.794) (end 0 -4.191) (layer F.SilkS) (width 0.381))
+    (fp_line (start 4.699 2.794) (end -4.699 2.794) (layer F.SilkS) (width 0.381))
+    (fp_line (start 0 -4.191) (end 4.699 2.794) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.49784 2.19964) (end -0.59944 1.30048) (layer F.SilkS) (width 0.381))
+    (fp_line (start 0.29972 -0.59944) (end -0.49784 2.19964) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.89916 0.20066) (end 0.29972 -0.59944) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.09906 -2.79908) (end -0.89916 0.20066) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.49784 2.19964) (end 0.1016 1.50114) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.89916 0.20066) (end 0.40132 -2.60096) (layer F.SilkS) (width 0.381))
+    (fp_line (start 0.70104 -0.89916) (end 0.1016 -0.50038) (layer F.SilkS) (width 0.381))
+    (fp_line (start -0.49784 2.19964) (end 0.70104 -0.89916) (layer F.SilkS) (width 0.381))
+  )
+
   (module TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm (layer F.Cu) (tedit 5D858B8F) (tstamp 5D87D249)
     (at 119.38 85.09 270)
     (descr "Test point with 2 pins, pitch 2.54mm, drill diameter 0.8mm")
@@ -214,7 +238,7 @@
     (pad 1 thru_hole circle (at 0 0) (size 7 7) (drill 3.5) (layers *.Cu *.Mask))
   )
 
-  (module MountingHole:MountingHole_3.5mm_Pad (layer F.Cu) (tedit 56D1B4CB) (tstamp 5D87A97F)
+  (module MountingHole:MountingHole_3.5mm_Pad (layer F.Cu) (tedit 56D1B4CB) (tstamp 5D8AC999)
     (at 180.34 134.62)
     (descr "Mounting Hole 3.5mm")
     (tags "mounting hole 3.5mm")
@@ -3618,6 +3642,9 @@
     )
   )
 
+  (gr_text "HIGH\nVOLTAGE!" (at 168.91 129.54) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3) italic))
+  )
   (dimension 83.82 (width 0.15) (layer Dwgs.User)
     (gr_text "83.820 mm" (at 138.43 147.35) (layer Dwgs.User)
       (effects (font (size 1 1) (thickness 0.15)))
