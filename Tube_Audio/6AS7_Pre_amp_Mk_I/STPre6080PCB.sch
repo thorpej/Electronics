@@ -132,7 +132,7 @@ U 1 1 5D8E20F8
 P 2350 1900
 F 0 "Q101" H 2556 1946 50  0000 L CNN
 F 1 "ZVN0545A" H 2556 1855 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 2550 2000 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 2550 2000 50  0001 C CNN
 F 3 "~" H 2350 1900 50  0001 C CNN
 	1    2350 1900
 	1    0    0    -1  
@@ -398,7 +398,7 @@ U 1 1 5D951A9A
 P 6850 1550
 F 0 "Q102" H 7056 1596 50  0000 L CNN
 F 1 "ZVN0545A" H 7056 1505 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 7050 1650 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 7050 1650 50  0001 C CNN
 F 3 "~" H 6850 1550 50  0001 C CNN
 	1    6850 1550
 	1    0    0    -1  
@@ -600,7 +600,7 @@ U 1 1 5D871BF8
 P 2350 4700
 F 0 "Q201" H 2556 4746 50  0000 L CNN
 F 1 "ZVN0545A" H 2556 4655 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 2550 4800 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 2550 4800 50  0001 C CNN
 F 3 "~" H 2350 4700 50  0001 C CNN
 	1    2350 4700
 	1    0    0    -1  
@@ -883,7 +883,7 @@ U 1 1 5D8BBA05
 P 6850 4350
 F 0 "Q202" H 7056 4396 50  0000 L CNN
 F 1 "ZVN0545A" H 7056 4305 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 7050 4450 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 7050 4450 50  0001 C CNN
 F 3 "~" H 6850 4350 50  0001 C CNN
 	1    6850 4350
 	1    0    0    -1  
@@ -1069,13 +1069,13 @@ Text GLabel 9300 2000 0    50   Input ~ 0
 L_tone_amp_input
 Text GLabel 9300 2100 0    50   Output ~ 0
 L_tone_amp_output
-Text GLabel 8700 2200 2    50   Output ~ 0
+Text GLabel 9300 2200 0    50   Input ~ 0
 L_tone_output
 Text GLabel 9300 4800 0    50   Input ~ 0
 R_tone_amp_input
 Text GLabel 9300 4900 0    50   Output ~ 0
 R_tone_amp_output
-Text GLabel 8700 5000 2    50   Output ~ 0
+Text GLabel 9300 5000 0    50   Input ~ 0
 R_tone_output
 $Comp
 L Device:R_Small R209
