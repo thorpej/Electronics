@@ -764,14 +764,6 @@ Wire Wire Line
 	6250 4650 6450 4650
 Wire Wire Line
 	7050 4800 7150 4800
-$Sheet
-S 4400 6150 1700 1300
-U 5DC527CD
-F0 "STPre6080Heaters" 50
-F1 "STPre6080Heaters.sch" 50
-$EndSheet
-Text Notes 4750 7300 0    50   Italic 10
-Heater configuration circuit
 Wire Notes Line
 	5350 700  10300 700 
 Wire Notes Line
@@ -861,4 +853,6 @@ F1 "STPre6080PSU.sch" 50
 $EndSheet
 Text Notes 2650 6850 0    50   Italic 10
 Power Supply\n(PCB)
+Text Notes 6200 3800 0    50   ~ 0
+(Separate PCB)
 $EndSCHEMATC

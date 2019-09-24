@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
-LIBS:STPre6080PCB-cache
+LIBS:STPre6080-cache
 EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 1
+Sheet 1 4
 Title "6AS7 Pre-amp Mk I PCB"
 Date "2019-09-19"
 Rev "1.0"
