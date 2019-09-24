@@ -408,21 +408,6 @@ X +250V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# jrt-Power_+300V
-#
-DEF jrt-Power_+300V #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -150 50 H I C CNN
-F1 "jrt-Power_+300V" 0 140 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 0 1 0 -30 50 0 100 N
-P 2 0 1 0 0 0 0 100 N
-P 2 0 1 0 0 100 30 50 N
-X +300V 1 0 0 0 U 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
 # jrt-Regulators_2ChanCCSLoad
 #
 DEF jrt-Regulators_2ChanCCSLoad U 0 40 Y Y 1 F N
