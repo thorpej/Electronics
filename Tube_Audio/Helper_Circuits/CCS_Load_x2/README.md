@@ -2,7 +2,7 @@
 
 This is a simple solid-state constant current source board intended for
 use as a plate load in a triode or pentode voltage gain stage.  It is based
-on the IXYS 10M45S 3-pin current regulator.  n IXYS 10M90S can be substituted
+on the IXYS 10M45S 3-pin current regulator.  An IXYS 10M90S can be substituted
 if you _really_ need the increased voltatge rating, but I suspect that you
 don't.  A CCS plate loads provide a near "infinite" resistance to a loaded
 device, resulting in a nearly horizontal load line.  This results in maximized
