@@ -408,11 +408,11 @@ X +250V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# jrt-Regulators_2ChanCCSLoad
+# jrt-Regulators_CCS_Load_x2
 #
-DEF jrt-Regulators_2ChanCCSLoad U 0 40 Y Y 1 F N
+DEF jrt-Regulators_CCS_Load_x2 U 0 40 Y Y 1 F N
 F0 "U" 200 300 50 H V C CNN
-F1 "jrt-Regulators_2ChanCCSLoad" 350 400 50 H V C CNN
+F1 "jrt-Regulators_CCS_Load_x2" 350 400 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

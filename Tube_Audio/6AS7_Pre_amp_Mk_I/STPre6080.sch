@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 4
+Sheet 1 3
 Title "6AS7 Pre-amp Mk I"
 Date "2019-09-19"
 Rev "1.0"
@@ -507,11 +507,11 @@ Text Notes 3650 5500 0    50   Italic 10
 Text Notes 4400 5550 0    50   Italic 10
 100V
 $Comp
-L jrt-Regulators:2ChanCCSLoad U2
+L jrt-Regulators:CCS_Load_x2 U2
 U 1 1 5DB45136
 P 5900 3600
 F 0 "U2" H 6228 3646 50  0000 L CNN
-F 1 "2ChanCCSLoad" H 6228 3555 50  0000 L CNN
+F 1 "CCS_Load_x2" H 6228 3555 50  0000 L CNN
 F 2 "" H 5900 3600 50  0001 C CNN
 F 3 "" H 5900 3600 50  0001 C CNN
 	1    5900 3600
