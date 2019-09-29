@@ -1,0 +1,60 @@
+*-----------------------------------------------------------------------
+* Filename:		SV6AS7.inc  V1  25/8/97
+* Simulator:		PSpice
+* Device type:		Power triode
+* Device model:		Svetlana 6AS7
+*
+* Author:		Duncan Munro
+* Date:			25/8/97
+* Copyright:		(C)1997-2000 Duncan Amplification
+*
+* The following parameters are not modelled:
+*
+*   (1) Heater is not modelled.
+*
+*   (2) Grid current is not modelled.
+*
+* Please note that this model is provided "as is" and
+* no warranty is provided in respect of its suitability
+* for any application.
+*
+* This model is provided for educational and non-profit use.
+*
+* Email queries to postmaster@duncanamps.com
+*
+* Pins   A  Anode
+*        G  Grid
+*        K  Cathode
+*
+*-----------------------------------------------------------------------
+
+.SUBCKT SV6AS7 A G K
+*
+* Calculate reduction in mu at large negative
+* grid voltages
+*
+Emu	mu	0	VALUE={PWRS(V(G,K),0.88)}
+*
+* Emission reduction due to low Va
+*
+Eel	el	0	VALUE={ATAN(LIMIT{V(A,K),0,1E6}/10)}
+*
+* Calculate change in shape with reducing grid voltage
+*
+Eshape	shape	0	VALUE={(220+V(G,K))/220}
+*
+Egs	gs	0	VALUE={LIMIT{V(A,K)+V(mu)*2.8,0,1E6}}
+Egs2	gs2	0	VALUE={PWRS(V(gs)*V(shape),1.5)*410E-6}
+Ecath  	cc    	0 	VALUE={V(gs2)*V(el)}
+*
+* Calculate anode current
+*
+Ga     	A     	K     	VALUE={V(cc)}
+*
+* Capacitances
+*
+Cgk	G	K	8p
+Cga	A	G	11p
+Cak	A	K	3p
+
+.ENDS 
