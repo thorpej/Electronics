@@ -4,8 +4,8 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 3
-Title "6AS7 Pre-amp Mk 1 power supply"
+Sheet 3 3
+Title "6AS7 Pre-amp Mk I PSU"
 Date "2019-09-20"
 Rev "1.0"
 Comp "San Francisco Electronworks"
