@@ -61,9 +61,6 @@
  * 
  * The 2 byte command types are able to encapsulate the offset into the 2 byte
  * command issued to the device. and thus don't play any address decoder tricks.
- * 
- * Devices that require a larger offset (e.g. 24C1024, 128KiB) are not currently
- * supported.
  *
  * Thankfully, the task of programming an SEEPROM is simply and we don't care about
  * sharing the I2C bus with anyone.  The EEPROM-28 board ties pins 1, 2, and 3
@@ -82,7 +79,7 @@
 #include <avr/pgmspace.h>
 #include <Wire.h>
 
-#define EEPROM_28_VERSION   "EEPROM-28 v0.1"
+#define EEPROM_28_VERSION   "EEPROM-28 v1.0_Beta_2"
 #define EEPROM_28_COPYRIGHT "Copyright (c) 2019 Jason R. Thorpe.  All rights reserved."
 
 #define SERIAL_SPEED        57600
