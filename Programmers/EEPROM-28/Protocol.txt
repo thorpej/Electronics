@@ -1,0 +1,124 @@
+The host communicates with the EEPROM-28 over a 57600:8N1 serial interface
+using a simple text-based command protocol.  This protocol is also suitable
+for interacting directly with the EEPROM-28 as a command line interface.
+
+All numbers in this protocol are in BARE HEXADECIMAL (no leading "0x").
+The EEPROM-28 always outputs numbers with upper-case, but accepts upper-
+and lower-case as input.
+
+The EEPROM-28 indicates it is ready to accept a command by presenting
+a ">>> " prompt.  The end of a command line is indicated by a '\n' (newline)
+character.  '\r' (carraige return) characters are ignored.
+
+Command acceptance is indicated by the string "Okay".  Note that some
+commands might return an error condition after responding with "Okay";
+see individual command descriptions for more details.
+
+Errors are indicated by the string "Err " followed by a description of
+the error.
+
+If the command returns data to the caller, that data will be returned after
+the "Okay" status, preceeded by "<<< ".
+
+Informational lines are preceeded by a "#" character.
+
+READ command
+------------
+The READ command reads up to 16 bytes at the specified offset and returns
+them to the caller.
+
+Syntax:
+
+    Rx OOOOOOOO
+
+x = number of bytes to read minus 1 (range 0 - F)
+OOOOOOOO = byte offset expressed as a 32-bit integer
+
+Example - Read 16 bytes from offset 0.
+
+    >>> RF 00000000
+    Okay
+    <<< 00000000 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    >>> 
+
+Example - Read 1 byte from offset 16.
+
+    >>> R0 00000010
+    Okay
+    <<< 00000010 10
+    >>> 
+
+WRITE command
+-------------
+The WRITE command writes up to 16 bytes at the specified offset.
+
+Syntax:
+
+    Wx OOOOOOOO .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+
+x = number of bytes to write minus 1 (range 0 - F)
+OOOOOOOO = byte offset expressed as a 32-bit integer
+
+Example - Write 16 bytes at offset 0.
+
+    WF 00000000 00 11 22 33 44 55 66 77 88 99 AA BB CC DD EE FF
+
+    >>> WF 00000000 00 11 22 33 44 55 66 77 88 99 AA BB CC DD EE FF
+    Okay
+    >>> 
+
+Example - Write 1 byte at offset 16.
+
+    W0 00000010 A5
+
+    >>> W0 A5
+    Okay
+    >>> 
+
+LIST EEPROM TYPES
+-----------------
+The LIST EEPROM TYPES command lists the known EEPROM types supported by
+the EEPROM-28.
+
+Syntex:
+
+    T?
+
+Example:
+
+    >>> T?
+    Okay
+    # Supported EEPROM types:
+    #     28c16 -- 2048 bytes
+    #     28c64 -- 8192 bytes
+    #     28c256 -- 32768 bytes
+    #     24c01 -- 128 bytes, serial
+    #     24c02 -- 256 bytes, serial
+    #     24c04 -- 512 bytes, serial
+    #     24c08 -- 1024 bytes, serial
+    #     24c16 -- 2048 bytes, serial
+    #     24c32 -- 4096 bytes, serial
+    #     24c64 -- 8192 bytes, serial
+    #     24c128 -- 16384 bytes, serial
+    #     24c256 -- 32768 bytes, serial
+    #     24c512 -- 65536 bytes, serial
+    #     24c1024 -- 131072 bytes, serial
+    #     24c1025 -- 131072 bytes, serial
+    #     24c1026 -- 131072 bytes, serial
+
+SELECT EEPROM TYPE
+------------------
+The SELECT EEPROM TYPE command tells the EEPROM-28 what kind of EEPROM is
+being accessed.  This selects the appropriate size boundary as well as
+the access prototol for the device.
+
+Syntax:
+
+    T device_type
+
+Example:
+
+    >>> T 28c256
+    Okay
+    >>> 
+
