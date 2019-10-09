@@ -187,7 +187,7 @@
     (at 108.85 54.75 90)
     (descr "Through hole straight pin header, 2x20, 2.54mm pitch, double rows")
     (tags "Through hole pin header THT 2x20 2.54mm double row")
-    (fp_text reference REF** (at 1.27 -2.33 90) (layer F.SilkS) hide
+    (fp_text reference J1 (at -2.25 24.15 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value PinHeader_2x20_P2.54mm_Vertical (at 1.27 50.59 90) (layer F.Fab) hide
