@@ -126,47 +126,34 @@ F 3 "" H 8550 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Jumper:Jumper_3_Bridged12 JP1
-U 1 1 5D9D19EA
-P 9550 1800
-F 0 "JP1" H 9550 1911 50  0000 C CNN
-F 1 "Jumper_3_Bridged12" H 9550 2002 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9550 1800 50  0001 C CNN
-F 3 "~" H 9550 1800 50  0001 C CNN
-	1    9550 1800
-	1    0    0    1   
-$EndComp
-$Comp
 L power:GND #PWR0122
 U 1 1 5D9D43E4
-P 9800 1800
-F 0 "#PWR0122" H 9800 1550 50  0001 C CNN
-F 1 "GND" V 9805 1672 50  0000 R CNN
-F 2 "" H 9800 1800 50  0001 C CNN
-F 3 "" H 9800 1800 50  0001 C CNN
-	1    9800 1800
+P 9750 1800
+F 0 "#PWR0122" H 9750 1550 50  0001 C CNN
+F 1 "GND" V 9755 1672 50  0000 R CNN
+F 2 "" H 9750 1800 50  0001 C CNN
+F 3 "" H 9750 1800 50  0001 C CNN
+	1    9750 1800
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+3V3 #PWR0123
 U 1 1 5D9D49BD
-P 9300 1800
-F 0 "#PWR0123" H 9300 1650 50  0001 C CNN
-F 1 "+3V3" V 9315 1928 50  0000 L CNN
-F 2 "" H 9300 1800 50  0001 C CNN
-F 3 "" H 9300 1800 50  0001 C CNN
-	1    9300 1800
-	0    -1   -1   0   
+P 9050 2000
+F 0 "#PWR0123" H 9050 1850 50  0001 C CNN
+F 1 "+3V3" V 9065 2128 50  0000 L CNN
+F 2 "" H 9050 2000 50  0001 C CNN
+F 3 "" H 9050 2000 50  0001 C CNN
+	1    9050 2000
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	8950 1650 9550 1650
 $Comp
 L Connector:Screw_Terminal_01x03 J2
 U 1 1 5D9D9B0E
 P 8900 3650
 F 0 "J2" V 8772 3830 50  0000 L CNN
 F 1 "UART_Header" V 8863 3830 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal" H 8900 3650 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8900 3650 50  0001 C CNN
 F 3 "~" H 8900 3650 50  0001 C CNN
 	1    8900 3650
 	0    1    1    0   
@@ -206,7 +193,7 @@ U 1 1 5D9DD1CF
 P 8900 4400
 F 0 "J3" V 8772 4580 50  0000 L CNN
 F 1 "Power_Output_Header" V 8863 4580 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal" H 8900 4400 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8900 4400 50  0001 C CNN
 F 3 "~" H 8900 4400 50  0001 C CNN
 	1    8900 4400
 	0    1    1    0   
@@ -264,7 +251,7 @@ U 1 1 5D9E0DC6
 P 8950 5300
 F 0 "J4" V 8822 5380 50  0000 L CNN
 F 1 "I2C_Header" V 8913 5380 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 8950 5300 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8950 5300 50  0001 C CNN
 F 3 "~" H 8950 5300 50  0001 C CNN
 	1    8950 5300
 	0    1    1    0   
@@ -299,25 +286,25 @@ Wire Wire Line
 	8950 1450 8950 1350
 Wire Wire Line
 	8950 1350 9050 1350
-Text GLabel 5400 2650 0    50   Output ~ 0
+Text GLabel 5400 3350 0    50   Output ~ 0
 A0
 Text GLabel 5400 3100 0    50   Output ~ 0
 ~RST
-Text GLabel 7300 2450 2    50   BiDi ~ 0
-D0
-Text GLabel 7300 2550 2    50   BiDi ~ 0
-D1
-Text GLabel 7300 3450 2    50   BiDi ~ 0
-D2
-Text GLabel 5400 2450 0    50   BiDi ~ 0
-D3
-Text GLabel 5400 3250 0    50   BiDi ~ 0
-D4
-Text GLabel 7300 3350 2    50   BiDi ~ 0
-D5
-Text GLabel 5400 2050 0    50   BiDi ~ 0
-D6
 Text GLabel 5400 2550 0    50   BiDi ~ 0
+D0
+Text GLabel 5400 2650 0    50   BiDi ~ 0
+D1
+Text GLabel 5400 3250 0    50   BiDi ~ 0
+D2
+Text GLabel 5400 2050 0    50   BiDi ~ 0
+D3
+Text GLabel 5400 2450 0    50   BiDi ~ 0
+D4
+Text GLabel 7300 3450 2    50   BiDi ~ 0
+D5
+Text GLabel 7300 3350 2    50   BiDi ~ 0
+D6
+Text GLabel 7300 2550 2    50   BiDi ~ 0
 D7
 Connection ~ 6250 1350
 Wire Wire Line
@@ -338,8 +325,6 @@ F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/r
 $EndComp
 Wire Wire Line
 	7150 3450 7300 3450
-Wire Wire Line
-	7150 2450 7300 2450
 Wire Wire Line
 	7150 2550 7300 2550
 Wire Wire Line
@@ -380,23 +365,16 @@ Wire Wire Line
 Wire Wire Line
 	5550 2550 5400 2550
 Wire Wire Line
-	5550 2650 5400 2650
-Wire Wire Line
 	5550 2050 5400 2050
 Wire Wire Line
 	7150 2750 7300 2750
-Text GLabel 7300 3150 2    50   Input ~ 0
+Text GLabel 5400 2850 0    50   Input ~ 0
 IRQ
-Wire Wire Line
-	7300 3150 7150 3150
 NoConn ~ 7150 3050
 NoConn ~ 7150 2950
 NoConn ~ 5550 3050
 NoConn ~ 5550 2950
-NoConn ~ 5550 2850
 NoConn ~ 5550 2250
-NoConn ~ 5550 2150
-NoConn ~ 5550 3350
 NoConn ~ 7150 2350
 Wire Wire Line
 	6650 3950 6550 3950
@@ -432,28 +410,28 @@ Wire Wire Line
 Wire Wire Line
 	5450 3100 5400 3100
 Text GLabel 3250 1550 0    50   Output ~ 0
-OPL_D0
-Text GLabel 3250 1650 0    50   Output ~ 0
-OPL_D1
-Text GLabel 3250 1750 0    50   Output ~ 0
-OPL_D2
-Text GLabel 3250 1850 0    50   Output ~ 0
-OPL_D3
-Text GLabel 3250 1950 0    50   Output ~ 0
-OPL_D4
-Text GLabel 3250 2050 0    50   Output ~ 0
-OPL_D5
-Text GLabel 3250 2150 0    50   Output ~ 0
-OPL_D6
-Text GLabel 3250 2250 0    50   Output ~ 0
 OPL_D7
+Text GLabel 3250 1650 0    50   Output ~ 0
+OPL_D6
+Text GLabel 3250 1750 0    50   Output ~ 0
+OPL_D5
+Text GLabel 3250 1850 0    50   Output ~ 0
+OPL_D4
+Text GLabel 3250 1950 0    50   Output ~ 0
+OPL_D3
+Text GLabel 3250 2050 0    50   Output ~ 0
+OPL_D2
+Text GLabel 3250 2150 0    50   Output ~ 0
+OPL_D0
+Text GLabel 3250 2250 0    50   Output ~ 0
+OPL_D1
 $Comp
 L 74xx:74LS125 U203
 U 1 1 5DB4BD13
 P 3700 4050
 F 0 "U203" H 3700 4367 50  0000 C CNN
 F 1 "74AHCT125" H 3700 4276 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 4050 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 4050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 4050 50  0001 C CNN
 	1    3700 4050
 	1    0    0    -1  
@@ -464,7 +442,7 @@ U 2 1 5DB4F55B
 P 3700 4750
 F 0 "U203" H 3700 5067 50  0000 C CNN
 F 1 "74AHCT125" H 3700 4976 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 4750 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 4750 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 4750 50  0001 C CNN
 	2    3700 4750
 	1    0    0    -1  
@@ -475,7 +453,7 @@ U 3 1 5DB5069A
 P 3700 5450
 F 0 "U203" H 3700 5767 50  0000 C CNN
 F 1 "74AHCT125" H 3700 5676 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 5450 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 5450 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 5450 50  0001 C CNN
 	3    3700 5450
 	1    0    0    -1  
@@ -486,7 +464,7 @@ U 4 1 5DB50D8E
 P 3700 6150
 F 0 "U203" H 3700 6467 50  0000 C CNN
 F 1 "74AHCT125" H 3700 6376 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 6150 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 6150 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 6150 50  0001 C CNN
 	4    3700 6150
 	1    0    0    -1  
@@ -500,37 +478,37 @@ OPL_A0
 Text GLabel 4000 4750 2    50   Output ~ 0
 ~OPL_WR
 Text GLabel 2050 1550 2    50   Output ~ 0
-D0
-Text GLabel 2050 1650 2    50   Output ~ 0
-D1
-Text GLabel 2050 1750 2    50   Output ~ 0
-D2
-Text GLabel 2050 1850 2    50   Output ~ 0
-D3
-Text GLabel 2050 1950 2    50   Output ~ 0
-D4
-Text GLabel 2050 2050 2    50   Output ~ 0
-D5
-Text GLabel 2050 2150 2    50   Output ~ 0
-D6
-Text GLabel 2050 2250 2    50   Output ~ 0
 D7
+Text GLabel 2050 1650 2    50   Output ~ 0
+D6
+Text GLabel 2050 1750 2    50   Output ~ 0
+D5
+Text GLabel 2050 1850 2    50   Output ~ 0
+D4
+Text GLabel 2050 1950 2    50   Output ~ 0
+D3
+Text GLabel 2050 2050 2    50   Output ~ 0
+D2
+Text GLabel 2050 2150 2    50   Output ~ 0
+D0
+Text GLabel 2050 2250 2    50   Output ~ 0
+D1
 Text GLabel 1050 1550 0    50   Input ~ 0
-OPL_D0
-Text GLabel 1050 1650 0    50   Input ~ 0
-OPL_D1
-Text GLabel 1050 1750 0    50   Input ~ 0
-OPL_D2
-Text GLabel 1050 1850 0    50   Input ~ 0
-OPL_D3
-Text GLabel 1050 1950 0    50   Input ~ 0
-OPL_D4
-Text GLabel 1050 2050 0    50   Input ~ 0
-OPL_D5
-Text GLabel 1050 2150 0    50   Input ~ 0
-OPL_D6
-Text GLabel 1050 2250 0    50   Input ~ 0
 OPL_D7
+Text GLabel 1050 1650 0    50   Input ~ 0
+OPL_D6
+Text GLabel 1050 1750 0    50   Input ~ 0
+OPL_D5
+Text GLabel 1050 1850 0    50   Input ~ 0
+OPL_D4
+Text GLabel 1050 1950 0    50   Input ~ 0
+OPL_D3
+Text GLabel 1050 2050 0    50   Input ~ 0
+OPL_D2
+Text GLabel 1050 2150 0    50   Input ~ 0
+OPL_D0
+Text GLabel 1050 2250 0    50   Input ~ 0
+OPL_D1
 $Comp
 L power:+3V3 #PWR0128
 U 1 1 5DC29367
@@ -579,21 +557,21 @@ F 3 "" H 1050 2950 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Text GLabel 4250 1550 2    50   Input ~ 0
-D0
-Text GLabel 4250 1650 2    50   Input ~ 0
-D1
-Text GLabel 4250 1750 2    50   Input ~ 0
-D2
-Text GLabel 4250 1850 2    50   Input ~ 0
-D3
-Text GLabel 4250 1950 2    50   Input ~ 0
-D4
-Text GLabel 4250 2050 2    50   Input ~ 0
-D5
-Text GLabel 4250 2150 2    50   Input ~ 0
-D6
-Text GLabel 4250 2250 2    50   Input ~ 0
 D7
+Text GLabel 4250 1650 2    50   Input ~ 0
+D6
+Text GLabel 4250 1750 2    50   Input ~ 0
+D5
+Text GLabel 4250 1850 2    50   Input ~ 0
+D4
+Text GLabel 4250 1950 2    50   Input ~ 0
+D3
+Text GLabel 4250 2050 2    50   Input ~ 0
+D2
+Text GLabel 4250 2150 2    50   Input ~ 0
+D0
+Text GLabel 4250 2250 2    50   Input ~ 0
+D1
 $Comp
 L power:+3V3 #PWR0131
 U 1 1 5DC89778
@@ -705,7 +683,7 @@ U 5 1 5DCCCFE6
 P 3700 7250
 F 0 "U203" H 3930 7296 50  0000 L CNN
 F 1 "74AHCT125" H 3930 7205 50  0000 L CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 7250 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 7250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 7250 50  0001 C CNN
 	5    3700 7250
 	1    0    0    -1  
@@ -837,4 +815,174 @@ Text Notes 8350 2800 0    50   Italic 0
 Convenience pass-through headers
 Text Notes 5650 4350 0    50   Italic 0
 U101 is defined in the Clock Source sheet.
+NoConn ~ 5550 2150
+Wire Wire Line
+	5550 3350 5400 3350
+$Comp
+L Device:C_Small C201
+U 1 1 5DA53005
+P 2350 1250
+F 0 "C201" H 2442 1296 50  0000 L CNN
+F 1 ".1uF" H 2442 1205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2350 1250 50  0001 C CNN
+F 3 "~" H 2350 1250 50  0001 C CNN
+	1    2350 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C202
+U 1 1 5DA56FF1
+P 2750 1250
+F 0 "C202" H 2842 1296 50  0000 L CNN
+F 1 ".1uF" H 2842 1205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2750 1250 50  0001 C CNN
+F 3 "~" H 2750 1250 50  0001 C CNN
+	1    2750 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C203
+U 1 1 5DA58D30
+P 4300 6850
+F 0 "C203" H 4392 6896 50  0000 L CNN
+F 1 ".1uF" H 4392 6805 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 4300 6850 50  0001 C CNN
+F 3 "~" H 4300 6850 50  0001 C CNN
+	1    4300 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0148
+U 1 1 5DA5BB4A
+P 2350 1350
+F 0 "#PWR0148" H 2350 1100 50  0001 C CNN
+F 1 "GND" H 2355 1177 50  0000 C CNN
+F 2 "" H 2350 1350 50  0001 C CNN
+F 3 "" H 2350 1350 50  0001 C CNN
+	1    2350 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0149
+U 1 1 5DA5C1A7
+P 2750 1350
+F 0 "#PWR0149" H 2750 1100 50  0001 C CNN
+F 1 "GND" H 2755 1177 50  0000 C CNN
+F 2 "" H 2750 1350 50  0001 C CNN
+F 3 "" H 2750 1350 50  0001 C CNN
+	1    2750 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0150
+U 1 1 5DA606A7
+P 2350 1150
+F 0 "#PWR0150" H 2350 1000 50  0001 C CNN
+F 1 "+3V3" H 2365 1323 50  0000 C CNN
+F 2 "" H 2350 1150 50  0001 C CNN
+F 3 "" H 2350 1150 50  0001 C CNN
+	1    2350 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0151
+U 1 1 5DA60D4B
+P 2750 1150
+F 0 "#PWR0151" H 2750 1000 50  0001 C CNN
+F 1 "VCC" H 2767 1323 50  0000 C CNN
+F 2 "" H 2750 1150 50  0001 C CNN
+F 3 "" H 2750 1150 50  0001 C CNN
+	1    2750 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0152
+U 1 1 5DA6179C
+P 4300 6950
+F 0 "#PWR0152" H 4300 6700 50  0001 C CNN
+F 1 "GND" H 4305 6777 50  0000 C CNN
+F 2 "" H 4300 6950 50  0001 C CNN
+F 3 "" H 4300 6950 50  0001 C CNN
+	1    4300 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0153
+U 1 1 5DA61DAB
+P 4300 6750
+F 0 "#PWR0153" H 4300 6600 50  0001 C CNN
+F 1 "VCC" H 4317 6923 50  0000 C CNN
+F 2 "" H 4300 6750 50  0001 C CNN
+F 3 "" H 4300 6750 50  0001 C CNN
+	1    4300 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C204
+U 1 1 5DA66B96
+P 7800 1050
+F 0 "C204" H 7892 1096 50  0000 L CNN
+F 1 ".1uF" H 7892 1005 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 7800 1050 50  0001 C CNN
+F 3 "~" H 7800 1050 50  0001 C CNN
+	1    7800 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0154
+U 1 1 5DA66B9C
+P 7800 1150
+F 0 "#PWR0154" H 7800 900 50  0001 C CNN
+F 1 "GND" H 7805 977 50  0000 C CNN
+F 2 "" H 7800 1150 50  0001 C CNN
+F 3 "" H 7800 1150 50  0001 C CNN
+	1    7800 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0155
+U 1 1 5DA66BA2
+P 7800 950
+F 0 "#PWR0155" H 7800 800 50  0001 C CNN
+F 1 "+3V3" H 7815 1123 50  0000 C CNN
+F 2 "" H 7800 950 50  0001 C CNN
+F 3 "" H 7800 950 50  0001 C CNN
+	1    7800 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 2650 5400 2650
+NoConn ~ 7150 2450
+NoConn ~ 7150 3150
+Wire Wire Line
+	5400 2850 5550 2850
+$Comp
+L Jumper:Jumper_2_Open JP1
+U 1 1 5DBF7DC5
+P 9550 1800
+F 0 "JP1" H 9550 1575 50  0000 C CNN
+F 1 "Jumper_2_Open" H 9550 1666 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9550 1800 50  0001 C CNN
+F 3 "~" H 9550 1800 50  0001 C CNN
+	1    9550 1800
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R205
+U 1 1 5DBFD35A
+P 9200 2000
+F 0 "R205" V 9100 2000 50  0000 C CNN
+F 1 "1K" V 9200 2000 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 9130 2000 50  0001 C CNN
+F 3 "~" H 9200 2000 50  0001 C CNN
+	1    9200 2000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8950 1650 8950 1800
+Wire Wire Line
+	8950 1800 9350 1800
+Wire Wire Line
+	9350 1800 9350 2000
+Connection ~ 9350 1800
 $EndSCHEMATC
