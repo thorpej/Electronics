@@ -1,0 +1,159 @@
+/*-
+ * Copyright (c) 2019 Jason R. Thorpe.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+
+#include <dt-bindings/pinctrl/bcm2835.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/*
+ * Device tree overlay for the RAdLib -- an OPL2 FM synthesizer for
+ * Raspberry Pi.
+ *
+ * This overlay is for Raspberry Pi systems with a 40-pin GPIO header.
+ */
+
+/*
+ * The RAdLib uses the following GPIO pins [header pin #]:
+ *
+ * Bi-directional signals:
+ * OPL D0	GPIO20 [38]
+ * OPL D1	GPIO21 [40]
+ * OPL D2	GPIO26 [37]
+ * OPL D3	GPIO16 [36]
+ * OPL D4	GPIO19 [35]
+ * OPL D5	GPIO13 [33]
+ * OPL D6	GPIO12 [32]
+ * OPL D7	GPIO6  [31]
+ *
+ * Output-only signals:
+ * OPL A0	GPIO27 [13]
+ * READ		GPIO7  [26]
+ * OPL /CS	GPIO8  [24]
+ * OPL /RST	GPIO25 [22]
+ *
+ * Input-only signals:
+ * IRQ		GPIO22 [15]
+ */
+
+#define	OPL_D0		20
+#define	OPL_D1		21
+#define	OPL_D2		26
+#define	OPL_D3		16
+#define	OPL_D4		19
+#define	OPL_D5		13
+#define	OPL_D6		12
+#define	OPL_D7		6
+
+#define	OPL_A0		27
+#define	OPL_READ	7
+#define	OPL_CS		8
+#define	OPL_RST		25
+
+#define	OPL_IRQ		22
+
+/dts-v1/;
+/plugin/;
+/ {
+	compatible = "brcm,bcm2837", "brcm,bcm2836", "brcm,bcm2835";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			radlib_Dx_output: radlib-Dx-output-pins {
+				brcm,pins = <OPL_D0, OPL_D1, OPL_D2, OPL_D3,
+				    OPL_D4, OPL_D5, OPL_D6, OPL_D7>;
+				brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+				brcm,pull = <BCM2835_PUD_OFF>;
+			};
+			radlib_Dx_input: radlib-Dx-input-pins {
+				brcm,pins = <OPL_D0, OPL_D1, OPL_D2, OPL_D3,
+				    OPL_D4, OPL_D5, OPL_D6, OPL_D7>;
+				brcm,function = <BCM2835_FSEL_GPIO_IN>;
+				brcm,pull = <BCM2835_PUD_OFF>;
+			};
+
+			radlib_ctrl_output: radlib-ctrl-output-pins {
+				brcm,pins = <OPL_A0, OPL_READ, OPL_CS, OPL_RST>;
+				brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+				brcm,pull = <BCM2835_PUD_OFF>;
+			};
+			radlib_ctrl_disabled: radlib-ctrl-disabled {
+				/*
+				 * Configure /CS and /RST as inputs and
+				 * pull them high so that the OPL2 will
+				 * be inert until the driver attaches.
+				 */
+				brcm,pins = <OPL_CS, OPL_RST>;
+				brcm,function = <BCM2835_FSEL_GPIO_IN>;
+				brcm,pull = <BCM2835_PUD_UP>;
+			};
+
+			radlib_irq_input: radlib-irq-input-pins {
+				brcm,pins = <OPL_IRQ>;
+				brcm,function = <BCM2835_FSEL_GPIO_IN>;
+				brcm,pull = <BCM2835_PUD_OFF>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+		__overlay__ {
+			radlib-opl2 {
+				compatible = "thorpej,radlib-opl2";
+
+				interrupt-parent = <&gpio>;
+				interrupts = <OPL_IRQ IRQ_TYPE_LEVEL_HIGH>;
+
+				pinctrl-names = "default",
+				    "data-outputs", "data-inputs",
+				    "control-outputs", "irq-inputs";
+				pinctrl-0 = <&radlib_ctrl_disabled>;
+				pinctrl-1 = <&radlib_Dx_output>;
+				pinctrl-2 = <&radlib_Dx_input>;
+				pinctrl-3 = <&radlib_ctrl_output>;
+				pinctrl-4 = <&radlib_irq_input>;
+
+				data-gpios = <&gpio OPL_D0 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D1 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D2 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D3 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D4 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D5 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D6 GPIO_ACTIVE_HIGH>,
+					     <&gpio OPL_D7 GPIO_ACTIVE_HIGH>;
+
+				a0-gpios = <&gpio OPL_A0 GPIO_ACTIVE_HIGH>;
+
+				read-gpios = <&gpio OPL_READ GPIO_ACTIVE_HIGH>;
+
+				cs-gpios = <&gpio OPL_CS GPIO_ACTIVE_LOW>;
+
+				rst-gpios = <&gpio OPL_RST GPIO_ACTIVE_LOW>;
+			};
+		};
+	};
+};
