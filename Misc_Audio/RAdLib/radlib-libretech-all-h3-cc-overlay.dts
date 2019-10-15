@@ -1,0 +1,161 @@
+/*-
+ * Copyright (c) 2019 Jason R. Thorpe.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/interrupt-controller/irq.h>
+
+/*
+ * Device tree overlay for the RAdLib -- an OPL2 FM synthesizer for
+ * Raspberry Pi.
+ *
+ * This overlay is for Libre Computer All-H3-CC systems with a 40-pin GPIO
+ * header.
+ */
+
+/*
+ * The RAdLib uses the following GPIO pins [header pin #]:
+ *
+ * Bi-directional signals:
+ * OPL D0	PG13 [38]
+ * OPL D1	PG12 [40]
+ * OPL D2	PA16 [37]
+ * OPL D3	PA15 [36]
+ * OPL D4	PG10 [35]
+ * OPL D5	PA6  [33]
+ * OPL D6	PA13 [32]
+ * OPL D7	PA21 [31]
+ *
+ * Output-only signals:
+ * OPL A0	PA0  [13]
+ * READ		PA17 [26]
+ * OPL /CS	PC3  [24]
+ * OPL /RST	PA14 [22]
+ *
+ * Input-only signals:
+ * IRQ		PA3  [15]
+ */
+
+#define	OPL_D0		"PG13"
+#define	OPL_D1		"PG12"
+#define	OPL_D2		"PA16"
+#define	OPL_D3		"PA15"
+#define	OPL_D4		"PG10"
+#define	OPL_D5		"PA6"
+#define	OPL_D6		"PA13"
+#define	OPL_D7		"PA21"
+
+#define	OPL_A0		"PA0"
+#define	OPL_READ	"PA17"
+#define	OPL_CS		"PC3"
+#define	OPL_RST		"PA14"
+
+#define	OPL_IRQ		"PA3"
+
+/dts-v1/;
+/plugin/;
+/ {
+	compatible = "libretech,all-h3-cc-h3";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			radlib_Dx_output: radlib-Dx-output-pins {
+				pins = OPL_D0, OPL_D1, OPL_D2, OPL_D3,
+				    OPL_D4, OPL_D5, OPL_D6, OPL_D7;
+				function = "gpio_out";
+			};
+			radlib_Dx_input: radlib-Dx-input-pins {
+				pins = OPL_D0, OPL_D1, OPL_D2, OPL_D3,
+				    OPL_D4, OPL_D5, OPL_D6, OPL_D7;
+				function = "gpio_in";
+			};
+
+			radlib_ctrl_output: radlib-ctrl-output-pins {
+				pins = OPL_A0, OPL_READ, OPL_CS, OPL_RST;
+				function = "gpio_out";
+			};
+			radlib_ctrl_disabled: radlib-ctrl-disabled {
+				/*
+				 * Configure /CS and /RST as inputs and
+				 * pull them high so that the OPL2 will
+				 * be inert until the driver attaches.
+				 */
+				pins = OPL_CS, OPL_RST;
+				function = "gpio_in";
+				bias-pull-up;
+			};
+
+			radlib_irq_input: radlib-irq-input-pins {
+				pins = OPL_IRQ;
+				function = "gpio_in";
+			};
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+		__overlay__ {
+			radlib-opl2 {
+				compatible = "thorpej,radlib-opl2";
+
+				interrupt-parent = <&pio>;
+				interrupts =
+				    <0 3 IRQ_TYPE_LEVEL_HIGH>;    /* PA3  */
+
+				pinctrl-names = "default",
+				    "data-outputs", "data-inputs",
+				    "control-outputs", "irq-inputs";
+				pinctrl-0 = <&radlib_ctrl_disabled>;
+				pinctrl-1 = <&radlib_Dx_output>;
+				pinctrl-2 = <&radlib_Dx_input>;
+				pinctrl-3 = <&radlib_ctrl_output>;
+				pinctrl-4 = <&radlib_irq_input>;
+
+				data-gpios =
+				    <&pio 6 13 GPIO_ACTIVE_HIGH>, /* PG13 */
+				    <&pio 6 12 GPIO_ACTIVE_HIGH>, /* PG12 */
+				    <&pio 0 16 GPIO_ACTIVE_HIGH>, /* PA16 */
+				    <&pio 0 15 GPIO_ACTIVE_HIGH>, /* PA15 */
+				    <&pio 6 10 GPIO_ACTIVE_HIGH>, /* PG10 */
+				    <&pio 0 6 GPIO_ACTIVE_HIGH>,  /* PA6  */
+				    <&pio 0 13 GPIO_ACTIVE_HIGH>, /* PA13 */
+				    <&pio 0 21 GPIO_ACTIVE_HIGH>; /* PA21 */
+
+				a0-gpios =
+				    <&pio 0 0 GPIO_ACTIVE_HIGH>;  /* PA0 */
+
+				read-gpios =
+				    <&pio 0 17 GPIO_ACTIVE_HIGH>; /* PA17 */
+
+				cs-gpios =
+				    <&pio 2 3 GPIO_ACTIVE_LOW>;   /* PC3  */
+
+				rst-gpios =
+				    <&pio 0 14 GPIO_ACTIVE_LOW>;  /* PA14 */
+			};
+		};
+	};
+};
