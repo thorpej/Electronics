@@ -77,7 +77,8 @@
 /dts-v1/;
 /plugin/;
 / {
-	compatible = "libretech,all-h3-cc-h3";
+	compatible = "libretech,all-h3-cc-h5", "libretech,all-h3-cc-h3",
+	    "libretech,all-h3-cc-h2-plus";
 
 	fragment@0 {
 		target = <&gpio>;
