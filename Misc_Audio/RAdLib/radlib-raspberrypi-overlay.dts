@@ -102,9 +102,9 @@
 			};
 			radlib_ctrl_disabled: radlib-ctrl-disabled {
 				/*
-				 * Configure /CS and /RST as inputs and
-				 * pull them high so that the OPL2 will
-				 * be inert until the driver attaches.
+				 * Configure /CS as an input and pull
+				 * it high so that the OPL2 will be
+				 * inert until the driver attaches.
 				 */
 				brcm,pins = <OPL_CS, OPL_RST>;
 				brcm,function = <BCM2835_FSEL_GPIO_IN>;

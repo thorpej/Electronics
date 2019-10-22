@@ -100,11 +100,11 @@
 			};
 			radlib_ctrl_disabled: radlib-ctrl-disabled {
 				/*
-				 * Configure /CS and /RST as inputs and
-				 * pull them high so that the OPL2 will
-				 * be inert until the driver attaches.
+				 * Configure /CS as an input and pull
+				 * it high so that the OPL2 will be
+				 * inert until the driver attaches.
 				 */
-				pins = OPL_CS, OPL_RST;
+				pins = OPL_CS;
 				function = "gpio_in";
 				bias-pull-up;
 			};
