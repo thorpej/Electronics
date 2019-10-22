@@ -8,16 +8,13 @@ with a compatible 40-pin GPIO header).  If you think this is a dumb
 idea, you're right!  That's really the whole point, actually.  (Well, that
 and I wanted to practice with more complex PCB layouts.)
 
-This borrows some ideas from a couple of other folks who have made
-AdLib clones or other OPL2-based synthesizers for other platforms:
+This borrows a lot from Sergey Malinov's
+[ISA OPL2 Card](http://www.malinov.com/Home/sergeys-projects/isa-opl2-card).
 
-* Maarten Janssen's [OPL2 Audio Board for Arduino & Raspberry Pi](https://hackaday.io/project/18995-opl2-audio-board-for-arduino-raspberry-pi).
-* Sergey Malinov's [ISA OPL2 Card](http://www.malinov.com/Home/sergeys-projects/isa-opl2-card).
-
-The OPL2 synthesizer circuit is essentially lifted from Sergey's ISA board.
-Because there's no ISA bus clock on the Raspberry Pi, I lifted the clock
-generator circuit from Maarten's board.  My main task was to interface the
-OPL2 to the Raspberry Pi.
+The OPL2 synthesizer circuit is essentially lifted from Sergey's board.
+Because there's no ISA bus clock on the Raspberry Pi, used a self-contained
+3.58MHz crystal oscillator in a DIP-8 "half-can" package.  My main task was
+to interface the OPL2 to the Raspberry Pi.
 
 Even though practically all software for the OPL2 treats it as a write-only
 device, technically here is a status register that is accessed when you
