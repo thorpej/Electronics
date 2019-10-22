@@ -1,5 +1,16 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74LVC245A
+D Octal Bus Transciever with 3-state Outputs
+K bus transceiver tri-state CMOS TTL level-shift
+F http://www.ti.com/lit/ds/symlink/sn74lvc245a.pdf
+$ENDCMP
+#
+$CMP RC4136
+D Quad General-Purpose Operational Amplifier
+K quad opamp
+$ENDCMP
+#
 $CMP SN74141
 D BCD-to-decimal decoder / Nixie driver
 $ENDCMP
