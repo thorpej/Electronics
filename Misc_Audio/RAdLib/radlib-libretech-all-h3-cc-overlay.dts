@@ -55,7 +55,7 @@
  * OPL /RST	PA14 [22]
  *
  * Input-only signals:
- * IRQ		PA3  [15]
+ * /IRQ		PA3  [15]
  */
 
 #define	OPL_D0		"PG13"
@@ -124,7 +124,7 @@
 
 				interrupt-parent = <&pio>;
 				interrupts =
-				    <0 3 IRQ_TYPE_LEVEL_HIGH>;    /* PA3  */
+				    <0 3 IRQ_TYPE_LEVEL_LOW>;    /* PA3  */
 
 				pinctrl-names = "default",
 				    "data-outputs", "data-inputs",
@@ -141,7 +141,7 @@
 				    <&pio 0 16 GPIO_ACTIVE_HIGH>, /* PA16 */
 				    <&pio 0 15 GPIO_ACTIVE_HIGH>, /* PA15 */
 				    <&pio 6 10 GPIO_ACTIVE_HIGH>, /* PG10 */
-				    <&pio 0 6 GPIO_ACTIVE_HIGH>,  /* PA6  */
+				    <&pio 0  6 GPIO_ACTIVE_HIGH>, /* PA6  */
 				    <&pio 0 13 GPIO_ACTIVE_HIGH>, /* PA13 */
 				    <&pio 0 21 GPIO_ACTIVE_HIGH>; /* PA21 */
 

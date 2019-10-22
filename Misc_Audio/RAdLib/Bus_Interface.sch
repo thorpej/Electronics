@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 3
+Sheet 2 2
 Title "RAdLib - AdLib clone for Raspberry Pi"
 Date "2019-10-10"
 Rev "0.1"
@@ -345,20 +345,9 @@ Wire Wire Line
 	5550 1850 5400 1850
 Text GLabel 7300 2750 2    50   Output ~ 0
 READ
-$Comp
-L 74xx:74HC04 U101
-U 4 1 5DA5D1AF
-P 6400 4900
-F 0 "U101" H 6400 5217 50  0000 C CNN
-F 1 "74AHCT04" H 6400 5126 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 6400 4900 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 6400 4900 50  0001 C CNN
-	4    6400 4900
-	1    0    0    -1  
-$EndComp
-Text GLabel 6100 4900 0    50   Input ~ 0
+Text GLabel 5800 4900 0    50   Input ~ 0
 ~OPL_WR
-Text GLabel 6700 4900 2    50   Output ~ 0
+Text GLabel 6200 4600 2    50   Output ~ 0
 ~OPL_RD
 Wire Wire Line
 	7150 3350 7300 3350
@@ -369,7 +358,7 @@ Wire Wire Line
 Wire Wire Line
 	7150 2750 7300 2750
 Text GLabel 5400 2850 0    50   Input ~ 0
-IRQ
+~OPL_IRQ
 NoConn ~ 7150 3050
 NoConn ~ 7150 2950
 NoConn ~ 5550 3050
@@ -650,64 +639,50 @@ Level-shift Raspberry Pi to OPL\n(register writes)
 $Comp
 L Device:R R202
 U 1 1 5DCAA178
-P 3250 2800
-F 0 "R202" H 3320 2846 50  0000 L CNN
-F 1 "4.7K" H 3320 2755 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 3180 2800 50  0001 C CNN
-F 3 "~" H 3250 2800 50  0001 C CNN
-F 4 "Xicon 270-4.7K/REEL-RC" H 3250 2800 50  0001 C CNN "Part"
-	1    3250 2800
+P 1600 6250
+F 0 "R202" H 1670 6296 50  0000 L CNN
+F 1 "3.3K" H 1670 6205 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1530 6250 50  0001 C CNN
+F 3 "~" H 1600 6250 50  0001 C CNN
+F 4 "Xicon 270-3.3K/REEL-RC" H 1600 6250 50  0001 C CNN "Part"
+	1    1600 6250
 	1    0    0    -1  
 $EndComp
 Text GLabel 3150 2550 0    50   Input ~ 0
 ~OPL_WR
 Wire Wire Line
 	3150 2550 3250 2550
-Wire Wire Line
-	3250 2650 3250 2550
-Connection ~ 3250 2550
-$Comp
-L power:VCC #PWR0135
-U 1 1 5DCB12D8
-P 3250 2950
-F 0 "#PWR0135" H 3250 2800 50  0001 C CNN
-F 1 "VCC" H 3268 3123 50  0000 C CNN
-F 2 "" H 3250 2950 50  0001 C CNN
-F 3 "" H 3250 2950 50  0001 C CNN
-	1    3250 2950
-	-1   0    0    1   
-$EndComp
 $Comp
 L 74xx:74LS125 U203
 U 5 1 5DCCCFE6
-P 3700 7250
-F 0 "U203" H 3930 7296 50  0000 L CNN
-F 1 "74AHCT125" H 3930 7205 50  0000 L CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 7250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 7250 50  0001 C CNN
-	5    3700 7250
+P 1600 4650
+F 0 "U203" H 1830 4696 50  0000 L CNN
+F 1 "74AHCT125" H 1830 4605 50  0000 L CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 1600 4650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 1600 4650 50  0001 C CNN
+	5    1600 4650
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR0136
 U 1 1 5DCD0443
-P 3700 6750
-F 0 "#PWR0136" H 3700 6600 50  0001 C CNN
-F 1 "VCC" H 3717 6923 50  0000 C CNN
-F 2 "" H 3700 6750 50  0001 C CNN
-F 3 "" H 3700 6750 50  0001 C CNN
-	1    3700 6750
+P 1600 4150
+F 0 "#PWR0136" H 1600 4000 50  0001 C CNN
+F 1 "VCC" H 1617 4323 50  0000 C CNN
+F 2 "" H 1600 4150 50  0001 C CNN
+F 3 "" H 1600 4150 50  0001 C CNN
+	1    1600 4150
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0137
 U 1 1 5DCD09A2
-P 3700 7750
-F 0 "#PWR0137" H 3700 7500 50  0001 C CNN
-F 1 "GND" H 3705 7577 50  0000 C CNN
-F 2 "" H 3700 7750 50  0001 C CNN
-F 3 "" H 3700 7750 50  0001 C CNN
-	1    3700 7750
+P 1600 5150
+F 0 "#PWR0137" H 1600 4900 50  0001 C CNN
+F 1 "GND" H 1605 4977 50  0000 C CNN
+F 2 "" H 1600 5150 50  0001 C CNN
+F 3 "" H 1600 5150 50  0001 C CNN
+	1    1600 5150
 	1    0    0    -1  
 $EndComp
 Text GLabel 3400 5450 0    50   Input ~ 0
@@ -746,75 +721,28 @@ F 3 "" H 3050 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 3050 6400
-Text GLabel 6100 5750 0    50   Input ~ 0
+Text GLabel 6150 5850 0    50   Input ~ 0
 ~OPL_IRQ
-$Comp
-L 74xx:74HC04 U101
-U 5 1 5DCDD39D
-P 6400 5750
-F 0 "U101" H 6400 6067 50  0000 C CNN
-F 1 "74AHCT04" H 6400 5976 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 6400 5750 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 6400 5750 50  0001 C CNN
-	5    6400 5750
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R203
 U 1 1 5DCDEB3B
-P 6700 5900
-F 0 "R203" H 6770 5946 50  0000 L CNN
-F 1 "2.2K" H 6770 5855 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6630 5900 50  0001 C CNN
-F 3 "~" H 6700 5900 50  0001 C CNN
-F 4 "Xicon 270-2.2K/REEL-RC" H 6700 5900 50  0001 C CNN "Part"
-	1    6700 5900
+P 6250 6100
+F 0 "R203" H 6320 6146 50  0000 L CNN
+F 1 "3.3K" H 6320 6055 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6180 6100 50  0001 C CNN
+F 3 "~" H 6250 6100 50  0001 C CNN
+F 4 "Xicon 270-3.3K/REEL-RC" H 6250 6100 50  0001 C CNN "Part"
+	1    6250 6100
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R204
-U 1 1 5DCDF804
-P 6700 6300
-F 0 "R204" H 6770 6346 50  0000 L CNN
-F 1 "3.3K" H 6770 6255 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6630 6300 50  0001 C CNN
-F 3 "~" H 6700 6300 50  0001 C CNN
-F 4 "Xicon 270-3.3K-RC" H 6700 6300 50  0001 C CNN "Part"
-	1    6700 6300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0139
-U 1 1 5DCE303F
-P 6700 6450
-F 0 "#PWR0139" H 6700 6200 50  0001 C CNN
-F 1 "GND" H 6705 6277 50  0000 C CNN
-F 2 "" H 6700 6450 50  0001 C CNN
-F 3 "" H 6700 6450 50  0001 C CNN
-	1    6700 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6700 6050 6700 6100
-Text GLabel 6950 6100 2    50   Output ~ 0
-IRQ
-Wire Wire Line
-	6700 6100 6950 6100
-Connection ~ 6700 6100
-Wire Wire Line
-	6700 6100 6700 6150
-Text Notes 5800 5350 0    50   Italic 0
-Invert IRQ signal and level-shift to 3V3.
 Text Notes 3200 3650 0    50   Italic 0
 Level-shift Raspberry Pi to OPL\n(control signals)
-Text Notes 6150 4500 0    50   Italic 0
-Generate ~RD
+Text Notes 5450 4450 0    50   Italic 0
+Generate ~RD\n(Pulled up to Vcc by R201)
 Text Notes 8150 950  0    50   Italic 0
 Raspberry Pi HAT ID ROM
 Text Notes 8350 2800 0    50   Italic 0
 Convenience pass-through headers
-Text Notes 5650 4350 0    50   Italic 0
-U101 is defined in the Clock Source sheet.
 NoConn ~ 5550 2150
 Wire Wire Line
 	5550 3350 5400 3350
@@ -843,12 +771,12 @@ $EndComp
 $Comp
 L Device:C_Small C203
 U 1 1 5DA58D30
-P 4300 6850
-F 0 "C203" H 4392 6896 50  0000 L CNN
-F 1 ".1uF" H 4392 6805 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 4300 6850 50  0001 C CNN
-F 3 "~" H 4300 6850 50  0001 C CNN
-	1    4300 6850
+P 2200 4250
+F 0 "C203" H 2292 4296 50  0000 L CNN
+F 1 ".1uF" H 2292 4205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2200 4250 50  0001 C CNN
+F 3 "~" H 2200 4250 50  0001 C CNN
+	1    2200 4250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -898,23 +826,23 @@ $EndComp
 $Comp
 L power:GND #PWR0152
 U 1 1 5DA6179C
-P 4300 6950
-F 0 "#PWR0152" H 4300 6700 50  0001 C CNN
-F 1 "GND" H 4305 6777 50  0000 C CNN
-F 2 "" H 4300 6950 50  0001 C CNN
-F 3 "" H 4300 6950 50  0001 C CNN
-	1    4300 6950
+P 2200 4350
+F 0 "#PWR0152" H 2200 4100 50  0001 C CNN
+F 1 "GND" H 2205 4177 50  0000 C CNN
+F 2 "" H 2200 4350 50  0001 C CNN
+F 3 "" H 2200 4350 50  0001 C CNN
+	1    2200 4350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR0153
 U 1 1 5DA61DAB
-P 4300 6750
-F 0 "#PWR0153" H 4300 6600 50  0001 C CNN
-F 1 "VCC" H 4317 6923 50  0000 C CNN
-F 2 "" H 4300 6750 50  0001 C CNN
-F 3 "" H 4300 6750 50  0001 C CNN
-	1    4300 6750
+P 2200 4150
+F 0 "#PWR0153" H 2200 4000 50  0001 C CNN
+F 1 "VCC" H 2217 4323 50  0000 C CNN
+F 2 "" H 2200 4150 50  0001 C CNN
+F 3 "" H 2200 4150 50  0001 C CNN
+	1    2200 4150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -968,11 +896,11 @@ F 3 "~" H 9550 1800 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R R205
+L Device:R R204
 U 1 1 5DBFD35A
 P 9200 2000
-F 0 "R205" V 9100 2000 50  0000 C CNN
-F 1 "1K" V 9200 2000 50  0000 C CNN
+F 0 "R204" V 9100 2000 50  0000 C CNN
+F 1 "3.3K" V 9200 2000 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 9130 2000 50  0001 C CNN
 F 3 "~" H 9200 2000 50  0001 C CNN
 	1    9200 2000
@@ -985,4 +913,66 @@ Wire Wire Line
 Wire Wire Line
 	9350 1800 9350 2000
 Connection ~ 9350 1800
+$Comp
+L power:GND #PWR0135
+U 1 1 5DB0A057
+P 6100 5100
+F 0 "#PWR0135" H 6100 4850 50  0001 C CNN
+F 1 "GND" H 6105 4927 50  0000 C CNN
+F 2 "" H 6100 5100 50  0001 C CNN
+F 3 "" H 6100 5100 50  0001 C CNN
+	1    6100 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4700 6100 4600
+Wire Wire Line
+	6100 4600 6200 4600
+$Comp
+L Transistor_FET:2N7000 Q201
+U 1 1 5DB155F3
+P 6000 4900
+F 0 "Q201" H 6206 4946 50  0000 L CNN
+F 1 "2N7000" H 6206 4855 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 6200 4825 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 6000 4900 50  0001 L CNN
+	1    6000 4900
+	1    0    0    -1  
+$EndComp
+Text Notes 5150 5700 0    50   Italic 0
+IRQ signal from OPL is open-drain; pull up to 3V3 and\nconnect directly to Raspberry Pi.  Interrupt is active-low.
+$Comp
+L power:+3V3 #PWR0139
+U 1 1 5DB18514
+P 6250 6250
+F 0 "#PWR0139" H 6250 6100 50  0001 C CNN
+F 1 "+3V3" H 6265 6423 50  0000 C CNN
+F 2 "" H 6250 6250 50  0001 C CNN
+F 3 "" H 6250 6250 50  0001 C CNN
+	1    6250 6250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6150 5850 6250 5850
+Wire Wire Line
+	6250 5850 6250 5950
+$Comp
+L power:GND #PWR0146
+U 1 1 5DB32E2F
+P 1600 6400
+F 0 "#PWR0146" H 1600 6150 50  0001 C CNN
+F 1 "GND" H 1605 6227 50  0000 C CNN
+F 2 "" H 1600 6400 50  0001 C CNN
+F 3 "" H 1600 6400 50  0001 C CNN
+	1    1600 6400
+	1    0    0    -1  
+$EndComp
+Text GLabel 1500 6000 0    50   UnSpc ~ 0
+READ
+Wire Wire Line
+	1500 6000 1600 6000
+Wire Wire Line
+	1600 6000 1600 6100
+Text Notes 850  5850 0    50   Italic 0
+Pull READ down to GND to ensure predictable\nstart-up condition of ~OPL_WR.
 $EndSCHEMATC
