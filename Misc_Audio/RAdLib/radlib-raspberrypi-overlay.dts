@@ -55,7 +55,7 @@
  * OPL /RST	GPIO25 [22]
  *
  * Input-only signals:
- * IRQ		GPIO22 [15]
+ * /IRQ		GPIO22 [15]
  */
 
 #define	OPL_D0		20
@@ -126,7 +126,7 @@
 				compatible = "thorpej,radlib-opl2";
 
 				interrupt-parent = <&gpio>;
-				interrupts = <OPL_IRQ IRQ_TYPE_LEVEL_HIGH>;
+				interrupts = <OPL_IRQ IRQ_TYPE_LEVEL_LOW>;
 
 				pinctrl-names = "default",
 				    "data-outputs", "data-inputs",
