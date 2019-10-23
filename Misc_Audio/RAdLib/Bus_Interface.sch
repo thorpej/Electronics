@@ -38,7 +38,7 @@ F 3 "" H 5950 3950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7300 2900 2    50   Output ~ 0
-~CS
+~OPL_CS
 $Comp
 L power:+5V #PWR0117
 U 1 1 5D9C4FC5
@@ -287,9 +287,9 @@ Wire Wire Line
 Wire Wire Line
 	8950 1350 9050 1350
 Text GLabel 5400 3350 0    50   Output ~ 0
-A0
+OPL_A0
 Text GLabel 5400 3100 0    50   Output ~ 0
-~RST
+~OPL_RST
 Text GLabel 5400 2550 0    50   BiDi ~ 0
 D0
 Text GLabel 5400 2650 0    50   BiDi ~ 0
@@ -344,10 +344,10 @@ Wire Wire Line
 Wire Wire Line
 	5550 1850 5400 1850
 Text GLabel 7300 2750 2    50   Output ~ 0
-READ
-Text GLabel 5800 4900 0    50   Input ~ 0
 ~OPL_WR
-Text GLabel 6200 4600 2    50   Output ~ 0
+Text GLabel 1250 4550 0    50   Input ~ 0
+~OPL_WR
+Text GLabel 1950 4250 2    50   Output ~ 0
 ~OPL_RD
 Wire Wire Line
 	7150 3350 7300 3350
@@ -398,347 +398,104 @@ Wire Wire Line
 	5450 3150 5450 3100
 Wire Wire Line
 	5450 3100 5400 3100
-Text GLabel 3250 1550 0    50   Output ~ 0
-OPL_D7
-Text GLabel 3250 1650 0    50   Output ~ 0
-OPL_D6
-Text GLabel 3250 1750 0    50   Output ~ 0
-OPL_D5
-Text GLabel 3250 1850 0    50   Output ~ 0
-OPL_D4
-Text GLabel 3250 1950 0    50   Output ~ 0
-OPL_D3
-Text GLabel 3250 2050 0    50   Output ~ 0
-OPL_D2
-Text GLabel 3250 2150 0    50   Output ~ 0
-OPL_D0
-Text GLabel 3250 2250 0    50   Output ~ 0
-OPL_D1
-$Comp
-L 74xx:74LS125 U203
-U 1 1 5DB4BD13
-P 3700 4050
-F 0 "U203" H 3700 4367 50  0000 C CNN
-F 1 "74AHCT125" H 3700 4276 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 4050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 4050 50  0001 C CNN
-	1    3700 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS125 U203
-U 2 1 5DB4F55B
-P 3700 4750
-F 0 "U203" H 3700 5067 50  0000 C CNN
-F 1 "74AHCT125" H 3700 4976 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 4750 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 4750 50  0001 C CNN
-	2    3700 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS125 U203
-U 3 1 5DB5069A
-P 3700 5450
-F 0 "U203" H 3700 5767 50  0000 C CNN
-F 1 "74AHCT125" H 3700 5676 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 5450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 5450 50  0001 C CNN
-	3    3700 5450
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS125 U203
-U 4 1 5DB50D8E
-P 3700 6150
-F 0 "U203" H 3700 6467 50  0000 C CNN
-F 1 "74AHCT125" H 3700 6376 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 3700 6150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 3700 6150 50  0001 C CNN
-	4    3700 6150
-	1    0    0    -1  
-$EndComp
-Text GLabel 3400 4050 0    50   Input ~ 0
-A0
-Text GLabel 3400 4750 0    50   Input ~ 0
-READ
-Text GLabel 4000 4050 2    50   Output ~ 0
-OPL_A0
-Text GLabel 4000 4750 2    50   Output ~ 0
-~OPL_WR
-Text GLabel 2050 1550 2    50   Output ~ 0
+Text GLabel 3350 1550 2    50   3State ~ 0
 D7
-Text GLabel 2050 1650 2    50   Output ~ 0
+Text GLabel 3350 1650 2    50   3State ~ 0
 D6
-Text GLabel 2050 1750 2    50   Output ~ 0
+Text GLabel 3350 1750 2    50   3State ~ 0
 D5
-Text GLabel 2050 1850 2    50   Output ~ 0
+Text GLabel 3350 1850 2    50   3State ~ 0
 D4
-Text GLabel 2050 1950 2    50   Output ~ 0
+Text GLabel 3350 1950 2    50   3State ~ 0
 D3
-Text GLabel 2050 2050 2    50   Output ~ 0
+Text GLabel 3350 2050 2    50   3State ~ 0
 D2
-Text GLabel 2050 2150 2    50   Output ~ 0
+Text GLabel 3350 2150 2    50   3State ~ 0
 D0
-Text GLabel 2050 2250 2    50   Output ~ 0
+Text GLabel 3350 2250 2    50   3State ~ 0
 D1
-Text GLabel 1050 1550 0    50   Input ~ 0
+Text GLabel 2350 1550 0    50   3State ~ 0
 OPL_D7
-Text GLabel 1050 1650 0    50   Input ~ 0
+Text GLabel 2350 1650 0    50   3State ~ 0
 OPL_D6
-Text GLabel 1050 1750 0    50   Input ~ 0
+Text GLabel 2350 1750 0    50   3State ~ 0
 OPL_D5
-Text GLabel 1050 1850 0    50   Input ~ 0
+Text GLabel 2350 1850 0    50   3State ~ 0
 OPL_D4
-Text GLabel 1050 1950 0    50   Input ~ 0
+Text GLabel 2350 1950 0    50   3State ~ 0
 OPL_D3
-Text GLabel 1050 2050 0    50   Input ~ 0
+Text GLabel 2350 2050 0    50   3State ~ 0
 OPL_D2
-Text GLabel 1050 2150 0    50   Input ~ 0
+Text GLabel 2350 2150 0    50   3State ~ 0
 OPL_D0
-Text GLabel 1050 2250 0    50   Input ~ 0
+Text GLabel 2350 2250 0    50   3State ~ 0
 OPL_D1
 $Comp
 L power:+3V3 #PWR0128
 U 1 1 5DC29367
-P 1550 1250
-F 0 "#PWR0128" H 1550 1100 50  0001 C CNN
-F 1 "+3V3" H 1565 1423 50  0000 C CNN
-F 2 "" H 1550 1250 50  0001 C CNN
-F 3 "" H 1550 1250 50  0001 C CNN
-	1    1550 1250
+P 2850 1250
+F 0 "#PWR0128" H 2850 1100 50  0001 C CNN
+F 1 "+3V3" H 2865 1423 50  0000 C CNN
+F 2 "" H 2850 1250 50  0001 C CNN
+F 3 "" H 2850 1250 50  0001 C CNN
+	1    2850 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0129
 U 1 1 5DC29ABE
-P 1550 2850
-F 0 "#PWR0129" H 1550 2600 50  0001 C CNN
-F 1 "GND" H 1555 2677 50  0000 C CNN
-F 2 "" H 1550 2850 50  0001 C CNN
-F 3 "" H 1550 2850 50  0001 C CNN
-	1    1550 2850
+P 2850 2850
+F 0 "#PWR0129" H 2850 2600 50  0001 C CNN
+F 1 "GND" H 2855 2677 50  0000 C CNN
+F 2 "" H 2850 2850 50  0001 C CNN
+F 3 "" H 2850 2850 50  0001 C CNN
+	1    2850 2850
 	1    0    0    -1  
 $EndComp
-Text GLabel 950  2550 0    50   Input ~ 0
-~OPL_RD
+Text GLabel 2300 2650 0    50   Input ~ 0
+~OPL_CS
 $Comp
 L Device:R R201
 U 1 1 5DC2DA27
-P 1050 2800
-F 0 "R201" H 1120 2846 50  0000 L CNN
-F 1 "4.7K" H 1120 2755 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 980 2800 50  0001 C CNN
-F 3 "~" H 1050 2800 50  0001 C CNN
-F 4 "Xicon 270-4.7K/REEL-RC" H 1050 2800 50  0001 C CNN "Part"
-	1    1050 2800
+P 2350 2900
+F 0 "R201" H 2420 2946 50  0000 L CNN
+F 1 "3.3K" H 2420 2855 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 2280 2900 50  0001 C CNN
+F 3 "~" H 2350 2900 50  0001 C CNN
+F 4 "Xicon 270-3.3K/REEL-RC" H 2350 2900 50  0001 C CNN "Part"
+	1    2350 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:VCC #PWR0130
-U 1 1 5DC34A75
-P 1050 2950
-F 0 "#PWR0130" H 1050 2800 50  0001 C CNN
-F 1 "VCC" H 1068 3123 50  0000 C CNN
-F 2 "" H 1050 2950 50  0001 C CNN
-F 3 "" H 1050 2950 50  0001 C CNN
-	1    1050 2950
-	-1   0    0    1   
-$EndComp
-Text GLabel 4250 1550 2    50   Input ~ 0
-D7
-Text GLabel 4250 1650 2    50   Input ~ 0
-D6
-Text GLabel 4250 1750 2    50   Input ~ 0
-D5
-Text GLabel 4250 1850 2    50   Input ~ 0
-D4
-Text GLabel 4250 1950 2    50   Input ~ 0
-D3
-Text GLabel 4250 2050 2    50   Input ~ 0
-D2
-Text GLabel 4250 2150 2    50   Input ~ 0
-D0
-Text GLabel 4250 2250 2    50   Input ~ 0
-D1
-$Comp
-L power:+3V3 #PWR0131
-U 1 1 5DC89778
-P 1050 2450
-F 0 "#PWR0131" H 1050 2300 50  0001 C CNN
-F 1 "+3V3" V 1065 2578 50  0000 L CNN
-F 2 "" H 1050 2450 50  0001 C CNN
-F 3 "" H 1050 2450 50  0001 C CNN
-	1    1050 2450
-	0    -1   -1   0   
-$EndComp
-$Comp
-L 74xx:74HC245 U202
-U 1 1 5DC8D977
-P 3750 2050
-F 0 "U202" H 3900 2850 50  0000 C CNN
-F 1 "74HCT245" H 3950 2750 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 3750 2050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC245" H 3750 2050 50  0001 C CNN
-	1    3750 2050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0132
-U 1 1 5DC90FA6
-P 3750 1250
-F 0 "#PWR0132" H 3750 1100 50  0001 C CNN
-F 1 "VCC" H 3767 1423 50  0000 C CNN
-F 2 "" H 3750 1250 50  0001 C CNN
-F 3 "" H 3750 1250 50  0001 C CNN
-	1    3750 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0133
-U 1 1 5DC9149F
-P 3750 2850
-F 0 "#PWR0133" H 3750 2600 50  0001 C CNN
-F 1 "GND" H 3755 2677 50  0000 C CNN
-F 2 "" H 3750 2850 50  0001 C CNN
-F 3 "" H 3750 2850 50  0001 C CNN
-	1    3750 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0134
-U 1 1 5DC91C2C
-P 3250 2450
-F 0 "#PWR0134" H 3250 2200 50  0001 C CNN
-F 1 "GND" V 3255 2322 50  0000 R CNN
-F 2 "" H 3250 2450 50  0001 C CNN
-F 3 "" H 3250 2450 50  0001 C CNN
-	1    3250 2450
-	0    1    1    0   
-$EndComp
-$Comp
-L 74xx:74HC245 U201
-U 1 1 5DC93089
-P 1550 2050
-F 0 "U201" H 1800 2850 50  0000 C CNN
-F 1 "74LVC245A" H 1800 2750 50  0000 C CNN
-F 2 "Package_DIP:DIP-20_W7.62mm" H 1550 2050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC245" H 1550 2050 50  0001 C CNN
-	1    1550 2050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	950  2550 1050 2550
-Wire Wire Line
-	1050 2550 1050 2650
-Connection ~ 1050 2550
-Text Notes 950  950  0    50   Italic 0
-Level-shift OPL to Raspberry Pi\n(register reads)
-Text Notes 3100 950  0    50   Italic 0
-Level-shift Raspberry Pi to OPL\n(register writes)
+Text Notes 2050 850  0    50   Italic 0
+Level-shift OPL to Raspberry Pi (register reads)\nPass-through Raspberry Pi to OPL (register writes)
 $Comp
 L Device:R R202
 U 1 1 5DCAA178
-P 1600 6250
-F 0 "R202" H 1670 6296 50  0000 L CNN
-F 1 "3.3K" H 1670 6205 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1530 6250 50  0001 C CNN
-F 3 "~" H 1600 6250 50  0001 C CNN
-F 4 "Xicon 270-3.3K/REEL-RC" H 1600 6250 50  0001 C CNN "Part"
-	1    1600 6250
+P 1950 2900
+F 0 "R202" H 2020 2946 50  0000 L CNN
+F 1 "3.3K" H 2020 2855 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1880 2900 50  0001 C CNN
+F 3 "~" H 1950 2900 50  0001 C CNN
+F 4 "Xicon 270-3.3K/REEL-RC" H 1950 2900 50  0001 C CNN "Part"
+	1    1950 2900
 	1    0    0    -1  
 $EndComp
-Text GLabel 3150 2550 0    50   Input ~ 0
-~OPL_WR
-Wire Wire Line
-	3150 2550 3250 2550
-$Comp
-L 74xx:74LS125 U203
-U 5 1 5DCCCFE6
-P 1600 4650
-F 0 "U203" H 1830 4696 50  0000 L CNN
-F 1 "74AHCT125" H 1830 4605 50  0000 L CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 1600 4650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS125" H 1600 4650 50  0001 C CNN
-	5    1600 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0136
-U 1 1 5DCD0443
-P 1600 4150
-F 0 "#PWR0136" H 1600 4000 50  0001 C CNN
-F 1 "VCC" H 1617 4323 50  0000 C CNN
-F 2 "" H 1600 4150 50  0001 C CNN
-F 3 "" H 1600 4150 50  0001 C CNN
-	1    1600 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0137
-U 1 1 5DCD09A2
-P 1600 5150
-F 0 "#PWR0137" H 1600 4900 50  0001 C CNN
-F 1 "GND" H 1605 4977 50  0000 C CNN
-F 2 "" H 1600 5150 50  0001 C CNN
-F 3 "" H 1600 5150 50  0001 C CNN
-	1    1600 5150
-	1    0    0    -1  
-$EndComp
-Text GLabel 3400 5450 0    50   Input ~ 0
-~CS
-Text GLabel 4000 5450 2    50   Output ~ 0
-~OPL_CS
-Text GLabel 3400 6150 0    50   Input ~ 0
-~RST
-Text GLabel 4000 6150 2    50   Output ~ 0
-~OPL_RST
-Wire Wire Line
-	3700 4300 3050 4300
-Wire Wire Line
-	3050 4300 3050 5000
-Wire Wire Line
-	3050 6400 3700 6400
-Wire Wire Line
-	3700 5700 3050 5700
-Connection ~ 3050 5700
-Wire Wire Line
-	3050 5700 3050 6400
-Wire Wire Line
-	3700 5000 3050 5000
-Connection ~ 3050 5000
-Wire Wire Line
-	3050 5000 3050 5700
-$Comp
-L power:GND #PWR0138
-U 1 1 5DCDBB6A
-P 3050 6400
-F 0 "#PWR0138" H 3050 6150 50  0001 C CNN
-F 1 "GND" H 3055 6227 50  0000 C CNN
-F 2 "" H 3050 6400 50  0001 C CNN
-F 3 "" H 3050 6400 50  0001 C CNN
-	1    3050 6400
-	1    0    0    -1  
-$EndComp
-Connection ~ 3050 6400
-Text GLabel 6150 5850 0    50   Input ~ 0
+Text GLabel 3950 4200 0    50   Input ~ 0
 ~OPL_IRQ
 $Comp
-L Device:R R203
+L Device:R R204
 U 1 1 5DCDEB3B
-P 6250 6100
-F 0 "R203" H 6320 6146 50  0000 L CNN
-F 1 "3.3K" H 6320 6055 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6180 6100 50  0001 C CNN
-F 3 "~" H 6250 6100 50  0001 C CNN
-F 4 "Xicon 270-3.3K/REEL-RC" H 6250 6100 50  0001 C CNN "Part"
-	1    6250 6100
+P 4050 4450
+F 0 "R204" H 4120 4496 50  0000 L CNN
+F 1 "3.3K" H 4120 4405 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 3980 4450 50  0001 C CNN
+F 3 "~" H 4050 4450 50  0001 C CNN
+F 4 "Xicon 270-3.3K/REEL-RC" H 4050 4450 50  0001 C CNN "Part"
+	1    4050 4450
 	1    0    0    -1  
 $EndComp
-Text Notes 3200 3650 0    50   Italic 0
-Level-shift Raspberry Pi to OPL\n(control signals)
-Text Notes 5450 4450 0    50   Italic 0
-Generate ~RD\n(Pulled up to Vcc by R201)
+Text Notes 1150 4150 0    50   Italic 0
+Generate ~RD
 Text Notes 8150 950  0    50   Italic 0
 Raspberry Pi HAT ID ROM
 Text Notes 8350 2800 0    50   Italic 0
@@ -749,100 +506,34 @@ Wire Wire Line
 $Comp
 L Device:C_Small C201
 U 1 1 5DA53005
-P 2350 1250
-F 0 "C201" H 2442 1296 50  0000 L CNN
-F 1 ".1uF" H 2442 1205 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2350 1250 50  0001 C CNN
-F 3 "~" H 2350 1250 50  0001 C CNN
-	1    2350 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C202
-U 1 1 5DA56FF1
-P 2750 1250
-F 0 "C202" H 2842 1296 50  0000 L CNN
-F 1 ".1uF" H 2842 1205 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2750 1250 50  0001 C CNN
-F 3 "~" H 2750 1250 50  0001 C CNN
-	1    2750 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C203
-U 1 1 5DA58D30
-P 2200 4250
-F 0 "C203" H 2292 4296 50  0000 L CNN
-F 1 ".1uF" H 2292 4205 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 2200 4250 50  0001 C CNN
-F 3 "~" H 2200 4250 50  0001 C CNN
-	1    2200 4250
+P 3650 1250
+F 0 "C201" H 3742 1296 50  0000 L CNN
+F 1 ".1uF" H 3742 1205 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 3650 1250 50  0001 C CNN
+F 3 "~" H 3650 1250 50  0001 C CNN
+	1    3650 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0148
 U 1 1 5DA5BB4A
-P 2350 1350
-F 0 "#PWR0148" H 2350 1100 50  0001 C CNN
-F 1 "GND" H 2355 1177 50  0000 C CNN
-F 2 "" H 2350 1350 50  0001 C CNN
-F 3 "" H 2350 1350 50  0001 C CNN
-	1    2350 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0149
-U 1 1 5DA5C1A7
-P 2750 1350
-F 0 "#PWR0149" H 2750 1100 50  0001 C CNN
-F 1 "GND" H 2755 1177 50  0000 C CNN
-F 2 "" H 2750 1350 50  0001 C CNN
-F 3 "" H 2750 1350 50  0001 C CNN
-	1    2750 1350
+P 3650 1350
+F 0 "#PWR0148" H 3650 1100 50  0001 C CNN
+F 1 "GND" H 3655 1177 50  0000 C CNN
+F 2 "" H 3650 1350 50  0001 C CNN
+F 3 "" H 3650 1350 50  0001 C CNN
+	1    3650 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR0150
 U 1 1 5DA606A7
-P 2350 1150
-F 0 "#PWR0150" H 2350 1000 50  0001 C CNN
-F 1 "+3V3" H 2365 1323 50  0000 C CNN
-F 2 "" H 2350 1150 50  0001 C CNN
-F 3 "" H 2350 1150 50  0001 C CNN
-	1    2350 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0151
-U 1 1 5DA60D4B
-P 2750 1150
-F 0 "#PWR0151" H 2750 1000 50  0001 C CNN
-F 1 "VCC" H 2767 1323 50  0000 C CNN
-F 2 "" H 2750 1150 50  0001 C CNN
-F 3 "" H 2750 1150 50  0001 C CNN
-	1    2750 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0152
-U 1 1 5DA6179C
-P 2200 4350
-F 0 "#PWR0152" H 2200 4100 50  0001 C CNN
-F 1 "GND" H 2205 4177 50  0000 C CNN
-F 2 "" H 2200 4350 50  0001 C CNN
-F 3 "" H 2200 4350 50  0001 C CNN
-	1    2200 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR0153
-U 1 1 5DA61DAB
-P 2200 4150
-F 0 "#PWR0153" H 2200 4000 50  0001 C CNN
-F 1 "VCC" H 2217 4323 50  0000 C CNN
-F 2 "" H 2200 4150 50  0001 C CNN
-F 3 "" H 2200 4150 50  0001 C CNN
-	1    2200 4150
+P 3650 1150
+F 0 "#PWR0150" H 3650 1000 50  0001 C CNN
+F 1 "+3V3" H 3665 1323 50  0000 C CNN
+F 2 "" H 3650 1150 50  0001 C CNN
+F 3 "" H 3650 1150 50  0001 C CNN
+	1    3650 1150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -896,10 +587,10 @@ F 3 "~" H 9550 1800 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R R204
+L Device:R R205
 U 1 1 5DBFD35A
 P 9200 2000
-F 0 "R204" V 9100 2000 50  0000 C CNN
+F 0 "R205" V 9100 2000 50  0000 C CNN
 F 1 "3.3K" V 9200 2000 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 9130 2000 50  0001 C CNN
 F 3 "~" H 9200 2000 50  0001 C CNN
@@ -916,63 +607,120 @@ Connection ~ 9350 1800
 $Comp
 L power:GND #PWR0135
 U 1 1 5DB0A057
-P 6100 5100
-F 0 "#PWR0135" H 6100 4850 50  0001 C CNN
-F 1 "GND" H 6105 4927 50  0000 C CNN
-F 2 "" H 6100 5100 50  0001 C CNN
-F 3 "" H 6100 5100 50  0001 C CNN
-	1    6100 5100
+P 1550 4750
+F 0 "#PWR0135" H 1550 4500 50  0001 C CNN
+F 1 "GND" H 1555 4577 50  0000 C CNN
+F 2 "" H 1550 4750 50  0001 C CNN
+F 3 "" H 1550 4750 50  0001 C CNN
+	1    1550 4750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6100 4700 6100 4600
-Wire Wire Line
-	6100 4600 6200 4600
+	1550 4350 1550 4250
 $Comp
 L Transistor_FET:2N7000 Q201
 U 1 1 5DB155F3
-P 6000 4900
-F 0 "Q201" H 6206 4946 50  0000 L CNN
-F 1 "2N7000" H 6206 4855 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 6200 4825 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 6000 4900 50  0001 L CNN
-	1    6000 4900
+P 1450 4550
+F 0 "Q201" H 1656 4596 50  0000 L CNN
+F 1 "2N7000" H 1656 4505 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_HandSolder" H 1650 4475 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 1450 4550 50  0001 L CNN
+	1    1450 4550
 	1    0    0    -1  
 $EndComp
-Text Notes 5150 5700 0    50   Italic 0
+Text Notes 2950 4050 0    50   Italic 0
 IRQ signal from OPL is open-drain; pull up to 3V3 and\nconnect directly to Raspberry Pi.  Interrupt is active-low.
 $Comp
 L power:+3V3 #PWR0139
 U 1 1 5DB18514
-P 6250 6250
-F 0 "#PWR0139" H 6250 6100 50  0001 C CNN
-F 1 "+3V3" H 6265 6423 50  0000 C CNN
-F 2 "" H 6250 6250 50  0001 C CNN
-F 3 "" H 6250 6250 50  0001 C CNN
-	1    6250 6250
+P 4050 4600
+F 0 "#PWR0139" H 4050 4450 50  0001 C CNN
+F 1 "+3V3" H 4065 4773 50  0000 C CNN
+F 2 "" H 4050 4600 50  0001 C CNN
+F 3 "" H 4050 4600 50  0001 C CNN
+	1    4050 4600
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6150 5850 6250 5850
+	3950 4200 4050 4200
 Wire Wire Line
-	6250 5850 6250 5950
+	4050 4200 4050 4300
+Text GLabel 1900 2450 0    50   Input ~ 0
+~OPL_WR
 $Comp
-L power:GND #PWR0146
-U 1 1 5DB32E2F
-P 1600 6400
-F 0 "#PWR0146" H 1600 6150 50  0001 C CNN
-F 1 "GND" H 1605 6227 50  0000 C CNN
-F 2 "" H 1600 6400 50  0001 C CNN
-F 3 "" H 1600 6400 50  0001 C CNN
-	1    1600 6400
+L 74xx:74HC245 U201
+U 1 1 5DC93089
+P 2850 2050
+F 0 "U201" H 3100 2850 50  0000 C CNN
+F 1 "74LVC245A" H 3100 2750 50  0000 C CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 2850 2050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC245" H 2850 2050 50  0001 C CNN
+	1    2850 2050
 	1    0    0    -1  
 $EndComp
-Text GLabel 1500 6000 0    50   UnSpc ~ 0
-READ
 Wire Wire Line
-	1500 6000 1600 6000
+	2350 2550 2350 2650
 Wire Wire Line
-	1600 6000 1600 6100
-Text Notes 850  5850 0    50   Italic 0
-Pull READ down to GND to ensure predictable\nstart-up condition of ~OPL_WR.
+	2300 2650 2350 2650
+Connection ~ 2350 2650
+Wire Wire Line
+	2350 2650 2350 2750
+$Comp
+L power:+3V3 #PWR0112
+U 1 1 5DB93DA0
+P 2350 3050
+F 0 "#PWR0112" H 2350 2900 50  0001 C CNN
+F 1 "+3V3" H 2365 3223 50  0000 C CNN
+F 2 "" H 2350 3050 50  0001 C CNN
+F 3 "" H 2350 3050 50  0001 C CNN
+	1    2350 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0130
+U 1 1 5DBACD47
+P 1950 3050
+F 0 "#PWR0130" H 1950 2800 50  0001 C CNN
+F 1 "GND" H 1955 2877 50  0000 C CNN
+F 2 "" H 1950 3050 50  0001 C CNN
+F 3 "" H 1950 3050 50  0001 C CNN
+	1    1950 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 2750 1950 2450
+Wire Wire Line
+	1950 2450 2350 2450
+Wire Wire Line
+	1900 2450 1950 2450
+Connection ~ 1950 2450
+$Comp
+L Device:R R203
+U 1 1 5DBB57C5
+P 1750 4000
+F 0 "R203" H 1820 4046 50  0000 L CNN
+F 1 "3.3K" H 1820 3955 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1680 4000 50  0001 C CNN
+F 3 "~" H 1750 4000 50  0001 C CNN
+	1    1750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0131
+U 1 1 5DBB6464
+P 1750 3850
+F 0 "#PWR0131" H 1750 3700 50  0001 C CNN
+F 1 "+3V3" H 1765 4023 50  0000 C CNN
+F 2 "" H 1750 3850 50  0001 C CNN
+F 3 "" H 1750 3850 50  0001 C CNN
+	1    1750 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 4250 1750 4250
+Wire Wire Line
+	1750 4250 1950 4250
+Connection ~ 1750 4250
+Wire Wire Line
+	1750 4150 1750 4250
 $EndSCHEMATC

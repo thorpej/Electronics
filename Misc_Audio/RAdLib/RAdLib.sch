@@ -220,16 +220,11 @@ Wire Wire Line
 Wire Wire Line
 	4100 2450 4500 2450
 Wire Wire Line
-	2900 2850 2900 3550
-Wire Wire Line
-	2900 3550 4500 3550
-Wire Wire Line
 	5100 3450 5100 3700
 Wire Wire Line
 	5100 3700 4500 3700
 Wire Wire Line
 	4500 3700 4500 3550
-Connection ~ 4500 3550
 Wire Wire Line
 	4100 2850 4400 2850
 Wire Wire Line
@@ -1342,4 +1337,9 @@ OPL_CLK
 NoConn ~ 900  1350
 Wire Wire Line
 	2350 3300 2500 3300
+Wire Wire Line
+	2900 2850 2900 3700
+Wire Wire Line
+	2900 3700 4500 3700
+Connection ~ 4500 3700
 $EndSCHEMATC
