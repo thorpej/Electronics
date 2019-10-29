@@ -12,9 +12,14 @@ This borrows a lot from Sergey Malinov's
 [ISA OPL2 Card](http://www.malinov.com/Home/sergeys-projects/isa-opl2-card).
 
 The OPL2 synthesizer circuit and audio output stage is essentially lifted
-from Sergey's board.  Because there's no ISA bus clock on the Raspberry Pi,
-I used a self-contained 3.58MHz crystal oscillator in a DIP-8 "half-can"
-package.  _My_ main task was to interface the OPL2 to the Raspberry Pi.
+from Sergey's board and then adapted to the Raspberry Pi environemnt:
+
+* Because there's no ISA bus clock on the Raspberry Pi, I used a
+self-contained 3.58MHz crystal oscillator in a DIP-8 "half-can" package.
+* Because there is no +12V/-12V split rail supply on the Raspberry Pi,
+the entire analog section of the board needed to be reworked.
+
+## Bus Interface
 
 Even though practically all software for the OPL2 treats it as a write-only
 device, technically here is a status register that is accessed when you
@@ -84,6 +89,45 @@ the input and B is the output.  That just leaves generating the /RD signal
 at the OPL2.  This is achieved by connecting the /RD pin to Vcc with a 4.7K
 resistor and to GND using a discrete MOSFET.  The MOSFET is turned on by
 the READ signal going high, which pulls the OPL2 /RD pin to GND.
+
+## Active Filter
+
+The original AdLib features an active low-pass filter comprised of 2
+op-amps in a Butterworth configuration.  Simulation of this circuit
+shows a voltage gain of 8dB with a flat response to 10KHz, is 3dB down
+at 15KHz, and is 10dB down at 20KHz.
+
+Unfortunately, the performance of this circuit relies on the headroom
+afforded by the +12V/-12V split rail supply available on the ISA bus.
+No such headroom is available on the Raspberry Pi; all we have is a
++5V rail.
+
+The YM3014B DAC outputs a signal from 1/4 Vcc to 3/4 Vcc.  This means a
+maximum output sine wave is centered at +2.5V and has a voltage swing of
+2.5Vpp (slightly higher than a standard consumer line-level output).  This
+leaves us with very little headroom to amplify the signal for the filter.
+This required a re-work of the 2-stage active low-pass filter.  The reworked
+filter achieves unity gain and performance similar to that of the original
+filter circuit, but requires the use of a rail-to-rail op-amp.
+
+## Audio Output Section
+
+The original AdLib also includes an audio power amplifier IC to drive
+headphones or a small loudspeaker.  Contemporary ISA AdLib clones typically
+use an LM386 connected to the +12V rail for this purpose.  Again, the
+Raspberry Pi does not have adequate power supply headroom in order to provide
+any voltage gain, so we will have to be content with the 2.5Vpp swing we get
+from the DAC, and rely on an external power amplifier with a line-level
+input to drive a loudspeaker.  However, I still want to include a volume
+control.  The high side of the volume control pot is AC-coupled to the output
+of the filter circuit, and the wiper is AC-coupled to an emitter-follower
+to isolate the volume control from the load connected to the output jack.
+The 2N3904 is biased with a voltage divider taken off the +5V rail.  This
+should be capable of driving any line-level output, and may also be able to
+drive headphones to some degree.
+
+As built, unfortunately, this requires 3 large electrolytic caps to maintain
+the flat frequency response, but I don't think it's the end of the world.
 
 **NOTE: This is a work-in-progress.  Watch this space for updates.**
 
