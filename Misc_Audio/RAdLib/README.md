@@ -122,11 +122,12 @@ input to drive a loudspeaker.  However, I still want to include a volume
 control.  The high side of the volume control pot is AC-coupled to the output
 of the filter circuit, and the wiper is AC-coupled to an emitter-follower
 to isolate the volume control from the load connected to the output jack.
-The 2N3904 is biased with a voltage divider taken off the +5V rail.  This
-should be capable of driving any line-level output, and may also be able to
-drive headphones to some degree.
+AC coupling is used on either side of the volume control to deep DC off of
+the pot (no one likes scratchy volume controls).  The 2N3904 is biased with
+a voltage divider taken off the +5V rail.  This should be capable of driving
+any line-level output, and may also be able to drive headphones to some degree.
 
-As built, unfortunately, this requires 3 large electrolytic caps to maintain
+As built, unfortunately, this uses 3 large electrolytic caps to maintain
 the flat frequency response, but I don't think it's the end of the world.
 
 **NOTE: This is a work-in-progress.  Watch this space for updates.**
