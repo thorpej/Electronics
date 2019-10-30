@@ -80,7 +80,7 @@ L Memory_EEPROM:M24C01-FDW U204
 U 1 1 5D9C9C61
 P 8550 1550
 F 0 "U204" H 8950 2050 50  0000 C CNN
-F 1 "M24C01-FDW" H 8950 1950 50  0000 C CNN
+F 1 "24Cxx" H 8950 1950 50  0000 C CNN
 F 2 "Package_DIP:DIP-8_W7.62mm_Socket" H 8550 1900 50  0001 C CNN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b0/d8/50/40/5a/85/49/6f/DM00071904.pdf/files/DM00071904.pdf/jcr:content/translations/en.DM00071904.pdf" H 8600 1050 50  0001 C CNN
 	1    8550 1550
