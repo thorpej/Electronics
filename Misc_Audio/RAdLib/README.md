@@ -11,8 +11,8 @@ and I wanted to practice with more complex PCB layouts.)
 This borrows a lot from Sergey Malinov's
 [ISA OPL2 Card](http://www.malinov.com/Home/sergeys-projects/isa-opl2-card).
 
-The OPL2 synthesizer circuit and audio output stage is essentially lifted
-from Sergey's board and then adapted to the Raspberry Pi environemnt:
+The OPL2 synthesizer circuit is essentially lifted from Sergey's board
+and then adapted to the Raspberry Pi environemnt:
 
 * Because there's no ISA bus clock on the Raspberry Pi, I used a
 self-contained 3.58MHz crystal oscillator in a DIP-8 "half-can" package.
