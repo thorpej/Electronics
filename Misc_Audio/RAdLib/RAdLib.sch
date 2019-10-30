@@ -5,9 +5,9 @@ EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 2
-Title "RAdLib - AdLib clone for Raspberry Pi"
-Date "2019-10-10"
-Rev "0.1"
+Title "RAdLib - OPL2 FM Synthesizer for Raspberry Pi"
+Date "2019-10-30"
+Rev "1.0"
 Comp "Copyright 2019 Jason R. Thorpe.  All rights reserved."
 Comment1 "See LICENSE.txt."
 Comment2 ""

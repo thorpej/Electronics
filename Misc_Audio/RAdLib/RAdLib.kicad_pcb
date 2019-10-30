@@ -11,9 +11,11 @@
 
   (page USLetter)
   (title_block
-    (title "Raspberry Pi HAT template")
-    (date 2019-10-08)
+    (title "RAdLib - OPL2 FM Synthesizer for Raspberry Pi")
+    (date 2019-10-30)
+    (rev 1.0)
     (company "Copyright 2019 Jason R. Thorpe.  All rights reserved.")
+    (comment 1 "See LICENSE.txt.")
   )
 
   (layers
@@ -4506,7 +4508,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5DB929B4) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5DB9D362) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -5107,7 +5109,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5DB929B1) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5DB9D35F) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
