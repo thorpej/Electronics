@@ -2,7 +2,7 @@
 
 **NOTE: This is a work-in-progress.  Watch this space for updates.**
 
-This project is an attempt to being the glorious sound of the classic
+This project is an attempt to bring the glorious sound of the classic
 AdLib sound card to the Raspberry Pi (and other single-board computers
 with a compatible 40-pin GPIO header).  If you think this is a dumb
 idea, you're right!  The purpose of the project is really to teach myself
@@ -29,7 +29,7 @@ decode logic that allows it to be accessed at one of 4 jumper-selectable
 I/O-mapped addresses.  It occupies 2 bytes of I/O space.  The address decode
 logic on the board is responsible for asserting the OPL2's /CS signal, and
 the OPL2's /RD, /WR, and A0 signals are responsible for selecting which
-internal register the bus cycle will access.  The OPL2 also has 0 data
+internal register the bus cycle will access.  The OPL2 also has 8 data
 signals, D[0-7].  /CS, /RD, and /WR are active-low.  The OPL2 responds
 to these signals as follows:
 
@@ -54,7 +54,7 @@ have no such clock on the Raspberry Pi, so the clock is provided by a
 3.58MHz crystal oscillator module in a DIP-8 "half-can" package.
 
 Even though practically all software for the OPL2 treats it as a write-only
-device, here is a status register that is accessed when you issue a read
+device, there is a status register that is accessed when you issue a read
 cycle with the A0 pin low.  The only documented function of this status
 register is to report if the OPL2 is asserting its interrupt line,
 and which of the 2 timers is responsible for the interrupt.  I wasn't able
@@ -141,7 +141,8 @@ leaves us with very little headroom to amplify the signal for the filter.
 
 This required a re-work of the 2-stage active low-pass filter.  The reworked
 filter achieves unity gain and performance similar to that of the original
-filter circuit, but requires the use of a rail-to-rail op-amp.
+filter circuit, but requires the use of a rail-to-rail op-amp; the OP495
+is the most expensive part on the board.
 
 ## Audio Output Section
 
@@ -164,8 +165,8 @@ the flat frequency response, but I don't think it's the end of the world.
 
 ## Bill of Materials
 
-You can source most of the components at Mouser.  Links to individual
-components follow.
+You can source most of the components at Mouser.  Here are Links to
+individual components that fit the footprints on the board.
 
 All resistors are 1/8W 1%.
 
@@ -187,7 +188,7 @@ All resistors are 1/8W 1%.
 * 3x 10R resistor (R8, R10, R11) [Mouser 270-10-RC](https://www.mouser.com/ProductDetail/270-10-RC)
 * 5x 3.3K resistor (R201, R202, R203, R204, R205) [Mouser 270-3.3K-RC](https://www.mouser.com/ProductDetail/270-3.3K-RC)
 * 1x 10K audio taper potentiometer (RV1) [Mouser 652-91A1A-B24-D15L](https://www.mouser.com/ProductDetail/652-91A1A-B24-D15L)
-* 1x OP495 op amp (U3) [Mouser 584-OP495GPZ](https://www.mouser.com/ProductDetail/584-OP495GPZ)
+* 1x OP495 op-amp (U3) [Mouser 584-OP495GPZ](https://www.mouser.com/ProductDetail/584-OP495GPZ)
 * 1x 74LVC245A bus transciever (U201) [Mouser 595-SN74LVC245ANE4](https://www.mouser.com/ProductDetail/595-SN74LVC245ANE4)
 * 1x XXX 24Cxx serial EEPROM (U204) (optional)
 * 1x DIP-8 3.579545MHz crystal oscillator (X1) [Mouser 520-TCH357X](https://www.mouser.com/ProductDetail/520-TCH357-X)
@@ -208,7 +209,7 @@ You can get these from Jameco, Amazon, etc.
 
 * YM3812 (U1) - DIP-24 15.24mm
 * YM3014B (U2) - DIP-8 7.62mm
-* OP495 (U3) (most expensive part) - DIP-14 7.62mm
+* OP495 (U3) - DIP-14 7.62mm
 * 24Cxx (U204) (optional) - DIP-8 7.62mm
 
 **NOTE: This is a work-in-progress.  Watch this space for updates.**
