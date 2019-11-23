@@ -165,7 +165,7 @@ the flat frequency response, but I don't think it's the end of the world.
 
 ## Bill of Materials
 
-You can source most of the components at Mouser.  Here are Links to
+You can source most of the components at Mouser.  Here are links to
 individual components that fit the footprints on the board.
 
 All resistors are 1/8W 1%.
