@@ -83,20 +83,20 @@
 		target = <&gpio>;
 		__overlay__ {
 			radlib_Dx_output: radlib-Dx-output-pins {
-				brcm,pins = <OPL_D0, OPL_D1, OPL_D2, OPL_D3,
-				    OPL_D4, OPL_D5, OPL_D6, OPL_D7>;
+				brcm,pins = <OPL_D0 OPL_D1 OPL_D2 OPL_D3,
+				    OPL_D4 OPL_D5 OPL_D6 OPL_D7>;
 				brcm,function = <BCM2835_FSEL_GPIO_OUT>;
 				brcm,pull = <BCM2835_PUD_OFF>;
 			};
 			radlib_Dx_input: radlib-Dx-input-pins {
-				brcm,pins = <OPL_D0, OPL_D1, OPL_D2, OPL_D3,
-				    OPL_D4, OPL_D5, OPL_D6, OPL_D7>;
+				brcm,pins = <OPL_D0 OPL_D1 OPL_D2 OPL_D3,
+				    OPL_D4 OPL_D5 OPL_D6 OPL_D7>;
 				brcm,function = <BCM2835_FSEL_GPIO_IN>;
 				brcm,pull = <BCM2835_PUD_OFF>;
 			};
 
 			radlib_ctrl_output: radlib-ctrl-output-pins {
-				brcm,pins = <OPL_A0, OPL_READ, OPL_CS, OPL_RST>;
+				brcm,pins = <OPL_A0 OPL_READ OPL_CS OPL_RST>;
 				brcm,function = <BCM2835_FSEL_GPIO_OUT>;
 				brcm,pull = <BCM2835_PUD_OFF>;
 			};
@@ -106,7 +106,7 @@
 				 * it high so that the OPL2 will be
 				 * inert until the driver attaches.
 				 */
-				brcm,pins = <OPL_CS, OPL_RST>;
+				brcm,pins = <OPL_CS OPL_RST>;
 				brcm,function = <BCM2835_FSEL_GPIO_IN>;
 				brcm,pull = <BCM2835_PUD_UP>;
 			};
