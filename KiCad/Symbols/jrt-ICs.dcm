@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74LS382A
+D 4-bit simplified ALU
+K ALU
+$ENDCMP
+#
 $CMP 74LVC245A
 D Octal Bus Transciever with 3-state Outputs
 K bus transceiver tri-state CMOS TTL level-shift
