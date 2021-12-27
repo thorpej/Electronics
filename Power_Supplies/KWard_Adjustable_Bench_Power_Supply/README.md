@@ -34,3 +34,7 @@ To be added in the future:
 	1. Chassis layout drawings.
 	2. Control panel CAD file for submitting to Front Panel Express.
 	3. Descriptions / photographs of the hand-wired circuit boards.  (What a pain; I should have done proper PCBs...)
+
+## ADDENDUM
+
+I am going to be rebuilding this project using proper PCBs!  Watch here for the KiCad design files!
