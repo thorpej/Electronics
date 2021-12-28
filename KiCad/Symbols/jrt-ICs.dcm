@@ -11,6 +11,10 @@ K bus transceiver tri-state CMOS TTL level-shift
 F http://www.ti.com/lit/ds/symlink/sn74lvc245a.pdf
 $ENDCMP
 #
+$CMP DB10x
+F https://www.mouser.com/datasheet/2/345/db101s-1012s-17410.pdf
+$ENDCMP
+#
 $CMP RC4136
 D Quad General-Purpose Operational Amplifier
 K quad opamp
