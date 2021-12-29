@@ -85,7 +85,7 @@ ENDDEF
 DEF jrt-ICs_DB10x D 0 40 Y Y 1 F N
 F0 "D" 250 300 50 H V C CNN
 F1 "jrt-ICs_DB10x" 250 200 50 H V C CNN
-F2 "Diodes_THT:Diode_Bridge_DIP-4_W7.62mm_P5.08mm" 0 -600 50 H I C CNN
+F2 "Diode_THT:Diode_Bridge_DIP-4_W7.62mm_P5.08mm" 0 -600 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
 C -200 0 10 1 1 0 F
