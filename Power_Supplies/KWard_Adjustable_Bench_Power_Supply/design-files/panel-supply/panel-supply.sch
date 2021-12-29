@@ -271,4 +271,6 @@ Text Notes 3050 3850 0    50   ~ 0
 Choose a resistor appropriate your your 12V DC\nfan, or use a jumper if no resistor is needed.
 Text Notes 2900 5200 0    50   ~ 0
 ESR of the output capacitor is critical, and must be in the range\nof 100mOhm - 1Ohm.  Part selected is Rubycon 25YXS220MEFC6.3X11.
+Text Notes 1550 4950 0    50   Italic 10
+Triad F5-12
 $EndSCHEMATC
