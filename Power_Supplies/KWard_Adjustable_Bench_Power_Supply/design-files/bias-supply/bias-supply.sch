@@ -401,17 +401,6 @@ F 3 "" H 8200 3450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 8200 3450
-$Comp
-L Connector:Screw_Terminal_01x02 J2
-U 1 1 64258EEA
-P 8600 4450
-F 0 "J2" V 8750 4350 50  0000 L CNN
-F 1 "To C- meter" V 8850 4200 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8600 4450 50  0001 C CNN
-F 3 "~" H 8600 4450 50  0001 C CNN
-	1    8600 4450
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8500 4250 8200 4250
 Connection ~ 8200 4250
@@ -482,4 +471,18 @@ Wire Wire Line
 	6400 3450 7400 3450
 Connection ~ 6100 3350
 Connection ~ 7400 3450
+$Comp
+L Connector:Screw_Terminal_01x03 J2
+U 1 1 61D5CFA2
+P 8600 4450
+F 0 "J2" V 8472 4630 50  0000 L CNN
+F 1 "To C- meter" V 8563 4630 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-3_P5.08mm" H 8600 4450 50  0001 C CNN
+F 3 "~" H 8600 4450 50  0001 C CNN
+	1    8600 4450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8700 4250 8600 4250
+Connection ~ 8600 4250
 $EndSCHEMATC
