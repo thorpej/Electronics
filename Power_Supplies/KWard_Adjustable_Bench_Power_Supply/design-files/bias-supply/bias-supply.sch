@@ -485,4 +485,6 @@ $EndComp
 Wire Wire Line
 	8700 4250 8600 4250
 Connection ~ 8600 4250
+Text Notes 1550 4200 0    50   ~ 0
+Main_120Vac
 $EndSCHEMATC
