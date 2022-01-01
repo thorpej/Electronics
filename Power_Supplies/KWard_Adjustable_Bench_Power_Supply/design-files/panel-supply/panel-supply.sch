@@ -265,10 +265,10 @@ Wire Wire Line
 	8000 3200 8050 3200
 Wire Wire Line
 	8050 3200 8050 3450
-Text Notes 5950 5200 0    50   ~ 0
-Choose the appropriate MEE1-series DC-DC converter\nfor the voltage requirements of your panel meters.
-Text Notes 3050 3850 0    50   ~ 0
-Choose a resistor appropriate your your 12V DC\nfan, or use a jumper if no resistor is needed.
+Text Notes 5950 5450 0    50   ~ 0
+Choose the appropriate MEE1-series DC-DC converter\nfor the voltage requirements of your panel meters.  If any\nof your meters are capable of runing at 12Vdc, then simply\ninstall jumpers between the appropriate pins of DC-DC\nconverter footprint(s).
+Text Notes 3050 3950 0    50   ~ 0
+Choose a resistor appropriate your your 12Vdc\nfan if you wish to limit the current or drop some\nof the voltage, or use a jumper if no resistor is\nneeded.
 Text Notes 2900 5200 0    50   ~ 0
 ESR of the output capacitor is critical, and must be in the range\nof 100mOhm - 1Ohm.  Part selected is Rubycon 25YXS220MEFC6.3X11.
 Text Notes 1550 4950 0    50   Italic 10
