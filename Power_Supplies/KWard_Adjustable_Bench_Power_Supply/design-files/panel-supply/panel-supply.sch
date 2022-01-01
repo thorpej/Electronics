@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "KWard Bench PSU - Panel meter supply"
-Date ""
-Rev "0.1"
-Comp "Copyright (c) 2021 Jason R. Thorpe. See LICENSE."
+Date "2022-01-01"
+Rev "1.0"
+Comp "Copyright (c) 2017-2022 Kevin Ward and Jason R. Thorpe. See LICENSE."
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -32,6 +32,7 @@ F 0 "D1" H 2950 4750 50  0000 L CNN
 F 1 "DB101" H 2950 4650 50  0000 L CNN
 F 2 "Diodes_THT:Diode_Bridge_DIP-4_W7.62mm_P5.08mm" H 2800 4450 50  0001 C CNN
 F 3 "https://www.mouser.com/datasheet/2/345/db101s-1012s-17410.pdf" H 2800 4450 50  0001 C CNN
+F 4 "583-DB101" H 2800 4450 50  0001 C CNN "Mouser"
 	1    2800 4450
 	1    0    0    -1  
 $EndComp
@@ -96,7 +97,7 @@ F 0 "C2" H 4765 4646 50  0000 L CNN
 F 1 "220µF" H 4765 4555 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4650 4600 50  0001 C CNN
 F 3 "https://www.mouser.com/datasheet/2/977/e_YXS-1600637.pdf" H 4650 4600 50  0001 C CNN
-F 4 "25YXS220MEFC6.3X11" H 4650 4600 50  0001 C CNN "Mouser"
+F 4 "232-25YXS220MEFC63X1" H 4650 4600 50  0001 C CNN "Mouser"
 	1    4650 4600
 	1    0    0    -1  
 $EndComp
