@@ -28,7 +28,7 @@ it should be pretty obvious where the jumpers need to go.
 There is room on the board for a small heat sink for the LM2940, if necessary,
 although there is no dedicated footprint outline for it.  If your LM2940 is
 getting warm, there are a variety of heat sinks availble from outlets such as
-Amazon (just search for "TO-220 heatsink") that should fit in the slotted space.
+Amazon (just search for "TO-220 heatsink") that should fit in the alotted space.
 
 The board has standard M3 mounting holes, and is intended to be mounted on the
 back of the PSU front panel using stand-offs.
