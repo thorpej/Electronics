@@ -32,6 +32,8 @@ small fin-type heat sinks may also fit in the alloted space.  However, it is
 important that the two heat sinks DO NOT TOUCH, unless the MJE5371s are mounted
 using a TO-220 insulated mounting kit (plastic screw bushing + mica sheet).
 
+The board includes protection diodes for the 3 transistors as well as the output.
+
 Note: The voltage adjustment divider contains a 10 Ohm fixed resistor to "back-stop"
 the negative bias voltage because without it, the voltage can become positive with
 the potentiometer at the full CCW position in simulation.  With this resistor in-place,
