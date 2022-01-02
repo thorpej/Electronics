@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "KWard Bench PSU - Bias supply"
-Date ""
-Rev "0.1"
-Comp "Copyright (c) 2021 Jason R. Thorpe. See LICENSE."
+Date "2022-01-01"
+Rev "1.0"
+Comp "Copyright (c) 2017-2022 Kevin Ward and Jason R. Thorpe. See LICENSE."
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -18,7 +18,7 @@ L Connector:Screw_Terminal_01x02 J1
 U 1 1 6421837C
 P 1750 3900
 F 0 "J1" H 1668 3575 50  0000 C CNN
-F 1 "168VAC input" H 1668 3666 50  0000 C CNN
+F 1 "125Vac input" H 1668 3666 50  0000 C CNN
 F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1750 3900 50  0001 C CNN
 F 3 "~" H 1750 3900 50  0001 C CNN
 	1    1750 3900
@@ -141,6 +141,7 @@ F 0 "D2" V 5204 3730 50  0000 L CNN
 F 1 "1N5383B" V 5295 3730 50  0000 L CNN
 F 2 "Diode_THT:D_DO-201_P15.24mm_Horizontal" H 5250 3475 50  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/1n5345b.pdf" H 5250 3650 50  0001 C CNN
+F 4 "863-1N5383BG" V 5250 3650 50  0001 C CNN "Mouser"
 	1    5250 3650
 	0    1    1    0   
 $EndComp
@@ -154,6 +155,7 @@ F 0 "Q1" V 5485 4150 50  0000 C CNN
 F 1 "MJE5731" V 5576 4150 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5450 4250 50  0001 C CNN
 F 3 "~" H 5250 4150 50  0001 C CNN
+F 4 "863-MJE5731G" V 5250 4150 50  0001 C CNN "Mouser"
 	1    5250 4150
 	0    -1   1    0   
 $EndComp
@@ -192,6 +194,7 @@ F 0 "Q2" V 6335 4150 50  0000 C CNN
 F 1 "MJE5731" V 6426 4150 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6300 4250 50  0001 C CNN
 F 3 "~" H 6100 4150 50  0001 C CNN
+F 4 "863-MJE5731G" V 6100 4150 50  0001 C CNN "Mouser"
 	1    6100 4150
 	0    -1   1    0   
 $EndComp
@@ -278,6 +281,7 @@ F 0 "Q3" V 6750 4300 50  0000 C CNN
 F 1 "KSA1013" V 6650 4300 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92L" H 6950 4150 50  0001 C CNN
 F 3 "~" H 6750 4050 50  0001 C CNN
+F 4 "512-KSA1013YBU" V 6750 4050 50  0001 C CNN "Mouser"
 	1    6750 4050
 	0    -1   -1   0   
 $EndComp
@@ -376,6 +380,7 @@ F 0 "D6" V 8154 3980 50  0000 L CNN
 F 1 "1N4007" V 8245 3980 50  0000 L CNN
 F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 8200 3725 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 8200 3900 50  0001 C CNN
+F 4 "621-1N4007G-T" V 8200 3900 50  0001 C CNN "Mouser"
 	1    8200 3900
 	0    1    1    0   
 $EndComp
@@ -487,4 +492,10 @@ Wire Wire Line
 Connection ~ 8600 4250
 Text Notes 1550 4200 0    50   ~ 0
 Main_120Vac
+Text Notes 8550 4650 1    50   Italic 10
+V-
+Text Notes 8650 4650 1    50   Italic 10
+V+
+Text Notes 8750 4700 1    50   Italic 10
+GND
 $EndSCHEMATC
