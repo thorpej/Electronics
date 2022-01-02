@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.12-1-10_14)"
     },
-    "CreationDate":  "2022-01-01T08:23:09-08:00"
+    "CreationDate":  "2022-01-02T10:33:00-08:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "panel-supply",
       "GUID": "70616e65-6c2d-4737-9570-706c792e6b69",
-      "Revision": "0.1"
+      "Revision": "1.0"
     },
     "Size":
     {
