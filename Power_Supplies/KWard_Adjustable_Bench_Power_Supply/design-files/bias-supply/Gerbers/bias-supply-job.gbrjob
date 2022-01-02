@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.12-1-10_14)"
     },
-    "CreationDate":  "2022-01-02T08:07:55-08:00"
+    "CreationDate":  "2022-01-02T10:15:02-08:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "bias-supply",
       "GUID": "62696173-2d73-4757-9070-6c792e6b6963",
-      "Revision": "0.1"
+      "Revision": "1.0"
     },
     "Size":
     {

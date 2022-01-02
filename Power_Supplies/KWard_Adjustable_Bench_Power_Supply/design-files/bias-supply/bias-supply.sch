@@ -5,7 +5,7 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "KWard Bench PSU - Bias supply"
-Date "2022-01-01"
+Date "2022-01-02"
 Rev "1.0"
 Comp "Copyright (c) 2017-2022 Kevin Ward and Jason R. Thorpe. See LICENSE."
 Comment1 ""
