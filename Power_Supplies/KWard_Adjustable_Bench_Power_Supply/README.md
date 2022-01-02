@@ -18,7 +18,9 @@ The main differences between this and Kevin's version are the transformers used.
 build uses an Edcor XPWR133 for the B+ rail, floating 6550 screen supply, and the 6550 array's
 heaters.  In my build, an AnTek AS-4T400 is used, which necessitates a separate transformer
 for the floating 6550 screen supply.  I also opted to use a different transformer for the C-
-rail.  The design is otherwise un-changed from Kevin's design.
+rail.  Additionally, there are some minor improvements, such as the use of a precision 10-turn
+pot for the B+ voltage control (to address a design flaw in the original), as well as an
+provision to discharge capacitors on the device-under-test.  The design is otherwise un-changed from Kevin's design.
 
 The interesting files here are:
 
