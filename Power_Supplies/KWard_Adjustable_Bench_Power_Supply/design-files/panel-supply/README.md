@@ -12,18 +12,11 @@ be used to limit the current or drop the voltage to the fan, if desired.  If
 you don't want to put a resistor there, just install a jumper wire at the R1
 position.  Note the resistor is mounted vertically (to save board space).
 
-The board also has a provisions for 3 Murata MEE1S12xxDC DC-DC converters if
-your panel meters have limited operating voltage ranges.  The use of these
-DC-DC converters is optional; if your panel meters are capable of running
-at 12Vdc (fixed, or have their own on-board regulators), then you can simply
-install jumpers in those locations (standard DIP-8 pin numbering):
-
-* Pin 4 to Pin 5 (+Vin to +Vout)
-* Pin 1 to Pin 7 (-Vin to -Vout)
-
-Refer to the MEE1S12xxDC data sheet if you have any questions about these
-DC-DC converters or their pinouts.  If you look at the traces on the board,
-it should be pretty obvious where the jumpers need to go.
+The board also has a provisions for 3 Murata MEE1S12xxDC DC-DC converters.
+Even if your meters can operate on 12Vdc, use of these DC-DC converters is
+**mandatory** because the inexpensive panel meters widely available from China
+typically require isolated power supplies.  (Speculation: they are floating
+their own internal supply on top of measured voltage?)
 
 There is room on the board for a small heat sink for the LM2940, if necessary,
 although there is no dedicated footprint outline for it.  If your LM2940 is
@@ -48,4 +41,4 @@ This capacitor should have an ESR between 100 mOhm and 1 Ohm, per the LM2940 dat
 sheet.  _Mouser part number 232-25YXS220MEFC63X1._
 * 1x LM2940 12V 1A LDO regulator or equivalent (see LM2940 data sheet for pinout).
 _Mouser part number 926-LM2940T-50/LF08._
-* **Optional** Murata MEE1S12xxDC DC-DC converters (availble from Mouser or DigiKey).
+* Murata MEE1S12xxDC DC-DC converters (availble from Mouser or DigiKey).
