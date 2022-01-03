@@ -8,33 +8,33 @@ The board is powered by a a Triad F4-120 power transfomer, which is nominally
 rated as 115Vac -> 120Vac @ 50ma.
 
 The AC input is rectified by a Rectron DB107 diode bridge chip, filtered, and
-fed to a MJE5371 PNP power transistor whose base is pinned to a -150V reference
-voltage by a Zener diode, providing some voltage drop from the source voltage,
-and taking some of the load off of the second MJE5371 PNP power transistor, whose
-base is connected to a voltage divider made up of a fixed resistor and a precision
-10-turn potentiometer (see note below).  A 1µF film cap at the output shunts out
-any noise.
+fed to a MJE5371 PNP power transistor which provides a low-impedance voltage
+reference by pinning its base to -150V using a Zener diode.  This -150V reference
+voltage is then fed to a second MJE5371, whose base voltage is controlled by a
+fixed 39K resistor and a precision 10-turn potentiometer (see note below),
+providing the variable bias voltage output.  A 1µF film cap at the output shunts
+out any noise.
 
 Current limiting is provided by a small KSA1013 PNP transistor (connected to the
 base of the second MJE5371) and a 22 Ohm resistor.  As the current increases, the
-voltage drop across the resistor increases, which gradually turns on the KSA1013,
-which pulls the base of the second MJE5371 closer to GND (more positive), thus
-reducing the negative bias voltage.  Note that this is a gradual effect; if there
-is significant load on the bias supply, it will become gradually more difficult to
-pull the voltage further negative.
+voltage drop across the 22 Ohm resistor increases, which gradually turns on the
+KSA1013, which pulls the base of the second MJE5371 closer to GND (more positive),
+thus making the bias voltage output less negative.  Note that this is a gradual
+effect; if there is significant load on the bias supply, it will become gradually
+more difficult to pull the voltage further negative.
 
-Beacuse the second MJE5371 must drop considerable voltage, it dissipates quite a
-bit more power than the first MJE5371 (which is merely disposing of excess voltage
-from the power transformer).  It is therefore mounted to a much beefier heat sink
-than the first MJE5371.  Space for a small fin-type heat sink for the first MJE5371
-is provided, along with a specific Aavid part known to fit the footprint.  Other
-small fin-type heat sinks may also fit in the alloted space.  However, it is
-important that the two heat sinks DO NOT TOUCH, unless the MJE5371s are mounted
-using a TO-220 insulated mounting kit (plastic screw bushing + mica sheet).
+Beacuse the second MJE5371 can drop considerable voltage depending on the desired
+bias output voltage selected, it can dissipate quite a bit more heat than the first
+MJE5371 used as the voltage reference.  It is therefore mounted to a much beefier
+heat sink than the first MJE5371.  Space for a small fin-type heat sink for the
+first MJE5371 is provided, along with a specific Aavid part known to fit the
+footprint.  Other small fin-type heat sinks may also fit in the alloted space.
+However, it is important that the two heat sinks DO NOT TOUCH, unless the MJE5371s
+are mounted using a TO-220 insulated mounting kit (plastic screw bushing + mica sheet).
 
 The board includes protection diodes for the 3 transistors as well as the output.
 
-Note: The voltage adjustment divider contains a 10 Ohm fixed resistor to "back-stop"
+Note: The voltage adjustment divider also contains a 10 Ohm fixed resistor to "back-stop"
 the negative bias voltage because without it, the voltage can become positive with
 the potentiometer at the full CCW position in simulation.  With this resistor in-place,
 you may not be able to get the bias voltage to exactly 0V.  This may vary slightly
