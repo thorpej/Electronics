@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "KWard Bench PSU - Pass tube array"
-Date ""
-Rev "0.1"
-Comp "Copyright (c) 2021 Jason R. Thorpe. See LICENSE."
+Date "2022-01-04"
+Rev "1.0"
+Comp "Copyright (c) 2017-2021 Kevin Ward and Jason R. Thorpe. See LICENSE."
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -19,7 +19,7 @@ U 1 1 61D35673
 P 3500 2750
 F 0 "U1" H 3750 3100 50  0000 L CNN
 F 1 "6550" H 3750 3000 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 3500 2750 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 3500 2750 50  0001 C CNN
 F 3 "" H 3500 2750 50  0001 C CNN
 	1    3500 2750
 	1    0    0    -1  
@@ -30,7 +30,7 @@ U 1 1 61D36D03
 P 5000 2750
 F 0 "U2" H 5250 3100 50  0000 L CNN
 F 1 "6550" H 5250 3000 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 5000 2750 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 5000 2750 50  0001 C CNN
 F 3 "" H 5000 2750 50  0001 C CNN
 	1    5000 2750
 	1    0    0    -1  
@@ -41,7 +41,7 @@ U 1 1 61D3CEF9
 P 6500 2750
 F 0 "U3" H 6750 3100 50  0000 L CNN
 F 1 "6550" H 6750 3000 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 6500 2750 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 6500 2750 50  0001 C CNN
 F 3 "" H 6500 2750 50  0001 C CNN
 	1    6500 2750
 	1    0    0    -1  
@@ -52,7 +52,7 @@ U 1 1 61D3CEFF
 P 8000 2750
 F 0 "U4" H 8250 3100 50  0000 L CNN
 F 1 "6550" H 8250 3000 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 8000 2750 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 8000 2750 50  0001 C CNN
 F 3 "" H 8000 2750 50  0001 C CNN
 	1    8000 2750
 	1    0    0    -1  
@@ -271,7 +271,7 @@ U 2 1 61D45AEA
 P 3500 4550
 F 0 "U1" H 3728 4513 50  0000 L CNN
 F 1 "6550" H 3728 4422 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 3500 4550 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 3500 4550 50  0001 C CNN
 F 3 "" H 3500 4550 50  0001 C CNN
 	2    3500 4550
 	1    0    0    -1  
@@ -282,7 +282,7 @@ U 2 1 61D46395
 P 5000 4550
 F 0 "U2" H 5228 4513 50  0000 L CNN
 F 1 "6550" H 5228 4422 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 5000 4550 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 5000 4550 50  0001 C CNN
 F 3 "" H 5000 4550 50  0001 C CNN
 	2    5000 4550
 	1    0    0    -1  
@@ -293,7 +293,7 @@ U 2 1 61D47016
 P 6500 4550
 F 0 "U3" H 6728 4513 50  0000 L CNN
 F 1 "6550" H 6728 4422 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 6500 4550 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 6500 4550 50  0001 C CNN
 F 3 "" H 6500 4550 50  0001 C CNN
 	2    6500 4550
 	1    0    0    -1  
@@ -304,29 +304,11 @@ U 2 1 61D47C97
 P 8000 4550
 F 0 "U4" H 8228 4513 50  0000 L CNN
 F 1 "6550" H 8228 4422 50  0000 L CNN
-F 2 "Valve:Valve_Octal" H 8000 4550 50  0001 C CNN
+F 2 "jrt-TubeSockets:AES_P-ST8-193_Octal_T14" H 8000 4550 50  0001 C CNN
 F 3 "" H 8000 4550 50  0001 C CNN
 	2    8000 4550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5100 5100 5100 5000
-Wire Wire Line
-	5100 5100 6600 5100
-Wire Wire Line
-	6600 5100 6600 5000
-Connection ~ 5100 5100
-Wire Wire Line
-	6600 5100 7900 5100
-Connection ~ 6600 5100
-Wire Wire Line
-	4900 5200 4900 5000
-Wire Wire Line
-	4900 5200 6400 5200
-Wire Wire Line
-	6400 5200 6400 5000
-Connection ~ 4900 5200
-Connection ~ 6400 5200
 $Comp
 L Connector:Screw_Terminal_01x04 J1
 U 1 1 61D53E8C
@@ -431,14 +413,8 @@ Wire Wire Line
 	3400 5000 3400 5100
 Connection ~ 3400 5100
 Wire Wire Line
-	3400 5100 5100 5100
-Wire Wire Line
 	3600 5000 3600 5200
 Connection ~ 3600 5200
-Wire Wire Line
-	3600 5200 4900 5200
-Wire Wire Line
-	6400 5200 8100 5200
 Wire Wire Line
 	7900 5000 7900 5100
 Connection ~ 7900 5100
@@ -457,4 +433,28 @@ Wire Wire Line
 	2150 3550 2150 3100
 Wire Wire Line
 	2150 3100 1700 3100
+Wire Wire Line
+	3400 5100 5100 5100
+Wire Wire Line
+	3600 5200 4900 5200
+Wire Wire Line
+	4900 5000 4900 5200
+Connection ~ 4900 5200
+Wire Wire Line
+	4900 5200 6400 5200
+Wire Wire Line
+	5100 5000 5100 5100
+Connection ~ 5100 5100
+Wire Wire Line
+	5100 5100 6600 5100
+Wire Wire Line
+	6400 5000 6400 5200
+Connection ~ 6400 5200
+Wire Wire Line
+	6400 5200 8100 5200
+Wire Wire Line
+	6600 5000 6600 5100
+Connection ~ 6600 5100
+Wire Wire Line
+	6600 5100 7900 5100
 $EndSCHEMATC
