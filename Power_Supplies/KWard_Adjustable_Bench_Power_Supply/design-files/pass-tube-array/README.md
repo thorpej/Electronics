@@ -17,7 +17,7 @@ The _S_, _K_, and _G_ terminals connect to the corresponding terminals on
 the [screen supply and regulator board](../screen-supply-and-regulator).
 
 On the other end of the board are terminals for the 6.3Vac filament supply
-supplied by the AkTek AS-4T400 power transformer that powers the B+ supply.
+provided by the AkTek AS-4T400 power transformer that powers the B+ supply.
 
 The board itself holds between 1 and 4 6550 pentodes, which are wired in
 parallel.  Each 6550 supplies 100mA of current for the PSU output.  The
