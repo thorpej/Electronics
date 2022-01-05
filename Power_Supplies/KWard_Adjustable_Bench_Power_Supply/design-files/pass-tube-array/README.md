@@ -43,6 +43,8 @@ Note that all resistors are 2W metal film unless specified otherwise.  The Mouse
 part numbers provided here for standard resistors are for Vishay PR02-series, which
 fit the footprints on the board.
 
+* 4x PCB-mount octal tube sockets, [AES P-ST8-193](https://www.tubesandmore.com/products/socket-8-pin-octal-ceramic-pc-mount) or
+equivalent (26mm pin circle diameter, 2mm pin width).
 * 1x 2-position screw terminal block, 5.08mm pitch (CUI TB007-508-02BE or equivalent).
 _Mouser part number 490-TB007-508-02BE._
 * 1x 4-position screw terminal block, 10.16mm pitch (Molex 39910-0104 or equivalent).
