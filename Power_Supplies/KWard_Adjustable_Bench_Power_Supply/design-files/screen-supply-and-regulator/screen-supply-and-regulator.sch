@@ -125,7 +125,7 @@ L Device:Q_NMOS_GDS Q1
 U 1 1 61D1719C
 P 5200 2550
 F 0 "Q1" H 5405 2596 50  0000 L CNN
-F 1 "STP16N50M2" H 5405 2505 50  0000 L CNN
+F 1 "STP18N55M5" H 5405 2505 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5400 2650 50  0001 C CNN
 F 3 "~" H 5200 2550 50  0001 C CNN
 	1    5200 2550
@@ -217,8 +217,8 @@ Wire Wire Line
 	4850 2950 4850 3100
 Wire Wire Line
 	4850 3100 5300 3100
-Text Notes 2600 3350 0    50   ~ 0
-IRF840 would be an acceptable substitute for Q1 (or\nany other high-voltage GDS power MOSFET with a Vgs\nthreshold of 2V-4V).  Nominal screen voltage: 116Vdc.\nScreen voltage is floated on top of 6550 cathode voltage.
+Text Notes 5550 2450 0    50   ~ 0
+Any other high-voltage GDS power MOSFET with a Vgs\nthreshold of 3V-4V (typical) would be a suitable sutstitute\nfor Q1.  Nominal screen voltage: 116Vdc.  Screen voltage\nis floated on top of 6550 cathode voltage.
 Wire Wire Line
 	4250 2550 4450 2550
 Connection ~ 4250 2550
@@ -240,6 +240,7 @@ F 0 "U1" H 3150 4342 50  0000 C CNN
 F 1 "LM317" H 3150 4251 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 3150 4350 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/lm317.pdf" H 3150 4100 50  0001 C CNN
+F 4 "926-LM317AT/NOPB" H 3150 4100 50  0001 C CNN "Mouser"
 	1    3150 4100
 	1    0    0    -1  
 $EndComp
@@ -389,7 +390,7 @@ F 0 "R8" H 3570 5396 50  0000 L CNN
 F 1 "36K" H 3570 5305 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_Power_L25.0mm_W9.0mm_P30.48mm" V 3430 5350 50  0001 C CNN
 F 3 "~" H 3500 5350 50  0001 C CNN
-F 4 "71-CW00536K00JE73" H 3500 5350 50  0001 C CNN "Mouser"
+F 4 "71-RS00236K00FB12" H 3500 5350 50  0001 C CNN "Mouser"
 	1    3500 5350
 	1    0    0    -1  
 $EndComp
@@ -517,7 +518,7 @@ Connection ~ 4100 5500
 Text Notes 4900 5400 0    50   ~ 0
 3W wire-wound
 Text Notes 3500 5650 0    50   ~ 0
-5W wire-wound
+1% 5W wire-wound
 Wire Wire Line
 	4100 4900 4200 4900
 Wire Wire Line
