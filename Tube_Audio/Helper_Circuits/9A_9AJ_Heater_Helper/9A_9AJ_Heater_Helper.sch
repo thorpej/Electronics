@@ -1,16 +1,15 @@
 EESchema Schematic File Version 4
-LIBS:9A_9AJ_Heater_Helper-cache
 EELAYER 30 0
 EELAYER END
-$Descr USLetter 11000 8500
+$Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "9A / 9AJ Heater Helper"
 Date "2019-09-20"
 Rev "1.0"
-Comp "San Francisco Electronworks"
-Comment1 "See LICENSE.txt."
-Comment2 "Copyright 2019 Jason R. Thorpe.  All rights reserved."
+Comp "Copyright 2019 Jason R. Thorpe. See LICENSE.txt."
+Comment1 ""
+Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
