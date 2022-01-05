@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.12-1-10_14)"
     },
-    "CreationDate":  "2022-01-04T15:34:02-08:00"
+    "CreationDate":  "2022-01-04T16:21:17-08:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "pass-tube-array",
       "GUID": "70617373-2d74-4756-9265-2d6172726179",
-      "Revision": "0.1"
+      "Revision": "1.0"
     },
     "Size":
     {
