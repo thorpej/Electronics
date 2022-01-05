@@ -22,7 +22,7 @@ provided by the AkTek AS-4T400 power transformer that powers the B+ supply.
 The board itself holds between 1 and 4 6550 pentodes, which are wired in
 parallel.  Each 6550 supplies 100mA of current for the PSU output.  The
 tubes installed should be a matched set so that they share the current
-toughly equally.  10 Ohm ballast resistors in series with each 6550 cathode
+roughly equally.  A 10 Ohm ballast resistor in series with each 6550 cathode
 aids in load sharing.
 
 Each 6550 also contains a 150 Ohm screen protection resistor, in addition
