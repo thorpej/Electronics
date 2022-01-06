@@ -5,9 +5,9 @@ $Descr A 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "KWard Bench PSU - High Voltage supply"
-Date ""
-Rev "0.1"
-Comp "Copyright (c) 2021 Jason R. Thorpe. See LICENSE."
+Date "2022-01-06"
+Rev "1.0"
+Comp "Copyright (c) 2017-2021 Kevin Ward and Jason R. Thorpe. See LICENSE."
 Comment1 ""
 Comment2 ""
 Comment3 ""
