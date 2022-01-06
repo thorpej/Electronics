@@ -126,6 +126,7 @@ F 0 "C1" H 5915 3696 50  0000 L CNN
 F 1 "560µF" H 5915 3605 50  0000 L CNN
 F 2 "" H 5800 3650 50  0001 C CNN
 F 3 "~" H 5800 3650 50  0001 C CNN
+F 4 "661-E92L401SN561MR65" H 5800 3650 50  0001 C CNN "Mouser"
 	1    5800 3650
 	1    0    0    -1  
 $EndComp
@@ -148,6 +149,7 @@ F 0 "C2" H 5915 3996 50  0000 L CNN
 F 1 "560µF" H 5915 3905 50  0000 L CNN
 F 2 "" H 5800 3950 50  0001 C CNN
 F 3 "~" H 5800 3950 50  0001 C CNN
+F 4 "661-E92L401SN561MR65" H 5800 3950 50  0001 C CNN "Mouser"
 	1    5800 3950
 	1    0    0    -1  
 $EndComp
@@ -170,8 +172,8 @@ Wire Wire Line
 	5800 3500 6300 3500
 Wire Wire Line
 	5800 4100 6300 4100
-Text Notes 5450 4600 0    50   ~ 0
-First set of filter caps are 385V\nTDK B43501B3567M2 (selected\nfor high ripple current rating).
+Text Notes 5150 4650 0    50   ~ 0
+First set of filter caps are 400V\nUnited Chemi-Con E92L401VSN561MR65U\n(selected for high ripple current rating and\n10000 hour lifetime rating).
 $Comp
 L power:GND #PWR01
 U 1 1 61CFBDA3
