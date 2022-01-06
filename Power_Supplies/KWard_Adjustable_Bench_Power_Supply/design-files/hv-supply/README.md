@@ -26,6 +26,10 @@ pass tube array's anode (_A_) terminal.
 The 6.3Vac source is connected to the 6.3Vac input of the pass tube array
 board and powers the 6550 heater filaments.
 
+Note that the B+ supply's power transformer is switched by a separate switch
+from the main PSU power switch, which is noted in the schematic wtih the
+"_B+\_120Vac_" label.
+
 Note: The recifier specified (a Vishay GBPC3510-E4/51) is, quite admittedly,
 overkill.  That particular device is rated 1000V 35A, and is screw-mounted
 with heat sinking capabilities.  I generally use this component because it is
