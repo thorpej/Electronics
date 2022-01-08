@@ -1,0 +1,95 @@
+/*
+Copyright (c) 2022 Jason R. Thorpe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+/*
+ * Device Tree overlay for my Raspberry Pi-based remote power controller.
+ *
+ * This controller board uses an I2C MCP23008 I/O expander to control 2
+ * ULN2003 Darlington arrays.  These Darlington arrays have open-collector
+ * outputs that control an array of 8 12Vdc relays that switch the mains
+ * voltage for 8 power outlets connected to the board.
+ *
+ * The MCP23008 has a fixed 7-bit I2C address of 0x20 (the A0-A2 are
+ * hard-wired to GND).
+ *
+ * The specified Rayex LB2-12DS-R relays have a nominal coil current
+ * rating of 75mA (~1W power consumption).  This is well within the
+ * current sinking capability of each ULN2003 output when driven by
+ * a 3V3 signal.
+ *
+ * The controller has footprint space for a Raspberry Pi Zero / Zero W,
+ * and uses the following pins on the 40-pin Pi GPIO header:
+ *
+ *	1		+3V3 power output for MCP23008.
+ *
+ *	2, 4		+5V power input for Raspberry Pi.  There is
+ *			a 5V @ 5A regulator on the controller board.
+ *
+ *	3, 5		I2C1 SDA / SCL (I2C) signals to control MCP23008.
+ *
+ *	8, 10		Console UART (brought out to separate header on
+ *			the controller board).
+ *
+ *	40		GPIO21 -> ~RESET input to MCP23008.
+ */
+
+#include <dt-bindings/pinctrl/bcm2835.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "raspberrypi,model-zero-w",
+		     "raspberrypi,model-zero";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			mcpgpio_reset: mcpgpio_reset {
+				brcm,pins = <21>;
+				brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&i2c1>;
+		__overlay__ {
+			gpio@20 {
+				compatible = "microchip,mcp23008";
+				gpio-controller;
+				#gpio-cells = <2>;
+				reg = <0x20>;
+				gpio-line-names = "Outlet1",
+						  "Outlet2",
+						  "Outlet3",
+						  "Outlet4",
+						  "Outlet5",
+						  "Outlet6",
+						  "Outlet7",
+						  "Outlet8";
+				reset-gpios = <&gpio 21 GPIO_ACTIVE_LOW>;
+			};
+		};
+	};
+}
