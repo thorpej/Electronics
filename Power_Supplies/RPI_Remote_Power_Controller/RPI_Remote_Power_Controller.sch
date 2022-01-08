@@ -156,7 +156,7 @@ L Transistor_Array:ULN2003 U4
 U 1 1 61D78993
 P 5400 9050
 F 0 "U4" H 5400 9717 50  0000 C CNN
-F 1 "ULN2001" H 5400 9626 50  0000 C CNN
+F 1 "ULN2003" H 5400 9626 50  0000 C CNN
 F 2 "Package_DIP:DIP-16_W7.62mm_Socket" H 5450 8500 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/uln2003a.pdf" H 5500 8850 50  0001 C CNN
 	1    5400 9050
@@ -167,7 +167,7 @@ L Transistor_Array:ULN2003 U3
 U 1 1 61D76245
 P 5400 7250
 F 0 "U3" H 5400 7917 50  0000 C CNN
-F 1 "ULN2001" H 5400 7826 50  0000 C CNN
+F 1 "ULN2003" H 5400 7826 50  0000 C CNN
 F 2 "Package_DIP:DIP-16_W7.62mm_Socket" H 5450 6700 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/uln2003a.pdf" H 5500 7050 50  0001 C CNN
 	1    5400 7250
@@ -272,8 +272,6 @@ $EndComp
 Wire Wire Line
 	1950 7200 1950 7050
 Wire Wire Line
-	1950 7050 2900 7050
-Wire Wire Line
 	3650 7050 3650 7500
 NoConn ~ 3150 8100
 Wire Wire Line
@@ -293,13 +291,6 @@ F 3 "" H 3150 8500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Connection ~ 3150 8500
-Wire Wire Line
-	3150 7700 2900 7700
-Wire Wire Line
-	2900 7700 2900 7050
-Connection ~ 2900 7050
-Wire Wire Line
-	2900 7050 3650 7050
 Text GLabel 1450 950  2    50   Output ~ 0
 Mains_Hot
 Text GLabel 1450 1050 2    50   Output ~ 0
@@ -950,7 +941,6 @@ NoConn ~ 1050 8000
 NoConn ~ 1050 8100
 NoConn ~ 1050 8300
 NoConn ~ 1050 8400
-NoConn ~ 1050 8500
 NoConn ~ 1050 8700
 NoConn ~ 1050 8800
 NoConn ~ 1050 8900
@@ -1137,4 +1127,16 @@ F 3 "" H 1100 5950 50  0001 C CNN
 	1    1100 5950
 	0    -1   -1   0   
 $EndComp
+Wire Wire Line
+	1950 7050 3650 7050
+Wire Wire Line
+	1050 8500 950  8500
+Wire Wire Line
+	950  8500 950  10050
+Wire Wire Line
+	950  10050 2850 10050
+Wire Wire Line
+	2850 10050 2850 7700
+Wire Wire Line
+	2850 7700 3150 7700
 $EndSCHEMATC
