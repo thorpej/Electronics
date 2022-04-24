@@ -4,4 +4,9 @@ $CMP Arduino_Nano
 D Arduino Nano board
 $ENDCMP
 #
+$CMP Teensy4_1_GPIO
+D Teensy 4.1 microcontroller board, GPIO and power pins only
+F https://www.pjrc.com/store/teensy41.html
+$ENDCMP
+#
 #End Doc Library
