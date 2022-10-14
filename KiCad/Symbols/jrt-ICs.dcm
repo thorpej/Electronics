@@ -28,4 +28,9 @@ $CMP SN74141
 D BCD-to-decimal decoder / Nixie driver
 $ENDCMP
 #
+$CMP W65C21
+D Peripheral Interface Adapter (PIA)
+F https://www.westerndesigncenter.com/wdc/documentation/w65c21.pdf
+$ENDCMP
+#
 #End Doc Library
