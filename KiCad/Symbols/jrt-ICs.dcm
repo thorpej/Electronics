@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74LS164
+D 8-Bit Serial-In/Parallel-Out Shift Register
+F https://www.ti.com/lit/ds/symlink/cd74hc164.pdf
+$ENDCMP
+#
 $CMP 74LS382A
 D 4-bit simplified ALU
 K ALU
@@ -31,6 +36,16 @@ $ENDCMP
 #
 $CMP SN74141
 D BCD-to-decimal decoder / Nixie driver
+$ENDCMP
+#
+$CMP W65C21
+D Peripheral Interface Adapter (PIA)
+F https://www.westerndesigncenter.com/wdc/documentation/w65c21.pdf
+$ENDCMP
+#
+$CMP W65C22
+D Versatile Interface Adapter
+F https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf
 $ENDCMP
 #
 #End Doc Library
