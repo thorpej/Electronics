@@ -11,6 +11,11 @@ K bus transceiver tri-state CMOS TTL level-shift
 F http://www.ti.com/lit/ds/symlink/sn74lvc245a.pdf
 $ENDCMP
 #
+$CMP AS6C6264
+K SRAM
+F https://www.mouser.com/datasheet/2/12/Alliance%20Memory_64K_AS6C6264v2.0July2017-1144693.pdf
+$ENDCMP
+#
 $CMP DB10x
 F https://www.mouser.com/datasheet/2/345/db101s-1012s-17410.pdf
 $ENDCMP
