@@ -48,4 +48,10 @@ D Versatile Interface Adapter
 F https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf
 $ENDCMP
 #
+$CMP W65C51
+D Asynchronous Communications Interface Adapter
+K uart
+F https://www.westerndesigncenter.com/wdc/documentation/w65c51n.pdf
+$ENDCMP
+#
 #End Doc Library
