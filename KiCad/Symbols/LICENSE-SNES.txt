@@ -1,0 +1,3 @@
+Symbols in the SNES library are from the Zeal8bit project.
+
+https://github.com/Zeal8bit/Zeal-SNES-Adapter/blob/main/LICENSE
