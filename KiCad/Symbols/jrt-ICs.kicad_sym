@@ -6639,7 +6639,7 @@
 		(symbol "ATF1508AS-TQFP100_0_1"
 			(rectangle
 				(start -25.4 54.61)
-				(end 25.4 -63.5)
+				(end 25.4 -68.58)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -6966,7 +6966,7 @@
 						)
 					)
 				)
-				(number "19"
+				(number "16"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -6984,7 +6984,7 @@
 						)
 					)
 				)
-				(number "20"
+				(number "17"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7002,7 +7002,7 @@
 						)
 					)
 				)
-				(number "21"
+				(number "19"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7020,7 +7020,7 @@
 						)
 					)
 				)
-				(number "22"
+				(number "20"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7038,7 +7038,7 @@
 						)
 					)
 				)
-				(number "23"
+				(number "21"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7056,7 +7056,7 @@
 						)
 					)
 				)
-				(number "24"
+				(number "22"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7074,7 +7074,7 @@
 						)
 					)
 				)
-				(number "25"
+				(number "23"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7092,7 +7092,7 @@
 						)
 					)
 				)
-				(number "27"
+				(number "24"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7110,7 +7110,7 @@
 						)
 					)
 				)
-				(number "28"
+				(number "25"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7128,7 +7128,7 @@
 						)
 					)
 				)
-				(number "29"
+				(number "27"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7146,7 +7146,7 @@
 						)
 					)
 				)
-				(number "30"
+				(number "28"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7164,7 +7164,7 @@
 						)
 					)
 				)
-				(number "31"
+				(number "29"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7182,7 +7182,7 @@
 						)
 					)
 				)
-				(number "32"
+				(number "30"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7200,7 +7200,7 @@
 						)
 					)
 				)
-				(number "33"
+				(number "31"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7218,7 +7218,7 @@
 						)
 					)
 				)
-				(number "35"
+				(number "32"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7236,7 +7236,7 @@
 						)
 					)
 				)
-				(number "36"
+				(number "33"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7254,7 +7254,7 @@
 						)
 					)
 				)
-				(number "37"
+				(number "35"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7272,7 +7272,7 @@
 						)
 					)
 				)
-				(number "40"
+				(number "36"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7283,14 +7283,14 @@
 			(pin bidirectional line
 				(at -27.94 -43.18 0)
 				(length 2.54)
-				(name "I/O/PD2"
+				(name "I/O"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "41"
+				(number "37"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7308,7 +7308,7 @@
 						)
 					)
 				)
-				(number "42"
+				(number "40"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7319,14 +7319,14 @@
 			(pin bidirectional line
 				(at -27.94 -48.26 0)
 				(length 2.54)
-				(name "I/O"
+				(name "I/O/PD2"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "44"
+				(number "41"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7344,7 +7344,7 @@
 						)
 					)
 				)
-				(number "45"
+				(number "42"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7362,7 +7362,7 @@
 						)
 					)
 				)
-				(number "46"
+				(number "44"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7380,7 +7380,7 @@
 						)
 					)
 				)
-				(number "47"
+				(number "45"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -7390,6 +7390,42 @@
 			)
 			(pin bidirectional line
 				(at -27.94 -58.42 0)
+				(length 2.54)
+				(name "I/O"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "46"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -27.94 -60.96 0)
+				(length 2.54)
+				(name "I/O"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "47"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -27.94 -63.5 0)
 				(length 2.54)
 				(name "I/O"
 					(effects
@@ -7425,7 +7461,7 @@
 				)
 			)
 			(pin power_in line
-				(at -8.89 -66.04 90)
+				(at -8.89 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7461,7 +7497,7 @@
 				)
 			)
 			(pin power_in line
-				(at -6.35 -66.04 90)
+				(at -6.35 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7479,7 +7515,7 @@
 				)
 			)
 			(pin power_in line
-				(at -3.81 -66.04 90)
+				(at -3.81 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7515,7 +7551,7 @@
 				)
 			)
 			(pin power_in line
-				(at -1.27 -66.04 90)
+				(at -1.27 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7551,7 +7587,7 @@
 				)
 			)
 			(pin power_in line
-				(at 1.27 -66.04 90)
+				(at 1.27 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7587,7 +7623,7 @@
 				)
 			)
 			(pin power_in line
-				(at 3.81 -66.04 90)
+				(at 3.81 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7623,7 +7659,7 @@
 				)
 			)
 			(pin power_in line
-				(at 6.35 -66.04 90)
+				(at 6.35 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7659,7 +7695,7 @@
 				)
 			)
 			(pin power_in line
-				(at 8.89 -66.04 90)
+				(at 8.89 -71.12 90)
 				(length 2.54)
 				(name "GND"
 					(effects
@@ -7877,7 +7913,7 @@
 			(pin bidirectional line
 				(at 27.94 15.24 180)
 				(length 2.54)
-				(name "I/O/TDO"
+				(name "I/O"
 					(effects
 						(font
 							(size 1.27 1.27)
