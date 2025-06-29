@@ -2393,7 +2393,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "jrt-PGA:PGA68"
 			(at 0 0 0)
 			(effects
 				(font
